@@ -3,12 +3,13 @@ import logo from './logo.svg';
 import './App.css';
 import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
-const Auth = new AuthService();
-
 import Calendar from "./components/Calendar"
 import Calories from "./components/Calories"
 import Weight from "./components/Weight"
 import Resources from "./pages/Resources"
+
+const Auth = new AuthService();
+
 
 
 
