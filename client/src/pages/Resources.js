@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 
-class Calendar extends Component {
+class Resources extends Component {
 
     render() {
         return (
@@ -12,4 +12,4 @@ class Calendar extends Component {
     };
 }
 
-export default Calendar;
+export default Resources;
