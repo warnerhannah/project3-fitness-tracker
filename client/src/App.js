@@ -11,8 +11,6 @@ import Resources from "./pages/Resources"
 const Auth = new AuthService();
 
 
-
-
 class App extends Component {
 
 

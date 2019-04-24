@@ -22,6 +22,19 @@ const UserSchema = new Schema({
     type: String,
     required: true
   },
+
+  // OURS 
+  weight: {
+    type: Number,
+  },
+  height: {
+    type: Number,
+  },
+  age: {
+    type: Number,
+  },
+
+  // END OURS
   createdAt: {
     type: Date,
     default: Date.now
