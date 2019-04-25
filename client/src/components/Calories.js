@@ -6,7 +6,7 @@ class Calories extends Component {
     render() {
         return (
             <div>
-
+                <p>This is the calories</p>
             </div>
         );
     };

@@ -26,6 +26,7 @@ class Profile extends Component {
         <h1>On the profile page!</h1>
         <p>Username: {this.state.username}</p>
         <p>Email: {this.state.email}</p>
+        <Stats />
         <Link to="/">Go home</Link>
       </div>
     )
