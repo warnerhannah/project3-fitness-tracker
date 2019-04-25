@@ -6,7 +6,7 @@ class Weight extends Component {
     render() {
         return (
             <div>
-
+                <p>This is the weight</p>
             </div>
         );
     };
