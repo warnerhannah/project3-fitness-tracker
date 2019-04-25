@@ -24,14 +24,28 @@ const UserSchema = new Schema({
   },
 
   // OURS 
+  name: {
+    type: String,
+    required: false
+  },
   weight: {
     type: Number,
+    required: false
   },
-  height: {
+  feet: {
     type: Number,
+    required: false
+
+  },
+  inches: {
+    type: Number,
+    required: false
+
   },
   age: {
     type: Number,
+    required: false
+
   },
 
   // END OURS

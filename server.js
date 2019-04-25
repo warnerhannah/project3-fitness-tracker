@@ -41,6 +41,7 @@ app.post('/api/login', (req, res) => {
 
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
+  console.log(req.body)
   db.User.create(req.body)
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
@@ -50,6 +51,28 @@ app.post('/api/signup', (req, res) => {
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {
   db.User.findById(req.params.id).then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
+// UPDATE USER
+app.post('/api/update/:id', (req, res) => {
+  console.log(req.body)
+  db.User.findById(req.params.id)
+  .updateMany(
+    {
+      name: req.body.name,
+      weight: req.body.weight,
+      feet: req.body.feet,
+      inches: req.body.inches,
+      age: req.body.age
+    }
+  )
+  .then(data => {
     if(data) {
       res.json(data);
     } else {
