@@ -13,9 +13,7 @@ class Navbar extends Component {
             return (
                 <div>
                     <ul className="navbar-nav">
-                        <li className="nav-item">
-                            <Link className="nav-link" to="/profile">Profile</Link>
-                        </li>
+                        
                         <li className="nav-item">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
@@ -27,6 +25,9 @@ class Navbar extends Component {
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/resources">Resources</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/profile">Profile</Link>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
