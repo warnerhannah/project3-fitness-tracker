@@ -22,11 +22,7 @@ class Stats extends Component {
     render() {
         return (
             <div>
-                <div>
-                    {/* <h3>Height: {this.state.height}</h3>
-                    <h3>Weight: {this.state.weight}</h3>
-                    <h3>Age: {this.state.age}</h3> */}
-                </div>
+                <p>This is the stats</p>
             </div>
         );
     };

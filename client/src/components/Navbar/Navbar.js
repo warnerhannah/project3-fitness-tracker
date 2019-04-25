@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
 import AuthService from '../AuthService';
+import { Link } from "react-router-dom";
 
 class Navbar extends Component {
     constructor() {
@@ -11,15 +11,32 @@ class Navbar extends Component {
     showNavigation = () => {
         if (this.Auth.loggedIn()) {
             return (
-                <ul className="navbar-nav">
-                    <li className="nav-item">
-                        <Link className="nav-link" to="/profile">Profile</Link>
-                    </li>
-                    <li className="nav-item">
-                        {/* this is not using the Link component to logout or user and then refresh the application to the start */}
-                        <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
-                    </li>
-                </ul>
+                <div>
+                    <ul className="navbar-nav">
+                        
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/calendar">Calendar</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/calories">Calories</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/weight">Weight</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/resources">Resources</Link>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to="/profile">Profile</Link>
+                        </li>
+                        <li className="nav-item">
+                            {/* this is not using the Link component to logout or user and then refresh the application to the start */}
+                            <a className="nav-link" href="/" onClick={() => this.Auth.logout()}>Logout</a>
+                        </li>
+                    </ul>
+
+
+                </div>
             );
         } else {
             return (
@@ -39,7 +56,7 @@ class Navbar extends Component {
         return (
             <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">React JWT App</Link>
+                    <Link className="navbar-brand" to="/">CBC Fitness Tracker</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
