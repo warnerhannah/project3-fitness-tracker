@@ -1,0 +1,14 @@
+input {
+    width: 50px;
+    text-align: right;
+}
+
+p {
+    font-weight: bold;
+}
+
+input.name {
+    width: 300px;
+    text-align: left;
+
+}
