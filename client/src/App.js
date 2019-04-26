@@ -7,6 +7,7 @@ import withAuth from './components/withAuth';
 // import Calories from "./components/Calories"
 // import Weight from "./components/Weight"
 // import Resources from "./pages/Resources"
+import Chart from './components/Chart';
 
 const Auth = new AuthService();
 
@@ -33,7 +34,9 @@ class App extends Component {
               <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
               <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
             </p>
+            <Chart/>
           </div>
+          
         </div>
     );
   }
