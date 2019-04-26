@@ -48,7 +48,7 @@ class Calories extends Component {
  }
   render() {
     return (
-      <div style={{ position: "relative", width: 600, height: 550 }}>
+      <div className="graphdata" style={{ position: "relative"}}>
         <Line
           data={this.state.Data}
           options={{

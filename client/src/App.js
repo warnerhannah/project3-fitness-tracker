@@ -8,8 +8,8 @@ import Home from "./pages/Home"
 // import Calories from "./components/Calories"
 // import Weight from "./components/Weight"
 // import Resources from "./pages/Resources"
-import Weightloss from './components/Weightloss';
-import Calories from './components/Calories';
+// import Weight from './components/Weight';
+// import Calories from './components/Calories';
 
 const Auth = new AuthService();
 

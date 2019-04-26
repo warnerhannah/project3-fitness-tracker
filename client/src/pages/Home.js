@@ -44,16 +44,14 @@ class Home extends Component {
                     <h3>My Stats</h3>
                     <div className="flex">
                         <p>Current Weight: {this.state.weight} lbs</p>
-                        <p>Current Height: </p>
-                        <p>Current Age: </p>
+                        <p>Current Height: {this.state.feet}ft. {this.state.inches}in.</p>
+                        <p>Current Age: {this.state.age} years</p>
                     </div>
                     <div className="flex">
                         <div className="graph">
-                            render weight graph
                             <Weight />
                         </div>
                         <div className="graph">
-                            render calories graph
                             <Calories />
                         </div>
                     </div>
