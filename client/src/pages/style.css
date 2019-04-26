@@ -1,6 +1,7 @@
-input {
+.profile {
     width: 50px;
     text-align: right;
+    border-radius: 10px;
 }
 
 p {
@@ -10,6 +11,39 @@ p {
 input.name {
     width: 300px;
     text-align: left;
-
 }
 
+button {
+    margin-left: 400px;
+}
+
+.signupL {
+    display: flex;
+    justify-content: center
+}
+
+h1 {
+    text-align: center
+}
+
+.flex {
+    display: flex;
+    justify-content: space-evenly
+  }
+  
+  .calendarClick {
+    margin: 20px;
+    background: white;
+    border-radius: 10px;
+    width: 30%;
+    height: 150px;
+    margin: 75px 0px;
+  }
+  
+  .calendar {
+    margin: 20px;
+    background:white;
+    border-radius: 10px;
+    width: 40%;
+    height: 300px;
+  }
