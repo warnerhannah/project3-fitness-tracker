@@ -90,6 +90,28 @@ app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => 
   res.send('You are authenticated'); //Sending some response when authenticated
 });
 
+app.get('/calendar', isAuthenticated, (req, res) => {
+  res.send('this is the calendar');
+});
+
+app.post('/api/update/calendar/:id', (req, res) => {
+  db.User.findById(req.params.id)
+  .updateMany(
+    {
+      title: req.body.title,
+      start: req.body.exercise,
+      end: req.body.end
+    }
+  )
+  .then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
 // Error handling
 app.use(function (err, req, res, next) {
   if (err.name === 'UnauthorizedError') { // Send the error rather than to show it on the console
