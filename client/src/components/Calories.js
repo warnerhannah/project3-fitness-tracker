@@ -14,10 +14,12 @@ class Calories extends Component {
                 datasets: [
                   {
                     label: "Calories Consumed",
+                    fill: true,
                     // this changes line fill color
-                    backgroundColor: ["rgb(75,192,192)"],
+                    backgroundColor: ["rgba(75,192,192,0.4)"],
                     // this changes the color of the dots
                     pointBackgroundColor: "rgb(75,192,192)",
+                    borderColor:"rgb(75,192,192)",
                     pointHoverRadius:5,
                     pointHoverBorderColor: "black",
                     data: [5,19,2,7,10],
@@ -25,9 +27,10 @@ class Calories extends Component {
                   {
                     label: "Calorie Lost",
                     // this changes line fill color
-                    backgroundColor: "purple",
+                    backgroundColor: ["rgb(128,1,128,0.6)"],
                     // this changes the color of the dots
                     pointBackgroundColor: "rgb(75,192,192)",
+                    borderColor:"rgb(128,1,128)",
                     pointHoverRadius:5,
                     pointHoverBorderColor: "black",
                     data: [10,1,17,6,6],
