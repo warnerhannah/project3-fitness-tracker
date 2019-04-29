@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import withAuth from './../components/withAuth';
 
 class Calendar extends Component {
     componentDidMount () {
@@ -14,4 +15,4 @@ class Calendar extends Component {
     };
 }
 
-export default Calendar;
+export default withAuth(Calendar);
