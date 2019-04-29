@@ -59,9 +59,10 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
-// UPDATE USER
+
+// Update User
 app.post('/api/update/:id', (req, res) => {
-  console.log(req.body)
+  console.log(req.body);
   db.User.findById(req.params.id)
   .updateMany(
     {
