@@ -16,7 +16,7 @@ class Home extends Component {
 
     componentDidMount() {
         API.getUser(this.props.user.id).then(res => {
-            console.log(res.data)
+            // console.log(res.data)
             this.setState({
                 name: res.data.name,
                 weight: res.data.weight,
@@ -29,17 +29,19 @@ class Home extends Component {
 
     render() {
         return (
-            <div>
-                <div className="flex">
+            <div className="container">
+
+                <div className="flex calContainer">
                     <div className="calendarClick">
                         <p>info when click on calendar</p>
                     </div>
 
                     <div className="calendar">
-                        <p>calendar</p>
+                    <h3>My Workout Schedule</h3>
                         <Calendar />
                     </div>
                 </div>
+
                 <div className="stats">
                     <h3>My Stats</h3>
                     <div className="flex">
@@ -49,13 +51,16 @@ class Home extends Component {
                     </div>
                     <div className="flex">
                         <div className="graph">
+                            <a href="/weight">Edit</a>
                             <Weight />
                         </div>
                         <div className="graph">
+                            <a href="/calories">Edit</a>
                             <Calories />
                         </div>
                     </div>
                 </div>
+
             </div>
         );
     };
