@@ -76,3 +76,30 @@ a {
     width: 80%;
     margin-left: 5%
 }
+
+.messaging {
+    background: white;
+    border-radius: 10px;
+    width: 100%;    
+    margin: 10px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+form {
+    padding: 20px;
+}
+
+.message {
+    width: 600px;
+    /* height: 100px; */
+}
+
+.sendButton {
+    float: right;
+    margin-right: 40px;
+    border-radius: 10px;
+    background: #008c90;
+    color: white;
+    padding: 5px;
+}

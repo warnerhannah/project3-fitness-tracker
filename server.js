@@ -59,9 +59,34 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
   }).catch(err => res.status(400).send(err));
 });
 
+// send user a message
+app.post('/api/sendmessage', (req, res) => {
+  // console.log("hit server")
+  db.Message.create({ 
+    username: req.body.username,
+    message: req.body.message
+  })
+  .then(data => {
+    res.json(data);
+  }).catch(err => res.status(400).send(err));
+});
+
+//display messages 
+app.get('/api/messages/:username', (req, res) => {
+  // console.log(req.params.username)
+  db.Message.find({
+    username: req.params.username
+  })
+  .then(data => {
+    // console.log(data)
+    res.json(data);
+  }).catch(err => res.status(400).send(err));
+})
+
+
 // UPDATE USER
 app.post('/api/update/:id', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   db.User.findById(req.params.id)
   .updateMany(
     {

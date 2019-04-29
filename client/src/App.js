@@ -5,6 +5,7 @@ import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
 import Home from "./pages/Home"
 import API from "./utils/API"
+import Message from "./pages/Message"
 // import Calendar from "./components/Calendar"
 // import Calories from "./components/Calories"
 // import Weight from "./components/Weight"
@@ -44,13 +45,9 @@ class App extends Component {
       <div className="App">
         <div className="App-header">
           <h2 className="nameHeader">Welcome, {this.state.name}!</h2>
-          {/* <p className="App-intro">
-              <button type="button" className="btn btn-primary" onClick={this.goToEditProfile}>Go to Profile</button>
-              <button type="button" className="btn btn-danger" onClick={this.handleLogout}>Logout</button>
-            </p> */}
         </div>
-        <Home />
-
+        {/* <Home /> */}
+        <Message />
       </div>
     );
   }
