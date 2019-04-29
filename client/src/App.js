@@ -46,8 +46,7 @@ class App extends Component {
         <div className="App-header">
           <h2 className="nameHeader">Welcome, {this.state.name}!</h2>
         </div>
-        {/* <Home /> */}
-        <Message />
+        <Home />
       </div>
     );
   }
