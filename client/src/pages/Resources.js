@@ -6,7 +6,7 @@ class Resources extends Component {
     render() {
         return (
             <div>
-                <p>This is the resources</p>
+                <h3>Fitness Resources:</h3>
             </div>
         );
     };
