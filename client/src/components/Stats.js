@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import API from "../utils/API";
+import withAuth from './../components/withAuth';
 
 
 class Stats extends Component {
@@ -28,4 +29,4 @@ class Stats extends Component {
     };
 }
 
-export default Stats;
+export default withAuth(Stats);
