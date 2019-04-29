@@ -103,3 +103,31 @@ form {
     color: white;
     padding: 5px;
 }
+
+.saveButton {
+    margin-right: 40px;
+    border-radius: 10px;
+    background: #008c90;
+    color: white;
+    padding: 5px;
+}
+
+.read {
+    background: grey;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+
+}
+
+.unread {
+    background: #008c90;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+}
+
+.from {
+    margin-left: 70%;
+}

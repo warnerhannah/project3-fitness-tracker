@@ -64,7 +64,8 @@ app.post('/api/sendmessage', (req, res) => {
   // console.log("hit server")
   db.Message.create({ 
     username: req.body.username,
-    message: req.body.message
+    message: req.body.message,
+    sender: req.body.sender
   })
   .then(data => {
     res.json(data);
@@ -80,6 +81,23 @@ app.get('/api/messages/:username', (req, res) => {
   .then(data => {
     // console.log(data)
     res.json(data);
+  }).catch(err => res.status(400).send(err));
+})
+
+// mark message as read 
+app.post("/api/messages/:id", (req,res) => {
+  db.Message.findById(req.params.id)
+  .update(
+    {
+      read: true
+    }
+  )
+  .then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
   }).catch(err => res.status(400).send(err));
 })
 

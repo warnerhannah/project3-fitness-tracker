@@ -11,6 +11,9 @@ const MessageSchema = new Schema({
     message: {
         type: String,
     },
+    sender: {
+        type: String,
+    },
     read: {
         type: Boolean,
         default: false

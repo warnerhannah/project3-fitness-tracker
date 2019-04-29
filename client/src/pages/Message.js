@@ -18,34 +18,44 @@ class Message extends Component {
 
     componentDidMount() {
         API.getUser(this.props.user.id)
-        .then(res => {
-          this.setState({
-            myusername: res.data.username,
-          })
-        })
-        .then(res => {
-            API.displayMessages(this.state.myusername)
+            .then(res => {
+                this.setState({
+                    myusername: res.data.username,
+                })
+            })
+            .then(res => {
+                this.displayMessages(res)
+            })
+    }
+
+    displayMessages = () => {
+        API.displayMessages(this.state.myusername)
             .then(res => {
                 // console.log(res.data)
                 this.setState({
-                    messages: res.data
+                    messages: res.data.reverse()
                 })
-            })  
-        })
-      }
+            })
+    }
 
+    markRead = (id) => {
+        API.markRead(id)
+            .then(res => {
+                this.displayMessages()
+            })
+    }
 
     sendMessage = (e) => {
         e.preventDefault();
         // console.log(this.state.username)
-        API.sendMessage(this.state.username, this.state.message)
-        .then(res => {
-            alert("Message sent!")
-          this.setState({
-            username: "",
-            message: "",
-          })
-        })
+        API.sendMessage(this.state.username, this.state.message, this.state.myusername)
+            .then(res => {
+                alert("Message sent!")
+                this.setState({
+                    username: "",
+                    message: "",
+                })
+            })
     }
 
     handleInputChange = (e) => {
@@ -57,7 +67,7 @@ class Message extends Component {
         return (
             <div className="container">
                 <div className="messaging">
-                <h3>Send A Motivational Message To Your Friends!</h3>
+                    <h3>Send A Motivational Message To Your Friends!</h3>
                     <form>
                         <p>
                             Please enter their username: <input
@@ -69,23 +79,32 @@ class Message extends Component {
                             </input>
                         </p>
                         <p> Please enter your message: <input
-                                className="message"
-                                value={this.state.message}
-                                onChange={this.handleInputChange}
-                                name="message"
-                            >
-                            </input>
+                            className="message"
+                            value={this.state.message}
+                            onChange={this.handleInputChange}
+                            name="message"
+                        >
+                        </input>
                         </p>
                         <button
-                        className="sendButton"
-                        onClick={this.sendMessage}
+                            className="sendButton"
+                            onClick={this.sendMessage}
                         >Send it!</button>
                     </form>
                 </div>
 
                 <div className="messaging">
-                <h3>Your Messages:</h3>
-                    
+                    <h3>Your Messages: (click to mark as read)</h3>
+                    {this.state.messages.map(message => (
+                        <div
+                            key={message.id}
+                            className={message.read ? "read" : "unread"}
+                            onClick={() => this.markRead(message._id)}
+                        >
+                            <p>{message.message}</p>
+                            <p className="from">From: {message.sender}</p>
+                        </div>
+                    ))}
                 </div>
 
             </div>
