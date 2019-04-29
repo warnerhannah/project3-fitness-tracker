@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AuthService from '../AuthService';
 import { Link } from "react-router-dom";
+import shoe from './images/shoe.jpg'
 
 class Navbar extends Component {
     constructor() {
@@ -54,9 +55,11 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+            <nav className="navbar navbar-expand-lg navbar-dark">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">CBC Fitness Tracker</Link>
+                    <Link className="navbar-brand" to="/">
+                    <img src={shoe} alt="shoeimage"/>
+                     Fitness Tracker</Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

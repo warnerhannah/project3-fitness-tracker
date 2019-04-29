@@ -21,7 +21,7 @@ class Login extends Component {
       .then(res => {
         // once user is logged in
         // take them to their profile page
-        this.props.history.replace(`/profile`);
+        this.props.history.replace(`/`);
       })
       .catch(err => {
         alert(err.response.data.message)
@@ -39,6 +39,7 @@ class Login extends Component {
     return (
       <div className="container">
         <h1>Login</h1>
+        <div className="signupL">
         <form onSubmit={this.handleFormSubmit}>
           <div className="form-group">
             <label htmlFor="email">Email address:</label>
@@ -58,9 +59,10 @@ class Login extends Component {
                    id="pwd"
                    onChange={this.handleChange}/>
           </div>
-          <button type="submit" className="btn btn-primary">Submit</button>
+          <button type="submit" className="btn btn-primary submit">Submit</button>
+
         </form>
-        <p><Link to="/signup">Go to Signup</Link></p>
+        </div>
       </div>
 
     );
