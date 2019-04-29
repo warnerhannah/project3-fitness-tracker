@@ -14,39 +14,39 @@ class Home extends Component {
     age: ""
   };
 
-  componentWillMount() {
+  componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
-      console.log(res.data);
+      // console.log(res.data)
       this.setState({
         name: res.data.name,
         weight: res.data.weight,
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
-      });
+      })
     });
   }
 
   render() {
     return (
-      <div>
-        <div className="flex">
+      <div className="container">
+
+        <div className="flex calContainer">
           <div className="calendarClick">
             <p>info when click on calendar</p>
           </div>
 
           <div className="calendar">
-            <p>calendar</p>
+            <h3>My Workout Schedule</h3>
             <Calendar />
           </div>
         </div>
+
         <div className="stats">
           <h3>My Stats</h3>
           <div className="flex">
             <p>Current Weight: {this.state.weight} lbs</p>
-            <p>
-              Current Height: {this.state.feet}ft. {this.state.inches}in.
-            </p>
+            <p>Current Height: {this.state.feet}ft. {this.state.inches}in.</p>
             <p>Current Age: {this.state.age} years</p>
           </div>
           <div className="flex">
@@ -54,10 +54,11 @@ class Home extends Component {
               {this.state.weight ? (
                 <Weight userWeight={this.state.weight} />
               ) : (
-                ""
-              )}
+                  ""
+                )}
             </div>
             <div className="graph">
+              <a href="/calories">Edit</a>
               <Calories />
             </div>
           </div>
