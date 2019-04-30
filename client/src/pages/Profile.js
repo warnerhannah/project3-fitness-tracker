@@ -20,7 +20,7 @@ class Profile extends Component {
 
   componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
-      console.log(res.data)
+     
       this.setState({
         username: res.data.username,
         email: res.data.email,
@@ -103,6 +103,7 @@ class Profile extends Component {
         </div>
 
         <button
+          className="saveButton"
           onClick={this.updateUser}
         >Save</button>
         {/* <Link to="/">Go home</Link> */}

@@ -59,5 +59,17 @@ export default {
 
   updateWeight: (id, title, start, end) => {
     return axios.put(`api/update/weight/${id}`, {title: title, start: start, end: end});
+  },
+
+  sendMessage: (username, message, sender) => {
+    return axios.post(`/api/sendmessage`, { username: username, message: message, sender: sender });
+  },
+
+  displayMessages: (username) => {
+    return axios.get(`/api/messages/${username}`, { username: username})
+  },
+
+  markRead: (id) => {
+    return axios.post(`/api/messages/${id}`)
   }
 };

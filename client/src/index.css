@@ -8,3 +8,9 @@ body {
 .navbar {
   background: #008c90
 }
+
+.nameHeader {
+  float: left;
+  margin-left: 10%;
+  padding-top: 10px
+}

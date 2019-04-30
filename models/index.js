@@ -3,5 +3,6 @@ module.exports = {
   Info: require('./Info'),
   Calendar: require('./Calendar'),
   Weight: require('./Weight'),
-  Calories: require('./Calories')
+  Calories: require('./Calories'),
+  Message: require('./Messages')
 };

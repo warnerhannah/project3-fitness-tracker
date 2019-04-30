@@ -48,6 +48,7 @@ const UserSchema = new Schema({
 
   },
 
+
   // END OURS
   createdAt: {
     type: Date,
