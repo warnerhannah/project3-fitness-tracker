@@ -18,6 +18,7 @@ import Calories from "./components/Calories"
 import Weight from "./components/Weight"
 import Resources from "./pages/Resources"
 import Message from "./pages/Message"
+import Food from "./pages/Food"
 
 // Here is if we have an id_token in localStorage
 if (localStorage.getItem("id_token")) {
@@ -37,7 +38,7 @@ ReactDOM.render(
             <Route exact path="/calories" component={Calories} />
             <Route exact path="/weight" component={Weight} />
             <Route exact path="/messages" component={Message} />
-
+            <Route exact path="/food" component={Food} />
             <Route exact path="/resources" component={Resources} />
         </div>
     </Router>
