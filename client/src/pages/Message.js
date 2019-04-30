@@ -58,6 +58,13 @@ class Message extends Component {
             })
     }
 
+    deleteMessage = (id) => {
+        API.deleteMessage(id)
+            .then(res => {
+                this.displayMessages()
+            })
+    }
+
     handleInputChange = (e) => {
         const { name, value } = e.target;
         this.setState({ [name]: value })
@@ -93,18 +100,29 @@ class Message extends Component {
                     </form>
                 </div>
 
-                <div className="messaging">
+                <div className="messaging scroll">
                     <h3>Your Messages: (click to mark as read)</h3>
-                    {this.state.messages.map(message => (
-                        <div
-                            key={message.id}
-                            className={message.read ? "read" : "unread"}
-                            onClick={() => this.markRead(message._id)}
-                        >
-                            <p>{message.message}</p>
-                            <p className="from">From: {message.sender}</p>
-                        </div>
-                    ))}
+                    {this.state.messages.length > 0 ?
+                        (
+                            this.state.messages.map(message => (
+                                <div
+                                    key={message.id}
+                                    className={message.read ? "read" : "unread"}
+                                    onClick={() => this.markRead(message._id)}
+                                >
+                                    <i
+                                        key={message.id}
+                                        className="fas fa-trash-alt"
+                                        onClick={() => this.deleteMessage(message._id)}
+                                    ></i>
+                                    <p>{message.message}</p>
+                                    <p className="from">From: {message.sender}</p>
+                                </div>
+                            ))
+                        )
+                        :
+                        (<h5 className="none">No Messages!</h5>)}
+
                 </div>
             </div>
         );

@@ -88,6 +88,11 @@ i {
     text-align: left;
 }
 
+.scroll {
+    max-height: 700px;
+    overflow-y:auto;
+}
+
 form {
     padding: 20px;
 }
@@ -137,4 +142,8 @@ form {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+}
+
+.none {
+    text-align: center;
 }

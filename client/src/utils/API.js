@@ -21,6 +21,10 @@ export default {
     return axios.get(`/api/messages/${username}`, { username: username})
   },
 
+  deleteMessage: (id) => {
+    return axios.post(`/api/delete/${id}`)
+  },
+
   markRead: (id) => {
     return axios.post(`/api/messages/${id}`)
   }
