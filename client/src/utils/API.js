@@ -11,5 +11,9 @@ export default {
 
   updateUser: (id, name, weight, feet, inches, age ) => {
     return axios.post(`api/update/${id}`, {name: name, weight: weight, feet: feet, inches: inches, age: age});
+  },
+
+  caloriesConsumed: (id, caloriesConsumed) => {
+    return axios.post(`api/update/${id}`, {caloriesConsumed});
   }
 };
