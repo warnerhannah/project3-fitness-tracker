@@ -47,6 +47,10 @@ class App extends Component {
           <h2 className="nameHeader">Welcome, {this.state.name}!</h2>
         </div>
         <Home />
+        <footer>
+        <p>Created by: Hannah, Michael, Ivan, and Manny</p>
+        <p>May 2019</p>
+      </footer>
       </div>
     );
   }
