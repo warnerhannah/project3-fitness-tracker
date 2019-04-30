@@ -53,7 +53,7 @@ class Home extends Component {
             <div className="graph">
               <div className="graphTitle">
                 <p>Weight Progress</p>
-                <i className="fas fa-edit"></i>
+                <a href="/weight"><i className="fas fa-edit"></i></a>
               </div>
               {this.state.weight ? (
                 <Weight userWeight={this.state.weight} />
@@ -64,7 +64,7 @@ class Home extends Component {
             <div className="graph">
               <div className="graphTitle">
                 <p>Calories Consumed/Burned</p>
-                <i className="fas fa-edit"></i>
+                <a href="/calories"><i className="fas fa-edit"></i></a>
               </div>
               <Calories />
             </div>
