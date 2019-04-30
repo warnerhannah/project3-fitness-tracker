@@ -71,5 +71,9 @@ export default {
 
   markRead: (id) => {
     return axios.post(`/api/messages/${id}`)
+  },
+
+  getFood: (quantity, size, food) => {
+    return axios.get(`/api/foodcalories/`, { quantity: quantity, size: size, food: food });
   }
 };
