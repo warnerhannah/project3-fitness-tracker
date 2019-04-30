@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Mern Demo",
   "main": "server.js",
+  "style": "lib/css/react-big-calendar.css",
   "scripts": {
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server.js",
@@ -21,13 +22,16 @@
   "dependencies": {
     "bcrypt-nodejs": "0.0.3",
     "chart.js": "^2.8.0",
+    "date-arithmetic": "^3.1.0",
     "dotenv": "^7.0.0",
     "express": "^4.16.4",
     "express-jwt": "^5.3.1",
+    "googleapis": "^27.0.0",
     "if-env": "^1.0.4",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.5.3",
     "morgan": "^1.9.1",
+    "react-big-calendar": "^0.20.4",
     "react-chartjs-2": "^2.7.6"
   }
 }
