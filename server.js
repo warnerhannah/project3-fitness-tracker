@@ -26,7 +26,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 mongoose
-  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', {useNewUrlParser: true, useCreateIndex: true})
+  .connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/appDB', { useNewUrlParser: true, useCreateIndex: true })
   .then(() => console.log("MongoDB Connected!"))
   .catch(err => console.error(err));
 
@@ -51,19 +51,19 @@ app.post('/api/signup', (req, res) => {
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {
   db.User.findById(req.params.id).then(data => {
-    if(data) {
+    if (data) {
       res.json(data);
     } else {
-      res.status(404).send({success: false, message: 'No user found'});
+      res.status(404).send({ success: false, message: 'No user found' });
     }
   }).catch(err => res.status(400).send(err));
 });
 
 // UPDATE USER
-app.post('/api/update/:id', (req, res) => {
+app.put('/api/update/:id', (req, res) => {
   console.log(req.body)
-  db.User.findById(req.params.id)
-  .updateMany(
+  db.User.findByIdAndUpdate(req.params.id,
+
     {
       name: req.body.name,
       weight: req.body.weight,
@@ -72,13 +72,14 @@ app.post('/api/update/:id', (req, res) => {
       age: req.body.age
     }
   )
-  .then(data => {
-    if(data) {
-      res.json(data);
-    } else {
-      res.status(404).send({success: false, message: 'No user found'});
-    }
-  }).catch(err => res.status(400).send(err));
+    .then(data => {
+      if (data) {
+        console.log(data);
+        res.send(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 // Serve up static assets (usually on heroku)
@@ -90,26 +91,136 @@ app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => 
   res.send('You are authenticated'); //Sending some response when authenticated
 });
 
-app.get('/calendar', isAuthenticated, (req, res) => {
-  res.send('this is the calendar');
+app.post('/api/calendar', (req, res) => {
+  db.Calendar.create(req.body)
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
 });
 
-app.post('/api/update/calendar/:id', (req, res) => {
-  db.User.findById(req.params.id)
-  .updateMany(
+app.get('/calendar', (req, res) => {
+  db.Calendar.find({}).then(data => {
+    if (data) {
+      res.json(data);
+    } else {
+      res.status(404).send({ success: false, message: 'No user found' });
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
+app.put('/api/update/calendar/:id', (req, res) => {
+  db.Calendar.findByIdAndUpdate(req.params.id,
     {
       title: req.body.title,
-      start: req.body.exercise,
+      start: req.body.start,
       end: req.body.end
     }
   )
-  .then(data => {
-    if(data) {
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+app.delete('/api/delete/calendar/:id', (req, res) => {
+  db.Calendar.findByIdAndRemove(req.params.id)
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+app.post('/api/calories', (req, res) => {
+  db.Calories.create(req.body)
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
+
+app.get('/calories', (req, res) => {
+  db.Calories.find({}).then(data => {
+    if (data) {
       res.json(data);
     } else {
-      res.status(404).send({success: false, message: 'No user found'});
+      res.status(404).send({ success: false, message: 'No user found' });
     }
   }).catch(err => res.status(400).send(err));
+});
+
+app.put('/api/update/calories/:id', (req, res) => {
+  db.Calories.findByIdAndUpdate(req.params.id,
+    {
+      title: req.body.title,
+      start: req.body.start,
+      end: req.body.end
+    }
+  )
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+app.delete('/api/delete/calories/:id', (req, res) => {
+  db.Calories.findByIdAndRemove(req.params.id)
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+app.post('/api/weight', (req, res) => {
+  db.Weight.create(req.body)
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json(err));
+});
+
+app.get('/weight', (req, res) => {
+  db.Weight.find({}).then(data => {
+    if (data) {
+      res.json(data);
+    } else {
+      res.status(404).send({ success: false, message: 'No user found' });
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
+app.put('/api/update/weight/:id', (req, res) => {
+  db.Weight.findByIdAndUpdate(req.params.id,
+    {
+      title: req.body.title,
+      start: req.body.start,
+      end: req.body.end
+    }
+  )
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+app.delete('/api/delete/weight/:id', (req, res) => {
+  db.Weight.findByIdAndRemove(req.params.id)
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 // Error handling
@@ -124,10 +235,10 @@ app.use(function (err, req, res, next) {
 // hello
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
+app.get("*", function (req, res) {
   res.sendFile(path.join(__dirname, "./client/build/index.html"));
 });
 
-app.listen(PORT, function() {
+app.listen(PORT, function () {
   console.log(`🌎 ==> Server now on port ${PORT}!`);
 });

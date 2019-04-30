@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const calendarSchema = new Schema({
+const caloriesSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -19,6 +19,6 @@ const calendarSchema = new Schema({
 
 
 
-const Calendar = mongoose.model('Calendar', calendarSchema);
+const Calories = mongoose.model('Calories', caloriesSchema);
 
-module.exports = Calendar;
+module.exports = Calories;

@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const calendarSchema = new Schema({
+const weightSchema = new Schema({
     title: {
         type: String,
         required: true,
@@ -19,6 +19,6 @@ const calendarSchema = new Schema({
 
 
 
-const Calendar = mongoose.model('Calendar', calendarSchema);
+const Weight = mongoose.model('Weight', weightSchema);
 
-module.exports = Calendar;
+module.exports = Weight;
