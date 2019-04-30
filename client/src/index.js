@@ -12,6 +12,7 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
+import Selectable from './components/selectable';
 import Calendar from "./components/Calendar"
 import Calories from "./components/Calories"
 import Weight from "./components/Weight"
@@ -32,7 +33,7 @@ ReactDOM.render(
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
             <Route exact path="/profile" component={Profile} />
-            <Route exact path="/calendar" component={Calendar} />
+            <Route exact path="/calendar" component={Selectable} />
             <Route exact path="/calories" component={Calories} />
             <Route exact path="/weight" component={Weight} />
             <Route exact path="/messages" component={Message} />
