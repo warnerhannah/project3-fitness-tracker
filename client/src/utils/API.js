@@ -13,7 +13,15 @@ export default {
     return axios.post(`api/update/${id}`, {name: name, weight: weight, feet: feet, inches: inches, age: age});
   },
 
-  caloriesConsumed: (id, caloriesConsumed) => {
-    return axios.post(`api/update/${id}`, {caloriesConsumed});
+  sendMessage: (username, message, sender) => {
+    return axios.post(`/api/sendmessage`, { username: username, message: message, sender: sender });
+  },
+
+  displayMessages: (username) => {
+    return axios.get(`/api/messages/${username}`, { username: username})
+  },
+
+  markRead: (id) => {
+    return axios.post(`/api/messages/${id}`)
   }
 };

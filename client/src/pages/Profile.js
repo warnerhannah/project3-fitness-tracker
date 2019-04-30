@@ -105,6 +105,7 @@ class Profile extends Component {
         </div>
 
         <button
+          className="saveButton"
           onClick={this.updateUser}
         >Save</button>
         {/* <Link to="/">Go home</Link> */}

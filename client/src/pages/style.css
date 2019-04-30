@@ -28,41 +28,107 @@ h1 {
 
 .flex {
     display: flex;
-    justify-content: space-evenly
+    justify-content: space-evenly;
+    flex: wrap;
   }
+
+.calContainer {
+    width: 100%;
+    justify-content: space-between
+}
   
 .calendarClick {
-    /* margin: 20px;
-    background: white;
-    border-radius: 10px;
-    width: 30%;
-    height: 150px;
-    margin: 75px 0px; */
-    margin: 20px 0px 20px 20px;
+    margin-top:10px;
     background:white;
     border-radius: 10px;
-    width: 40%;
+    width: 44%;
     height: 300px;
 }
   
 .calendar {
-    margin: 20px 20px 20px 0px;
+    margin-top:10px;
     background:white;
     border-radius: 10px;
-    width: 40%;
+    width: 55%;
     height: 300px;
 }
 
 .stats {
     background: white;
     border-radius: 10px;
-    width: 80%;    
-    margin: 20px auto;
+    width: 100%;    
+    margin: 10px auto;
     padding: 20px;
 }
 
 .graph {
+    background: #CCCCCC;
     height: 300px;
     border-radius: 10px;
     width: 40%;
+}
+
+a {
+    float: right;
+    margin-right: 10px
+}
+
+.container {
+    width: 80%;
+    margin-left: 5%
+}
+
+.messaging {
+    background: white;
+    border-radius: 10px;
+    width: 100%;    
+    margin: 10px auto;
+    padding: 20px;
+    text-align: left;
+}
+
+form {
+    padding: 20px;
+}
+
+.message {
+    width: 600px;
+    /* height: 100px; */
+}
+
+.sendButton {
+    float: right;
+    margin-right: 40px;
+    border-radius: 10px;
+    background: #008c90;
+    color: white;
+    padding: 5px;
+}
+
+.saveButton {
+    margin-right: 40px;
+    border-radius: 10px;
+    background: #008c90;
+    color: white;
+    padding: 5px;
+}
+
+.read {
+    background: grey;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 5px;
+
+}
+
+.unread {
+    background: #008c90;
+    border-radius: 10px;
+    color: white;
+    padding: 15px;
+    margin: 5px;
+}
+
+.from {
+    margin-left: 70%;
 }
