@@ -32,6 +32,12 @@ mongoose
   .catch(err => console.error(err));
 
 
+
+
+
+
+// AUTHENTICATION ROUTES
+
 // LOGIN ROUTE
 app.post('/api/login', (req, res) => {
   auth
@@ -59,6 +65,12 @@ app.get('/api/user/:id', isAuthenticated, (req, res) => {
     }
   }).catch(err => res.status(400).send(err));
 });
+
+
+
+
+
+// MESSAGING ROUTES
 
 // send user a message
 app.post('/api/sendmessage', (req, res) => {
@@ -102,6 +114,25 @@ app.post("/api/messages/:id", (req, res) => {
     }).catch(err => res.status(400).send(err));
 })
 
+// delete a message 
+app.post("/api/delete/:id", (req,res) => {
+  console.log("hitting server")
+  db.Message.findOneAndRemove({ _id: req.params.id })
+  .then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
+  }).catch(err => res.status(400).send(err));
+})
+
+
+
+
+
+
+// PROFILE ROUTES
 
 // UPDATE USER
 app.put('/api/update/:id', (req, res) => {
