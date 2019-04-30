@@ -1,17 +1,17 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
 import Home from "./pages/Home"
 import API from "./utils/API"
-import Message from "./pages/Message"
+// import Message from "./pages/Message"
 // import Calendar from "./components/Calendar"
 // import Calories from "./components/Calories"
 // import Weight from "./components/Weight"
 // import Resources from "./pages/Resources"
-import Weight from './components/Weight';
-import Calories from './components/Calories';
+// import Weight from './components/Weight';
+// import Calories from './components/Calories';
 
 const Auth = new AuthService();
 
