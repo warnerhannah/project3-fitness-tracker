@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #222;
-  height: 150px;
+  height: 100px;
   padding: 20px;
   color: white;
 }
@@ -24,3 +24,10 @@
 }
 
 
+.navbar {
+  background: #008c90
+}
+
+img {
+  height: 40px;
+}

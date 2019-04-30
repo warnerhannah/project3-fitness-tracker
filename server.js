@@ -41,6 +41,7 @@ app.post('/api/login', (req, res) => {
 
 // SIGNUP ROUTE
 app.post('/api/signup', (req, res) => {
+  console.log(req.body)
   db.User.create(req.body)
     .then(data => res.json(data))
     .catch(err => res.status(400).json(err));
@@ -50,6 +51,71 @@ app.post('/api/signup', (req, res) => {
 // to access
 app.get('/api/user/:id', isAuthenticated, (req, res) => {
   db.User.findById(req.params.id).then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
+  }).catch(err => res.status(400).send(err));
+});
+
+// send user a message
+app.post('/api/sendmessage', (req, res) => {
+  // console.log("hit server")
+  db.Message.create({ 
+    username: req.body.username,
+    message: req.body.message,
+    sender: req.body.sender
+  })
+  .then(data => {
+    res.json(data);
+  }).catch(err => res.status(400).send(err));
+});
+
+//display messages 
+app.get('/api/messages/:username', (req, res) => {
+  // console.log(req.params.username)
+  db.Message.find({
+    username: req.params.username
+  })
+  .then(data => {
+    // console.log(data)
+    res.json(data);
+  }).catch(err => res.status(400).send(err));
+})
+
+// mark message as read 
+app.post("/api/messages/:id", (req,res) => {
+  db.Message.findById(req.params.id)
+  .update(
+    {
+      read: true
+    }
+  )
+  .then(data => {
+    if(data) {
+      res.json(data);
+    } else {
+      res.status(404).send({success: false, message: 'No user found'});
+    }
+  }).catch(err => res.status(400).send(err));
+})
+
+
+// UPDATE USER
+app.post('/api/update/:id', (req, res) => {
+  // console.log(req.body)
+  db.User.findById(req.params.id)
+  .updateMany(
+    {
+      name: req.body.name,
+      weight: req.body.weight,
+      feet: req.body.feet,
+      inches: req.body.inches,
+      age: req.body.age
+    }
+  )
+  .then(data => {
     if(data) {
       res.json(data);
     } else {
@@ -76,7 +142,7 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
-
+// hello
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function(req, res) {
