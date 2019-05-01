@@ -46,11 +46,12 @@ h1 {
 }
   
 .calendar {
-    margin-top:10px;
+    margin:10px 0px;
     background:white;
     border-radius: 10px;
-    width: 55%;
-    height: 300px;
+    /* width: 55%; */
+    height: 600px;
+
 }
 
 .stats {
