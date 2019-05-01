@@ -12,44 +12,53 @@ class Food extends Component {
         quantity: "",
         size: "",
 
-        calories:""
+        calories: ""
     }
 
     handleInputChange = (e) => {
-        const { name, value } = e.target;
-        this.setState({ [name]: value })
-    }
-
-    checkInput = (e) => {
         e.preventDefault();
-
-        if (!this.state.food || !this.state.quantity || !this.state.size) {
-            alert("Please fill out all information!")
-        }
-        else {
-            this.checkSize()
-        }
+        const { name, value } = e.target;
+        this.setState({ [name]: value });
+        console.log("we got here!");
     }
 
-    checkSize = () => {
-        if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
-            this.addFood()
-        }
-        else {
-            alert("Please enter a size of small, medium, or large")
-        }
-    }
+    // checkInput = (e) => {
+    //     e.preventDefault();
 
-    addFood = () => {   
+    //     // if (!this.state.food || !this.state.quantity || !this.state.size) {
+    //     //     alert("Please fill out all information!")
+    //     // }
+    //     // else {
+    //         this.checkSize()
+    //     // }
+    // }
+
+    // checkSize = () => {
+    //     if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
+    //         this.addFood()
+    //     }
+    //     else {
+    //         alert("Please enter a size of small, medium, or large")
+    //     }
+    // }
+
+
+
+    addFood = () => {
         API.getFood(this.state.quantity, this.state.size, this.state.food)
-        .then(res => {
-            this.setState({
-                food: "",
-                quantity: "",
-                size: "",
+            .then(res => {
+                this.setState({
+                    food: "",
+                    quantity: "",
+                    size: "",
+                })
+                // pull food data to display caloric intake
             })
-            // pull food data to display caloric intake
-        })
+    }
+
+    handleSubmit(event) {
+        alert('You added: ' + this.state.food);
+        event.preventDefault();
     }
 
     render() {
