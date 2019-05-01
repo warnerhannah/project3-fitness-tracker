@@ -1,22 +1,30 @@
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
-import Weight from "../components/Weight"
+import Weight from "../components/Weight";
+import API from "../utils/API";
 
 
 class displayWeight extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
-      newWeight: "",
-      date:""
+      weight: "",
+      date: ""
     };
   }
 
-  addWeight = () => {
-    // pull new weight from state.newWeight
-    //add it to the graph
-  }
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.createWeight(this.state.weight, this.state.date)
+      .then()
+      .catch(err => alert(err));
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
   render() {
     return (
@@ -25,7 +33,6 @@ class displayWeight extends Component {
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>
             <Weight />
-            />
           </div>
         </div>
 
@@ -38,7 +45,7 @@ class displayWeight extends Component {
                 <input
                     className="cal"
                     onChange={this.handleInputChange}
-                    name="newWeight"
+                    name="weight"
                   >
                   </input>
                 </p>
@@ -52,7 +59,7 @@ class displayWeight extends Component {
                 </p>
                 <button
                   className="sendButton"
-                  onClick={this.addWeight}
+                  onClick={this.handleFormSubmit}
                 >Add It</button>
               </form>
             </div>

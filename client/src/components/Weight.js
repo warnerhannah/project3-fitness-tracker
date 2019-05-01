@@ -2,46 +2,26 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import API from "../utils/API";
 
-const initialState = {
-  type: "line",
-  Data: {
-    Weight: [],
-    labels: ["1", "2", "3", "4"],
-    datasets: [
-      {
 
-        label: "Month Weight Goal",
-        fill: true,
-        // this changes line fill color
-        backgroundColor: ["rgb(75,192,192)"],
-        // this changes the color of the dots
-        pointBackgroundColor: "rgb(75,192,192)",
-
-        pointHoverRadius: 5,
-        pointHoverBorderColor: "black",
-        data: []
-      }
-    ]
-  }
-};
 
 class Weight extends Component {
   state = {
 
-    weight: []
+    weight: [],
+    labels: []
 
   };
 
   componentDidMount() {
     API.getWeight().then(res => {
-      const newWeight = res.data.map(weight =>
-        weight.weight);
-      console.log(newWeight);
+      const newWeight = res.data.map(weight => weight.weight);
+      const newLabels = res.data.map(labels => labels.date);
+      console.log(res.data);
       this.setState({
 
         Data: {
           Weight: [],
-          labels: ["1", "2", "3", "4"],
+          labels: newLabels,
           datasets: [
             {
 
@@ -100,6 +80,7 @@ class Weight extends Component {
     }
     return data;
   };
+
   render() {
     return (
 
