@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { Line } from "react-chartjs-2";
 import Weight from "../components/Weight";
 import API from "../utils/API";
 
@@ -7,16 +6,15 @@ import API from "../utils/API";
 class displayWeight extends Component {
   constructor(props) {
     super(props);
-    console.log(props);
     this.state = {
-      newWeight: "",
+      weight: "",
       date: ""
     };
   }
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.createWeight(this.state.newWeight, this.state.date)
+    API.createWeight(this.state.weight, this.state.date)
       .then()
       .catch(err => alert(err));
   };
@@ -47,7 +45,7 @@ class displayWeight extends Component {
                 <input
                     className="cal"
                     onChange={this.handleInputChange}
-                    name="newWeight"
+                    name="weight"
                   >
                   </input>
                 </p>
@@ -61,7 +59,7 @@ class displayWeight extends Component {
                 </p>
                 <button
                   className="sendButton"
-                  onClick={this.addWeight}
+                  onClick={this.handleFormSubmit}
                 >Add It</button>
               </form>
             </div>

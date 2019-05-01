@@ -50,7 +50,9 @@ export default {
   },
 
   createWeight: (weight, date) => {
+    console.log("got here!");
     return axios.post(`api/weight`, {weight: weight, date: date});
+    
   },
 
   deleteWeight: (id, weight, labels) => {
