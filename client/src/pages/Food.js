@@ -29,9 +29,9 @@ class Food extends Component {
         //     alert("Please fill out all information!")
         // }
         // else {
-            
+            // this.checkSize()
         // }
-
+    // }
 
     // checkSize = () => {
     //     if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {

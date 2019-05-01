@@ -39,7 +39,9 @@ class Home extends Component {
 
           <div className="calendar">
             <h3>My Workout Schedule</h3>
-            <Calendar />
+            <div>
+              <Calendar />
+            </div>
           </div>
         </div>
 

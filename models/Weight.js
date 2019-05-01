@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 const weightSchema = new Schema({
     weight: {
         type: Number
+    }, 
+    date: {
+        type: String
     }
 });
 

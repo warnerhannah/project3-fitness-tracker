@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 // import { Bar, Line, Pie } from "react-chartjs-2";
 import withAuth from './../components/withAuth';
-// import API from "../utils/API";
+import API from "../utils/API";
 import Calendar from "../components/Calendar"
 
 class displayCalendar extends Component {
@@ -11,6 +11,12 @@ class displayCalendar extends Component {
 
     }
 
+    addEvent = () => {
+        API.createCalendar() 
+        .then(res => {
+    
+        })
+      }
 
     render() {
         return (
