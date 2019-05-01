@@ -31,19 +31,6 @@ class Home extends Component {
     return (
       <div className="container">
 
-        <div className="flex calContainer">
-          <div className="calendarClick">
-            <p>info when click on calendar</p>
-          </div>
-
-          <div className="calendar">
-            <h3>My Workout Schedule</h3>
-            <div>
-              <Calendar />
-            </div>
-          </div>
-        </div>
-
         <div className="stats">
           <h3>My Stats</h3>
           <div className="flex">
@@ -57,7 +44,7 @@ class Home extends Component {
                 <p>Weight Progress</p>
                 <a href="/weight"><i className="fas fa-edit"></i></a>
               </div>
-                <Weight/>
+              <Weight />
             </div>
             <div className="graph">
               <div className="graphTitle">
@@ -68,6 +55,20 @@ class Home extends Component {
             </div>
           </div>
         </div>
+
+        {/* <div className="flex calContainer"> */}
+        {/* <div className="calendarClick">
+            <p>info when click on calendar</p>
+          </div> */}
+
+        <div className="calendar">
+          <h3>My Workout Schedule</h3>
+          <div>
+            <Calendar />
+          </div>
+        </div>
+        {/* </div> */}
+        
       </div>
     );
   }
