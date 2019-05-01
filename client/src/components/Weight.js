@@ -102,15 +102,16 @@ class Weight extends Component {
   };
   render() {
     return (
-      <div className="graphdata" style={{ position: "relative" }}>
-        <Line
-          data={this.state.Data}
-          options={{
-            responsive: true
-          }}
-        />
-      </div>
-    );
+
+          <div className="graphdata" style={{ position: "relative" }}>
+            <Line
+              data={this.state.Data}
+              options={{
+                responsive: true
+              }}
+            />
+          </div>
+    )
   }
 }
 
