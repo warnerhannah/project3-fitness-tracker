@@ -52,6 +52,10 @@ class Home extends Component {
           </div>
           <div className="flex">
             <div className="graph">
+              <div className="graphTitle">
+                <p>Weight Progress</p>
+                <a href="/weight"><i className="fas fa-edit"></i></a>
+              </div>
               {this.state.weight ? (
                 <div>
                 
@@ -64,7 +68,10 @@ class Home extends Component {
                 )}
             </div>
             <div className="graph">
-              <a href="/calories">Edit</a>
+              <div className="graphTitle">
+                <p>Calories Consumed/Burned</p>
+                <a href="/calories"><i className="fas fa-edit"></i></a>
+              </div>
               <Calories />
             </div>
           </div>
