@@ -26,6 +26,9 @@ class Food extends Component {
         if (!this.state.food || !this.state.quantity || !this.state.size) {
             alert("Please fill out all information!")
         }
+        else {
+            this.checkSize()
+        }
     }
 
     checkSize = () => {
@@ -38,6 +41,15 @@ class Food extends Component {
     }
 
     addFood = () => {   
+        API.getFood(this.state.quantity, this.state.size, this.state.food)
+        .then(res => {
+            this.setState({
+                food: "",
+                quantity: "",
+                size: "",
+            })
+            // pull food data to display caloric intake
+        })
     }
 
     render() {

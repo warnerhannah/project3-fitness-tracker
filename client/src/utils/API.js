@@ -78,6 +78,6 @@ export default {
   },
 
   getFood: (quantity, size, food) => {
-    return axios.get(`/api/foodcalories/`, { quantity: quantity, size: size, food: food });
+    return axios.get(`/api/foodcalories/${quantity}/${size}/${food}`);
   }
 };
