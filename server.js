@@ -115,16 +115,16 @@ app.post("/api/messages/:id", (req, res) => {
 })
 
 // delete a message 
-app.post("/api/delete/:id", (req,res) => {
+app.post("/api/delete/:id", (req, res) => {
   console.log("hitting server")
   db.Message.findOneAndRemove({ _id: req.params.id })
-  .then(data => {
-    if(data) {
-      res.json(data);
-    } else {
-      res.status(404).send({success: false, message: 'No user found'});
-    }
-  }).catch(err => res.status(400).send(err));
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 })
 
 
@@ -165,6 +165,12 @@ if (process.env.NODE_ENV === "production") {
 app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => {
   res.send('You are authenticated'); //Sending some response when authenticated
 });
+
+
+
+
+
+// CALENDAR ROUTES
 
 app.post('/api/calendar', (req, res) => {
   db.Calendar.create(req.body)
@@ -210,6 +216,12 @@ app.delete('/api/delete/calendar/:id', (req, res) => {
     }).catch(err => res.status(400).send(err));
 });
 
+
+
+
+
+
+// CALORIES ROUTES 
 app.post('/api/calories', (req, res) => {
   db.Calories.create(req.body)
     .then(data => res.json(data))
@@ -253,6 +265,12 @@ app.delete('/api/delete/calories/:id', (req, res) => {
       }
     }).catch(err => res.status(400).send(err));
 });
+
+
+
+
+
+// WEGHT ROUTES
 
 app.post('/api/weight', (req, res) => {
   db.Weight.create(req.body)
@@ -298,11 +316,29 @@ app.delete('/api/delete/weight/:id', (req, res) => {
     }).catch(err => res.status(400).send(err));
 });
 
-app.get('/api/foodcalories/', (req, res) => {
-  axios.get(`https://api.edamam.com/api/nutrition-data?app_id=582634e3&app_key=706b87d8c66c0a186041c148f14d051c%20&ingr=${req.body.quantity}%20${req.body.size}%20${req.body.food}`)
-    .then(response => res.json(response.data))
+
+
+
+
+
+// INTERACT WITH FOOD API ROUTES
+
+app.get('/api/foodcalories/:quantity/:size/:food', (req, res) => {
+  var query = `https://api.edamam.com/api/nutrition-data?app_id=582634e3&app_key=706b87d8c66c0a186041c148f14d051c%20&ingr=${req.params.quantity}%20${req.params.size}%20${req.params.food}`
+  // console.log(query)
+  axios.get(query)
+    .then(response => {
+      console.log(response.data)
+      res.json(response.data)
+    }
+    )
     .catch(err => res.status(400).json(err));
 });
+
+
+
+
+
 
 // Error handling
 app.use(function (err, req, res, next) {

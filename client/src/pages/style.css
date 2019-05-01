@@ -147,3 +147,13 @@ form {
 .none {
     text-align: center;
 }
+
+
+.cal {
+    width: 50px
+}
+
+.flexIt {
+    display: flex;
+    justify-content: flex-start
+}

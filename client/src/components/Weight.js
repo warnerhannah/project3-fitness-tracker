@@ -29,16 +29,15 @@ class Weight extends Component {
         labels: ["Week 1", "Week 2","Week 3", "Week 4"],
         datasets: [
           {
-           
+
             label: "Month Weight Goal",
             fill: true,
             // this changes line fill color
             backgroundColor: ["rgb(75,192,192,0.4)"],
             // this changes the color of the dots
             pointBackgroundColor: "rgb(75,192,192)",
-            borderColor:"rgb(75,192,192)",
-            
-            pointHoverRadius:5,
+
+            pointHoverRadius: 5,
             pointHoverBorderColor: "black",
             data: [props.userWeight]
           }
@@ -59,15 +58,16 @@ class Weight extends Component {
   };
   render() {
     return (
-      <div className="graphdata" style={{ position: "relative" }}>
-        <Line
-          data={this.state.Data}
-          options={{
-            responsive: true
-          }}
-        />
-      </div>
-    );
+
+          <div className="graphdata" style={{ position: "relative" }}>
+            <Line
+              data={this.state.Data}
+              options={{
+                responsive: true
+              }}
+            />
+          </div>
+    )
   }
 }
 
