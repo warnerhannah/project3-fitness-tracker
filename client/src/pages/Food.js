@@ -23,12 +23,12 @@ class Food extends Component {
     checkInput = (e) => {
         e.preventDefault();
 
-        if (!this.state.food || !this.state.quantity || !this.state.size) {
-            alert("Please fill out all information!")
-        }
-        else {
+        // if (!this.state.food || !this.state.quantity || !this.state.size) {
+        //     alert("Please fill out all information!")
+        // }
+        // else {
             this.checkSize()
-        }
+        // }
     }
 
     checkSize = () => {
@@ -47,21 +47,25 @@ class Food extends Component {
                 food: "",
                 quantity: "",
                 size: "",
+                calories: res.data.calories
             })
             // pull food data to display caloric intake
+            //res.data.calories
         })
     }
 
     render() {
         return (
-            <div className="container">
+            <div>
                 <div className="messaging">
-                    <h3>Input a New Food:</h3>
+                <p>Want to know the caloric value of a food?</p>
+                    <h3>Search a Food:</h3>
                     <form>
                         <p>
                             Please enter the food name:
                             <input
                                 className="username"
+                                value={this.state.food}
                                 onChange={this.handleInputChange}
                                 name="food"
                             >
@@ -70,6 +74,7 @@ class Food extends Component {
                         <p> Please the quantity consumed:
                             <input
                                 className="message"
+                                value={this.state.quantity}
                                 onChange={this.handleInputChange}
                                 name="quantity"
                             >
@@ -78,6 +83,7 @@ class Food extends Component {
                         <p> Please enter the size:
                             <input
                                 className="message"
+                                value={this.state.size}
                                 placeholder="small, medium, or large"
                                 onChange={this.handleInputChange}
                                 name="size"
@@ -89,6 +95,10 @@ class Food extends Component {
                             onClick={this.checkInput}
                         >Yum!</button>
                     </form>
+
+                    <br></br>
+
+                    <p className="read">Calories Result: {this.state.calories}</p>
                 </div>
 
             </div>
