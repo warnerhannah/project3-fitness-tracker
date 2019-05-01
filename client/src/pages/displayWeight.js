@@ -33,7 +33,7 @@ class displayWeight extends Component {
           <h3>Add A Weight Data Point:</h3>
           <div>
             <div>
-              <form className="flexIt">
+              <form>
                 <p> Weight:
                 <input
                     className="cal"
