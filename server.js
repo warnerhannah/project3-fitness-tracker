@@ -291,7 +291,8 @@ app.get('/weight', (req, res) => {
 app.put('/api/update/weight/:id', (req, res) => {
   db.Weight.findByIdAndUpdate(req.params.id,
     {
-      weight: req.body.weight
+      weight: req.body.weight,
+      date: req.body.date
     }
   )
     .then(data => {
