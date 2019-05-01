@@ -12,16 +12,35 @@ let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k])
 const localizer = BigCalendar.momentLocalizer(moment) // or globalizeLocalizer
 
 
-let Basic = (props) => (
-    <BigCalendar
-      events={events}
-      views={allViews}
-      step={60}
-      showMultiDayTimes
-      max={dates.add(dates.endOf(new Date(2019, 17, 1), 'day'), -1, 'hours')}
-      defaultDate={new Date(2019, 3, 1)}
-      localizer={localizer}
-    />
-)
+class Calendar extends Component {
+  render() {
+    return (
+      <div>
 
-export default Basic;
+        <BigCalendar
+          events={events}
+          views={allViews}
+          step={60}
+          showMultiDayTimes
+          max={dates.add(dates.endOf(new Date(2019, 17, 1), 'day'), -1, 'hours')}
+          defaultDate={new Date(2019, 3, 1)}
+          localizer={localizer}
+        />
+      </div>
+    )
+  }
+}
+
+// let Basic = (props) => (
+//     <BigCalendar
+//       events={events}
+//       views={allViews}
+//       step={60}
+//       showMultiDayTimes
+//       max={dates.add(dates.endOf(new Date(2019, 17, 1), 'day'), -1, 'hours')}
+//       defaultDate={new Date(2019, 3, 1)}
+//       localizer={localizer}
+//     />
+// )
+
+export default Calendar;

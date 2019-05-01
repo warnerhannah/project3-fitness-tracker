@@ -10,10 +10,6 @@ class Calories extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      burned: "",
-      consumed: "",
-
-
       Weight: [],
       Data: {
 
@@ -48,15 +44,6 @@ class Calories extends Component {
     }
   }
 
-  addBurned = () => {
-    //pull from state.burned and add to graph/db
-  }
-
-  addConsumed = () => {
-    //pull from state.consumed and add to graph/db
-  }
-
-
   getChartData = canvas => {
     const data = this.state.data;
     if (data.datasets) {
@@ -72,70 +59,15 @@ class Calories extends Component {
 
   render() {
     return (
-      <div className="container">
-
-        <div className="graphdata" style={{ position: "relative" }}>
-
-          <div className="messaging">
-            <h3 className="none">Today's Totals</h3>
-            <div className="flex">
-              <p className="read">Burned: {this.state.burned}</p>
-              <p className="read">Consumed: {this.state.consumed}</p>
-            </div>
-          </div>
-          <div className="messaging">
-            <h3 className="none">Calories Consumed v. Calories Burned</h3>
-            <Line
-              data={this.state.Data}
-              options={{
-                responsive: true
-              }}
-            />
-          </div>
-
-          <div className="messaging">
-          <p>Know how many calories you've had?</p>
-            <h3>Add More Calories:</h3>
-            <div>
-              <div>
-                <form className="flexIt">
-                  <p> New Calories Burned Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addBurned}
-                  >Add It</button>
-                </form>
-              </div>
-              <div>
-                <form className="flexIt">
-                  <p> New Calories Consumed Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addConsumed}
-                  >Add It</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <Food />
-        </div>
+      <div className="graphdata" style={{ position: "relative" }}>
+        <Line
+          data={this.state.Data}
+          options={{
+            responsive: true
+          }}
+        />
       </div>
-
-    );
+    )
   }
 }
 
