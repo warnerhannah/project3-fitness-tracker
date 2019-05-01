@@ -11,7 +11,7 @@ class Calories extends Component {
           Weight: [],
             Data: {
                
-                labels: ["1", "2", "3", "4", "5"],
+                labels: ["Week 1", "Week 2", "Week 3", "Week 4"],
                 datasets: [
                   {
                     label: "Calories Consumed",
@@ -23,7 +23,7 @@ class Calories extends Component {
                     borderColor:"rgb(75,192,192)",
                     pointHoverRadius:5,
                     pointHoverBorderColor: "black",
-                    data: [5,19,2,7,10],
+                    data: [300,180,120,250],
                   },
                   {
                     label: "Calorie Lost",
@@ -31,11 +31,12 @@ class Calories extends Component {
                     backgroundColor: ["rgb(128,1,128,0.6)"],
                     // this changes the color of the dots
                     pointBackgroundColor: "rgb(75,192,192)",
+                    
                     borderColor:"rgb(128,1,128)",
                     pointHoverRadius:5,
                     pointHoverBorderColor: "black",
                     // this displays the users weight on the graph
-                    data: []
+                    data: [150,180,300,140]
                   }
                 ]
               }

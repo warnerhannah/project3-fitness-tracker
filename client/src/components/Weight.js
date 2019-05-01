@@ -24,7 +24,7 @@ class Weight extends Component {
             
             pointHoverRadius:5,
             pointHoverBorderColor: "black",
-            data: [props.userWeight, 170,160,140]
+            data: [props.userWeight]
           }
         ]
       }

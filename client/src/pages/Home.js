@@ -56,7 +56,7 @@ class Home extends Component {
                 <div>
                 
                 <Weight userWeight={this.state.weight}  />
-                <Link className="nav-link" to="/weight">Weight</Link>
+                <Link className="nav-link" to="/weight">Closer View</Link>
               
                 </div>
               ) : (
