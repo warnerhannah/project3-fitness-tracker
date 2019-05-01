@@ -7,6 +7,9 @@ class Weight extends Component {
     super(props);
     console.log(props);
     this.state = {
+      newWeight: "",
+
+
       type: "line",
       Data: {
         Weight: [],
@@ -30,6 +33,11 @@ class Weight extends Component {
     };
   }
 
+  addWeight = () => {
+    // pull new weight from state.newWeight
+    //add it to the graph
+  }
+
   getChartData = canvas => {
     const data = this.state.data;
     if (data.datasets) {
@@ -44,7 +52,7 @@ class Weight extends Component {
     return (
       <div className="container">
         <div className="messaging">
-        <h3 className="none">Weight Tracking</h3>
+          <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>
             <Line
               data={this.state.Data}
@@ -56,7 +64,25 @@ class Weight extends Component {
         </div>
 
         <div className="messaging">
-              
+          <h3>Add A Weight Data Point:</h3>
+          <div>
+            <div>
+              <form className="flexIt">
+                <p> Weight:
+                <input
+                    className="cal"
+                    onChange={this.handleInputChange}
+                    name="newWeight"
+                  >
+                  </input>
+                </p>
+                <button
+                  className="sendButton"
+                  onClick={this.addWeight}
+                >Add It</button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
     );

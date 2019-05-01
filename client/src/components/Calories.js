@@ -47,6 +47,16 @@ class Calories extends Component {
       }
     }
   }
+
+  addBurned = () => {
+    //pull from state.burned and add to graph/db
+  }
+
+  addConsumed = () => {
+    //pull from state.consumed and add to graph/db
+  }
+
+
   getChartData = canvas => {
     const data = this.state.data;
     if (data.datasets) {
@@ -57,6 +67,9 @@ class Calories extends Component {
     }
     return data;
   }
+
+
+
   render() {
     return (
       <div className="container">
