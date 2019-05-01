@@ -4,7 +4,7 @@ import withAuth from "../components/withAuth";
 import Calendar from "../components/Calendar";
 import Calories from "../components/Calories";
 import Weight from "../components/Weight";
-import { Link } from "react-router-dom";
+
 
 class Home extends Component {
   state = {
@@ -60,7 +60,7 @@ class Home extends Component {
                 <div>
                 
                 <Weight userWeight={this.state.weight}  />
-                <Link className="nav-link" to="/weight">Closer View</Link>
+                
               
                 </div>
               ) : (

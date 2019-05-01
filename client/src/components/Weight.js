@@ -1,8 +1,24 @@
 import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
-
+import API from "../utils/API";
 
 class Weight extends Component {
+  state = {
+   
+    weight: ""
+  
+  };
+
+  componentDidMount() {
+    API.getWeight().then(res => {
+      // console.log(res.data)
+      this.setState({
+     
+        weight: res.data.weight,
+      
+      })
+    });
+  }
   constructor(props) {
     super(props);
     console.log(props);
