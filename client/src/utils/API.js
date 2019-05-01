@@ -49,8 +49,8 @@ export default {
     return axios.get(`/weight`);
   },
 
-  createWeight: (weight, labels) => {
-    return axios.post(`api/weight`, {weight: weight, labels: labels});
+  createWeight: (weight, date) => {
+    return axios.post(`api/weight`, {weight: weight, date: date});
   },
 
   deleteWeight: (id, weight, labels) => {
