@@ -49,16 +49,16 @@ export default {
     return axios.get(`/weight`);
   },
 
-  createWeight: (title, start, end) => {
-    return axios.post(`api/weight`, {title: title, start: start, end: end});
+  createWeight: (weight, labels) => {
+    return axios.post(`api/weight`, {weight: weight, labels: labels});
   },
 
-  deleteWeight: (id, title, start, end) => {
-    return axios.post(`api/delete/weight/${id}`, {title: title, start: start, end: end});
+  deleteWeight: (id, weight, labels) => {
+    return axios.post(`api/delete/weight/${id}`, {weight: weight, labels: labels});
   },
 
-  updateWeight: (id, title, start, end) => {
-    return axios.put(`api/update/weight/${id}`, {title: title, start: start, end: end});
+  updateWeight: (id, weight, labels) => {
+    return axios.put(`api/update/weight/${id}`, {weight: weight, labels: labels});
   },
 
   sendMessage: (username, message, sender) => {

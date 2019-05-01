@@ -25,7 +25,6 @@ class displayWeight extends Component {
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>
             <Weight />
-            />
           </div>
         </div>
 
