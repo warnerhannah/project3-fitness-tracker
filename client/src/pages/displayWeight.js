@@ -9,7 +9,7 @@ class displayWeight extends Component {
     console.log(props);
     this.state = {
       newWeight: "",
-
+      date:""
     };
   }
 
@@ -39,6 +39,14 @@ class displayWeight extends Component {
                     className="cal"
                     onChange={this.handleInputChange}
                     name="newWeight"
+                  >
+                  </input>
+                </p>
+                <p> Date Recorded:
+                <input
+                    className="cal"
+                    onChange={this.handleInputChange}
+                    name="date"
                   >
                   </input>
                 </p>
