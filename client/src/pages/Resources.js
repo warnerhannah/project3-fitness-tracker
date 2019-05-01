@@ -7,6 +7,7 @@ class Resources extends Component {
         return (
             <div>
                 <h3>Fitness Resources:</h3>
+                <a link="Stronger By Science" href="https://www.strongerbyscience.com/category/articles/"> </a>
             </div>
         );
     };

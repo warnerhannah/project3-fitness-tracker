@@ -56,16 +56,7 @@ class Home extends Component {
                 <p>Weight Progress</p>
                 <a href="/weight"><i className="fas fa-edit"></i></a>
               </div>
-              {this.state.weight ? (
-                <div>
-                
-                <Weight userWeight={this.state.weight}  />
-                
-              
-                </div>
-              ) : (
-                  ""
-                )}
+                <Weight/>
             </div>
             <div className="graph">
               <div className="graphTitle">

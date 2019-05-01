@@ -2,23 +2,67 @@ import React, { Component } from "react";
 import { Line } from "react-chartjs-2";
 import API from "../utils/API";
 
+const initialState = {
+  type: "line",
+  Data: {
+    Weight: [],
+    labels: ["1", "2", "3", "4"],
+    datasets: [
+      {
+
+        label: "Month Weight Goal",
+        fill: true,
+        // this changes line fill color
+        backgroundColor: ["rgb(75,192,192)"],
+        // this changes the color of the dots
+        pointBackgroundColor: "rgb(75,192,192)",
+
+        pointHoverRadius: 5,
+        pointHoverBorderColor: "black",
+        data: []
+      }
+    ]
+  }
+};
+
 class Weight extends Component {
   state = {
-   
-    weight: ""
-  
+
+    weight: []
+
   };
 
   componentDidMount() {
     API.getWeight().then(res => {
-      // console.log(res.data)
+      const newWeight = res.data.map(weight =>
+        weight.weight);
+      console.log(newWeight);
       this.setState({
-     
-        weight: res.data.weight,
-      
+
+        Data: {
+          Weight: [],
+          labels: ["1", "2", "3", "4"],
+          datasets: [
+            {
+
+              label: "Weight",
+              fill: true,
+              // this changes line fill color
+              backgroundColor: ["rgb(75,192,192)"],
+              // this changes the color of the dots
+              pointBackgroundColor: "rgb(75,192,192)",
+
+              pointHoverRadius: 5,
+              pointHoverBorderColor: "black",
+              data: newWeight
+            }
+          ]
+        }
+
       })
     });
-  }
+  };
+  
   constructor(props) {
     super(props);
     console.log(props);
@@ -39,7 +83,7 @@ class Weight extends Component {
 
             pointHoverRadius: 5,
             pointHoverBorderColor: "black",
-            data: [props.userWeight]
+            data: []
           }
         ]
       }
