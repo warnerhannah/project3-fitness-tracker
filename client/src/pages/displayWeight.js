@@ -12,11 +12,19 @@ class displayWeight extends Component {
     };
   }
 
+  loadWeight = () => {
+    API.getWeight()
+      .then()
+      .catch(err => console.log(err));
+  };
+
   handleFormSubmit = event => {
     event.preventDefault();
     API.createWeight(this.state.weight, this.state.date)
-      .then()
-      .catch(err => alert(err));
+      .then(response => this.loadWeight())
+      .catch(err => {
+        console.log(err);
+      });
   };
 
   handleInputChange = event => {
@@ -48,6 +56,7 @@ class displayWeight extends Component {
                     name="weight"
                   >
                   </input>
+                  lbs.
                 </p>
                 <p> Date Recorded:
                 <input
