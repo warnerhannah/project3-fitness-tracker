@@ -20,9 +20,8 @@ class displayCalories extends Component {
   }
 
   addConsumed = () => {
-    //pull from state.consumed and add to graph/db
+    //pull from state.consumed
   }
-
 
   render() {
     return (
@@ -59,6 +58,7 @@ class displayCalories extends Component {
                   <p> Date Recorded:
                 <input
                       className="cal"
+                      placeholder="MM/DD"
                       onChange={this.handleInputChange}
                       name="dateBurned"
                     >
@@ -83,6 +83,7 @@ class displayCalories extends Component {
                   <p> Date Recorded:
                 <input
                       className="cal"
+                      placeholder="MM/DD"
                       onChange={this.handleInputChange}
                       name="dateConsumed"
                     >
