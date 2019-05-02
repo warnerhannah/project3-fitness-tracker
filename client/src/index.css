@@ -3,15 +3,15 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arimo', sans-serif;
-  background: white;
+  background: #d0e8e3;
 }
 
 .navbar {
-  background: black;
+  background: #008c90;
   width: 100%;
   position: fixed;
    z-index: 1;
-   color:black;
+   color:#008c90;
   /* padding-top: -10px; */
 }
 
