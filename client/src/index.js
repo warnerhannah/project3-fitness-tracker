@@ -13,7 +13,7 @@ import Login from './pages/Login';
 import Profile from './pages/Profile';
 import Signup from './pages/Signup';
 import Navbar from './components/Navbar';
-import Selectable from './components/selectable';
+// import Selectable from './components/selectable';
 import displayCalendar from "./pages/displayCalendar"
 import displayCal from "./pages/displayCal"
 import displayWeight from "./pages/displayWeight"

@@ -21,25 +21,25 @@ class Food extends Component {
     console.log("we got here!");
   };
 
-  // checkInput = (e) => {
-  //     e.preventDefault();
+  checkInput = (e) => {
+      e.preventDefault();
 
-  // if (!this.state.food || !this.state.quantity || !this.state.size) {
-  //     alert("Please fill out all information!")
-  // }
-  // else {
-  // this.checkSize()
-  // }
-  // }
+  if (!this.state.food || !this.state.quantity || !this.state.size) {
+      alert("Please fill out all information!")
+  }
+  else {
+  this.checkSize()
+  }
+  }
 
-  // checkSize = () => {
-  //     if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
-  //         this.addFood()
-  //     }
-  //     else {
-  //         alert("Please enter a size of small, medium, or large")
-  //     }
-  // }
+  checkSize = () => {
+      if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
+          this.addFood()
+      }
+      else {
+          alert("Please enter a size of small, medium, or large")
+      }
+  }
 
   addFood = () => {
     API.getFood(this.state.quantity, this.state.size, this.state.food).then(
