@@ -22,7 +22,7 @@ class Food extends Component {
         console.log("we got here!");
     }
 
-    // checkInput = (e) => {
+    checkInput = (e) => {
     //     e.preventDefault();
 
         // if (!this.state.food || !this.state.quantity || !this.state.size) {
