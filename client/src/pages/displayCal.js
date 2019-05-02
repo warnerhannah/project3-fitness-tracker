@@ -1,9 +1,6 @@
 import React, { Component } from "react";
-// import { Bar, Line, Pie } from "react-chartjs-2";
-// import { Line } from "react-chartjs-2";
 import withAuth from './../components/withAuth';
 import API from "../utils/API";
-import Food from "../pages/Food"
 import Calories from "../components/Calories"
 
 class displayCalories extends Component {
@@ -12,14 +9,29 @@ class displayCalories extends Component {
     this.state = {
       consumed: 5,
       burned: 10,
-      date: ""
+      date: "",
+      calData: [],
+      burnData: [],
+      calLabels: []
     };
+  }
+  componentDidMount(){
+    this.loadCalories();
   }
 
   loadCalories = () => {
-    API.getCalories()
-      .then()
-      .catch(err => console.log(err));
+    API.getCalories().then(res => {
+      const newConsumed = res.data.map(consumed => consumed.consumed);
+      const newBurned = res.data.map(burned => burned.burned);
+      const newLabels = res.data.map(labels => labels.date);
+      this.setState({
+        calData: newConsumed,
+        burnData: newBurned,
+        calLabels: newLabels
+      })
+    })
+      
+ 
   };
 
   handleFormSubmit = event => {
@@ -54,7 +66,7 @@ class displayCalories extends Component {
           </div>
           <div className="messaging">
             <h3 className="none">Calories Consumed v. Calories Burned</h3>
-            <Calories />
+            <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
             <form>
