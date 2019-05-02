@@ -23,33 +23,38 @@ class Home extends Component {
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
-      })
+      });
     });
   }
 
   render() {
     return (
       <div className="container">
-
         <div className="stats">
           <h3>My Stats</h3>
           <div className="flex">
             <p>Current Weight: {this.state.weight} lbs</p>
-            <p>Current Height: {this.state.feet}ft. {this.state.inches}in.</p>
+            <p>
+              Current Height: {this.state.feet}ft. {this.state.inches}in.
+            </p>
             <p>Current Age: {this.state.age} years</p>
           </div>
           <div className="flex">
             <div className="graph">
               <div className="graphTitle">
                 <p>Weight Progress</p>
-                <a href="/weight"><i className="fas fa-edit"></i></a>
+                <a href="/weight">
+                  <i className="fas fa-edit" />
+                </a>
               </div>
               <Weight />
             </div>
             <div className="graph">
               <div className="graphTitle">
                 <p>Calories Consumed/Burned</p>
-                <a href="/calories"><i className="fas fa-edit"></i></a>
+                <a href="/calories">
+                  <i className="fas fa-edit" />
+                </a>
               </div>
               <Calories />
             </div>
@@ -68,7 +73,6 @@ class Home extends Component {
           </div>
         </div>
         {/* </div> */}
-        
       </div>
     );
   }

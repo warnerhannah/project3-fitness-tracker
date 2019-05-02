@@ -158,3 +158,12 @@ form {
     display: flex;
     justify-content: flex-start
 }
+.containerRes{
+ background: white;
+ display: flex;
+ justify-content: space-between;
+ padding: 10px;
+ width: 80%;
+ margin-left: 10%;
+ border-radius: 10px;
+}

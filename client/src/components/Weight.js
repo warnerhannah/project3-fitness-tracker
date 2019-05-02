@@ -50,14 +50,14 @@ class Weight extends Component {
       type: "line",
       Data: {
         Weight: [],
-        labels: ["1", "2", "3", "4"],
+        labels: ["Week 1", "Week 2","Week 3", "Week 4"],
         datasets: [
           {
 
             label: "Month Weight Goal",
             fill: true,
             // this changes line fill color
-            backgroundColor: ["rgb(75,192,192)"],
+            backgroundColor: ["rgb(75,192,192,0.4)"],
             // this changes the color of the dots
             pointBackgroundColor: "rgb(75,192,192)",
 
