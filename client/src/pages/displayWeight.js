@@ -2,20 +2,30 @@ import React, { Component } from "react";
 import Weight from "../components/Weight";
 import API from "../utils/API";
 
-
 class displayWeight extends Component {
   constructor(props) {
     super(props);
     this.state = {
       weight: "",
-      date: ""
+      date: "",
+      data: [],
+      labels: []
     };
+  }
+  componentDidMount() {
+    this.loadWeight();
   }
 
   loadWeight = () => {
-    API.getWeight()
-      .then()
-      .catch(err => console.log(err));
+    API.getWeight().then(res => {
+      const newWeight = res.data.map(weight => weight.weight);
+      const newLabels = res.data.map(labels => labels.date);
+      console.log(res.data);
+      this.setState({
+        data: newWeight,
+        labels: newLabels
+      });
+    });
   };
 
   handleFormSubmit = event => {
@@ -40,7 +50,7 @@ class displayWeight extends Component {
         <div className="messaging">
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>
-            <Weight />
+            <Weight data={this.state.data} labels={this.state.labels} />
           </div>
         </div>
 
@@ -49,27 +59,28 @@ class displayWeight extends Component {
           <div>
             <div>
               <form>
-                <p> Weight:
-                <input
+                <p>
+                  {" "}
+                  Weight:
+                  <input
                     className="cal"
                     onChange={this.handleInputChange}
                     name="weight"
-                  >
-                  </input>
+                  />
                   lbs.
                 </p>
-                <p> Date Recorded:
-                <input
+                <p>
+                  {" "}
+                  Date Recorded:
+                  <input
                     className="cal"
                     onChange={this.handleInputChange}
                     name="date"
-                  >
-                  </input>
+                  />
                 </p>
-                <button
-                  className="sendButton"
-                  onClick={this.handleFormSubmit}
-                >Add It</button>
+                <button className="sendButton" onClick={this.handleFormSubmit}>
+                  Add It
+                </button>
               </form>
             </div>
           </div>

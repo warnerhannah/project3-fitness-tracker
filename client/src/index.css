@@ -22,7 +22,7 @@ body {
 }
 
 footer {
-  background: black;
+  background: #008c90;
   display: flex;
   justify-content: space-between;
   padding: 25px 50px 5px 50px;

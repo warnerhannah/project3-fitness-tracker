@@ -11,7 +11,9 @@ class Home extends Component {
     weight: "",
     inches: "",
     feet: "",
-    age: ""
+    age: "",
+    data: [],
+    labels: []
   };
 
   componentDidMount() {
@@ -25,7 +27,20 @@ class Home extends Component {
         age: res.data.age
       });
     });
+    this.loadWeight();
   }
+
+  loadWeight = () => {
+    API.getWeight().then(res => {
+      const newWeight = res.data.map(weight => weight.weight);
+      const newLabels = res.data.map(labels => labels.date);
+      console.log(res.data);
+      this.setState({
+        data: newWeight,
+        labels: newLabels
+      });
+    });
+  };
 
   render() {
     return (
@@ -47,7 +62,7 @@ class Home extends Component {
                   <i className="fas fa-edit" />
                 </a>
               </div>
-              <Weight />
+              <Weight data={this.state.data} labels={this.state.labels} />
             </div>
             <div className="graph">
               <div className="graphTitle">
