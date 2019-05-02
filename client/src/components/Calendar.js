@@ -1,7 +1,6 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
-import withAuth from './../components/withAuth';
 import API from "../utils/API";
+import withAuth from './../components/withAuth';
 import BigCalendar from 'react-big-calendar'
 import events from './events'
 import dates from '../../src/utils/dates'

@@ -8,17 +8,16 @@ body {
 
 .navbar {
   background: #008c90;
-  width: 100%;
+  /* width: 100%;
   position: fixed;
    z-index: 1;
    color:#008c90;
-  /* padding-top: -10px; */
+  padding-top: -10px; */
 }
 
 .nameHeader {
   float: left;
-  margin-left: 10%;
-
+  
   padding-top: 10px
 }
 
