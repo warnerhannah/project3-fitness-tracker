@@ -14,3 +14,8 @@ body {
   margin-left: 10%;
   padding-top: 10px
 }
+
+.rbc-calendar {
+  height: 600px !important;
+
+}
