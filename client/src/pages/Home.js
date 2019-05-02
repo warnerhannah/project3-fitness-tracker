@@ -71,7 +71,7 @@ class Home extends Component {
                   <i className="fas fa-edit" />
                 </a>
               </div>
-              <Calories />
+              <Calories data={this.state.data} labels={this.state.labels}/>
             </div>
           </div>
         </div>
