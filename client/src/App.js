@@ -1,17 +1,16 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import AuthService from './components/AuthService';
 import withAuth from './components/withAuth';
 import Home from "./pages/Home"
 import API from "./utils/API"
-import Message from "./pages/Message"
+// import Message from "./pages/Message"
 // import Calendar from "./components/Calendar"
 // import Calories from "./components/Calories"
 // import Weight from "./components/Weight"
 // import Resources from "./pages/Resources"
-import Weight from './components/Weight';
-import Calories from './components/Calories';
+// import Weight from './components/Weight';
+// import Calories from './components/Calories';
 
 const Auth = new AuthService();
 
@@ -47,6 +46,10 @@ class App extends Component {
           <h2 className="nameHeader">Welcome, {this.state.name}!</h2>
         </div>
         <Home />
+        <footer>
+        <p>Created by: Hannah, Michael, Ivan, and Manny</p>
+        <p>May 2019</p>
+      </footer>
       </div>
     );
   }

@@ -11,7 +11,7 @@
   background-color: #222;
   height: 100px;
   padding: 20px;
-  color: white;
+  color: black;
 }
 
 .App-intro {
@@ -25,7 +25,9 @@
 
 
 .navbar {
-  background: #008c90
+  background: #008c90;
+  
+  
 }
 
 img {

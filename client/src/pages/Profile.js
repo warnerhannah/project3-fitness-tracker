@@ -1,9 +1,11 @@
 import React, { Component } from 'react';
 import withAuth from './../components/withAuth';
 import API from './../utils/API';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 // import Stats from "../components/Stats"
 import "./style.css";
+import UpdateCalories from '../components/UpdateCalories';
+
 
 
 class Profile extends Component {
@@ -107,6 +109,7 @@ class Profile extends Component {
           onClick={this.updateUser}
         >Save</button>
         {/* <Link to="/">Go home</Link> */}
+        
       </div>
     )
   }

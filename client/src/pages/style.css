@@ -46,11 +46,12 @@ h1 {
 }
   
 .calendar {
-    margin-top:10px;
+    margin:10px 0px;
     background:white;
     border-radius: 10px;
-    width: 55%;
-    height: 300px;
+    /* width: 55%; */
+    height: 600px;
+
 }
 
 .stats {
@@ -63,14 +64,15 @@ h1 {
 
 .graph {
     background: #CCCCCC;
-    height: 300px;
+    /* height: 300px; */
     border-radius: 10px;
-    width: 40%;
+    width: 48%;
 }
 
-a {
+i {
     float: right;
-    margin-right: 10px
+    margin-right: 5px;
+    color: grey
 }
 
 .container {
@@ -85,6 +87,11 @@ a {
     margin: 10px auto;
     padding: 20px;
     text-align: left;
+}
+
+.scroll {
+    max-height: 700px;
+    overflow-y:auto;
 }
 
 form {
@@ -114,11 +121,10 @@ form {
 }
 
 .read {
-    background: grey;
+    background: lightgrey;
     border-radius: 10px;
     padding: 15px;
     margin: 5px;
-
 }
 
 .unread {
@@ -131,4 +137,33 @@ form {
 
 .from {
     margin-left: 70%;
+}
+
+.graphTitle {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.none {
+    text-align: center;
+}
+
+
+.cal {
+    width: 50px
+}
+
+.flexIt {
+    display: flex;
+    justify-content: flex-start
+}
+.containerRes{
+ background: white;
+ display: flex;
+ justify-content: space-between;
+ padding: 10px;
+ width: 80%;
+ margin-left: 10%;
+ border-radius: 10px;
 }

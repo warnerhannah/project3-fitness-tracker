@@ -31,6 +31,7 @@ const UserSchema = new Schema({
   weight: {
     type: Number,
     required: false
+    
   },
   feet: {
     type: Number,
@@ -53,7 +54,15 @@ const UserSchema = new Schema({
   createdAt: {
     type: Date,
     default: Date.now
-  }
+  },
+
+  calendar: [
+    {
+      type: Schema.Types.ObjectId,
+
+      ref: "Calendar"
+    }
+  ] 
 });
 
 // Execute before each user.save() call
