@@ -1,27 +1,42 @@
 import React, { Component } from "react";
 // import { Bar, Line, Pie } from "react-chartjs-2";
-import { Line } from "react-chartjs-2";
+// import { Line } from "react-chartjs-2";
 import withAuth from './../components/withAuth';
-// import API from "../utils/API";
+import API from "../utils/API";
 import Food from "../pages/Food"
 import Calories from "../components/Calories"
 
 class displayCalories extends Component {
-
-    state = {
-      burned: "",
-      consumed: "",
-
-    }
-
-
-  addBurned = () => {
-    //pull from state.burned and add to graph/db
+  constructor(props) {
+    super(props);
+    this.state = {
+      consumed: 5,
+      burned: 10,
+      date: ""
+    };
   }
 
-  addConsumed = () => {
-    //pull from state.consumed and add to graph/db
-  }
+  loadCalories = () => {
+    API.getCalories()
+      .then()
+      .catch(err => console.log(err));
+  };
+
+  handleFormSubmit = event => {
+    event.preventDefault();
+    API.createCalories(this.state.consumed, this.state.burned, this.state.date)
+      .then(response => this.loadCalories())
+      .catch(err => {
+        console.log(err);
+      });
+  };
+
+  handleInputChange = event => {
+    const { name, value } = event.target;
+    this.setState({
+      [name]: value
+    });
+  };
 
 
   render() {
@@ -41,9 +56,43 @@ class displayCalories extends Component {
             <h3 className="none">Calories Consumed v. Calories Burned</h3>
             <Calories />
           </div>
-
           <div className="messaging">
-          <p>Know how many calories you've had?</p>
+            <form>
+              <p> Consumed:
+                <input
+                  className="cal"
+                  onChange={this.handleInputChange}
+                  name="consumed"
+                >
+                </input>
+                kCal
+                </p>
+              <p> Burned:
+                <input
+                  className="cal"
+                  onChange={this.handleInputChange}
+                  name="burned"
+                >
+                </input>
+                kCal.
+                </p>
+              <p> Date Recorded:
+                <input
+                  className="cal"
+                  onChange={this.handleInputChange}
+                  name="date"
+                >
+                </input>
+              </p>
+              <button
+                className="sendButton"
+                onClick={this.handleFormSubmit}
+              >Add It</button>
+            </form>
+          </div>
+
+          {/* <div className="messaging">
+            <p>Know how many calories you've had?</p>
             <h3>Add More Calories:</h3>
             <div>
               <div>
@@ -80,7 +129,7 @@ class displayCalories extends Component {
               </div>
             </div>
           </div>
-          <Food />
+          <Food /> */}
         </div>
       </div>
 

@@ -2,18 +2,14 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const caloriesSchema = new Schema({
-    title: {
-        type: String,
-        required: true,
-        trim: true
+    consumed: {
+        type: Number
     },
-    start: {
-        type: String,
-        required: true
+    burned: {
+        type: Number
     },
-    end: {
-        type: String,
-        required: true
+    date: {
+        type: String
     }
 });
 

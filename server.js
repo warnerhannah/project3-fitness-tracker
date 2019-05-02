@@ -270,7 +270,7 @@ app.delete('/api/delete/calories/:id', (req, res) => {
 
 
 
-// WEGHT ROUTES
+// WEIGHT ROUTES
 
 app.post('/api/weight', (req, res) => {
   db.Weight.create(req.body)
@@ -324,17 +324,14 @@ app.delete('/api/delete/weight/:id', (req, res) => {
 
 app.get('/api/foodcalories/:quantity/:size/:food', (req, res) => {
   var query = `https://api.edamam.com/api/nutrition-data?app_id=582634e3&app_key=706b87d8c66c0a186041c148f14d051c%20&ingr=${req.params.quantity}%20${req.params.size}%20${req.params.food}`
-  // console.log(query)
+  console.log(query)
   axios.get(query)
     .then(response => {
       console.log(response.data)
       res.json(response.data)
-    }
-    )
+    })
     .catch(err => res.status(400).json(err));
 });
-
-
 
 
 
@@ -348,7 +345,7 @@ app.use(function (err, req, res, next) {
     next(err);
   }
 });
-// hello
+
 // Send every request to the React app
 // Define any API routes before this runs
 app.get("*", function (req, res) {
