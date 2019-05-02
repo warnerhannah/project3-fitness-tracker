@@ -8,11 +8,11 @@ import Calories from "../components/Calories"
 
 class displayCalories extends Component {
 
-    state = {
-      burned: "",
-      consumed: "",
+  state = {
+    burned: "",
+    consumed: "",
 
-    }
+  }
 
 
   addBurned = () => {
@@ -43,16 +43,24 @@ class displayCalories extends Component {
           </div>
 
           <div className="messaging">
-          <p>Know how many calories you've had?</p>
+            <p>Know how many calories you've had?</p>
             <h3>Add More Calories:</h3>
             <div>
               <div>
-                <form className="flexIt">
+                <form>
                   <p> New Calories Burned Data Point:
                 <input
                       className="cal"
                       onChange={this.handleInputChange}
                       name="size"
+                    >
+                    </input>
+                  </p>
+                  <p> Date Recorded:
+                <input
+                      className="cal"
+                      onChange={this.handleInputChange}
+                      name="dateBurned"
                     >
                     </input>
                   </p>
@@ -63,12 +71,20 @@ class displayCalories extends Component {
                 </form>
               </div>
               <div>
-                <form className="flexIt">
+                <form>
                   <p> New Calories Consumed Data Point:
                 <input
                       className="cal"
                       onChange={this.handleInputChange}
                       name="size"
+                    >
+                    </input>
+                  </p>
+                  <p> Date Recorded:
+                <input
+                      className="cal"
+                      onChange={this.handleInputChange}
+                      name="dateConsumed"
                     >
                     </input>
                   </p>

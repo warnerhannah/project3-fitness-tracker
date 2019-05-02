@@ -23,24 +23,24 @@ class Food extends Component {
     }
 
     checkInput = (e) => {
-    //     e.preventDefault();
+        e.preventDefault();
 
         // if (!this.state.food || !this.state.quantity || !this.state.size) {
         //     alert("Please fill out all information!")
         // }
         // else {
-            // this.checkSize()
+            this.checkSize()
         // }
-    // }
+    }
 
-    // checkSize = () => {
-    //     if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
-    //         this.addFood()
-    //     }
-    //     else {
-    //         alert("Please enter a size of small, medium, or large")
-    //     }
-    // }
+    checkSize = () => {
+        if (this.state.size === "small" || this.state.size === "medium" || this.state.size === "large") {
+            this.addFood()
+        }
+        else {
+            alert("Please enter a size of small, medium, or large")
+        }
+    }
 
 
 
@@ -108,8 +108,6 @@ class Food extends Component {
             </div>
         )
     }
-
-
 };
 
 export default withAuth(Food);
