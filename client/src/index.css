@@ -18,7 +18,8 @@ body {
 .nameHeader {
   float: left;
   color: lightgrey;
-  padding-top: 10px
+  padding-top: 10px;
+  padding-left: 20%;
 }
 
 .rbc-calendar {

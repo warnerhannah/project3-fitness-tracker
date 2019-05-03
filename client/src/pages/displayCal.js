@@ -78,6 +78,8 @@ class displayCalories extends Component {
             <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
+          <p>Know how many calories you've had?</p>
+            <h3>Add More Calories:</h3>
             <form>
               <p> Consumed:
                 <input
@@ -111,67 +113,9 @@ class displayCalories extends Component {
               >Add It</button>
             </form>
           </div>
-
-          <div className="messaging">
-            <p>Know how many calories you've had?</p>
-            <h3>Add More Calories:</h3>
-            <div>
-              <div>
-                <form>
-                  <p> New Calories Burned Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <p> Date Recorded:
-                <input
-                      className="cal"
-                      placeholder="MM/DD"
-                      onChange={this.handleInputChange}
-                      name="dateBurned"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addBurned}
-                  >Add It</button>
-                </form>
-              </div>
-              <div>
-                <form>
-                  <p> New Calories Consumed Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <p> Date Recorded:
-                <input
-                      className="cal"
-                      placeholder="MM/DD"
-                      onChange={this.handleInputChange}
-                      name="dateConsumed"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addConsumed}
-                  >Add It</button>
-                </form>
-              </div>
-            </div>
-          </div>
           <Food />
         </div>
       </div>
-
     );
   }
 }

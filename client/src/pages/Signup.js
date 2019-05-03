@@ -35,11 +35,23 @@ class Signup extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container flexIt">
 
-        <h1>Signup</h1>
+        <div className="messaging">
+          <h1>A fitness app that is as personalized as you are!</h1>
+          <p>Track your progress with graphs.. </p>
+          <ul>
+            <li>Your Caloric Intake</li>
+            <li>Your Calories Burned</li>
+            <li>Your Weight</li>
+          </ul>
+          <p>The ability to search foods to figure out how many calories they contain.</p>
+          <p>Plan your fitness schedule with an easy to read calendar.</p>
+        </div>
+
         <div className="signupL">
           <form onSubmit={this.handleFormSubmit}>
+            <h1>Signup Now!</h1>
             <div className="form-group">
               <label htmlFor="username">Username:</label>
               <input className="form-control signup"

@@ -14,7 +14,6 @@ class Profile extends Component {
     username: "",
     email: "",
     name: "",
-    weight: "",
     inches: "",
     feet: "",
     age: ""
@@ -26,7 +25,6 @@ class Profile extends Component {
         username: res.data.username,
         email: res.data.email,
         name: res.data.name,
-        weight: res.data.weight,
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
@@ -42,7 +40,6 @@ class Profile extends Component {
         console.log("saved!")
         this.setState({
           name: res.data.name,
-          weight: res.data.weight,
           inches: res.data.inches,
           feet: res.data.feet,
           age: res.data.age
@@ -70,14 +67,6 @@ class Profile extends Component {
         <p>Email: {this.state.email}</p>
 
         <div>
-          <p>Weight: <input
-            className="profile"
-            name="weight"
-            value={this.state.weight}
-            onChange={this.handleInputChange}
-          ></input>
-            lbs.</p>
-
           <p>Height: <input
             className="profile"
             name="feet"
