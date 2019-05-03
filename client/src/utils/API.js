@@ -6,27 +6,27 @@ export default {
   },
   // sign up a user to our service
   signUpUser: (username, email, password) => {
-    return axios.post('api/signup', {username: username, email: email, password: password});
+    return axios.post('/api/signup', {username: username, email: email, password: password});
   },
 
   updateUser: (id, name, weight, feet, inches, age ) => {
-    return axios.put(`api/update/${id}`, {name: name, weight: weight, feet: feet, inches: inches, age: age});
+    return axios.put(`/api/update/${id}`, {name: name, weight: weight, feet: feet, inches: inches, age: age});
   },
 
-  getCalendar: () => {
-    return axios.get(`/calendar`);
+  getCalendar: (id) => {
+    return axios.get(`/calendar/${id}`);
   },
 
-  createCalendar: (title, start, end) => {
-    return axios.post(`api/calendar`, {title: title, start: start, end: end});
+  createCalendar: (id, title, start, end) => {
+    return axios.post(`/api/calendar/${id}`, {title: title, start: start, end: end});
   },
 
   deleteCalendar: (id, title, start, end) => {
-    return axios.post(`api/delete/calendar/${id}`, {title: title, start: start, end: end});
+    return axios.post(`/api/delete/calendar/${id}`, {title: title, start: start, end: end});
   },
 
   updateCalendar: (id, title, start, end) => {
-    return axios.put(`api/update/calendar/${id}`, {title: title, start: start, end: end});
+    return axios.put(`/api/update/calendar/${id}`, {title: title, start: start, end: end});
   },
 
   getCalories: () => {
@@ -34,15 +34,15 @@ export default {
   },
 
   createCalories: (consumed, burned, date) => {
-    return axios.post(`api/calories`, {consumed: consumed, burned: burned, date: date});
+    return axios.post(`/api/calories`, {consumed: consumed, burned: burned, date: date});
   },
 
   deleteCalories: (id, title, start, end) => {
-    return axios.post(`api/delete/calories/${id}`, {title: title, start: start, end: end});
+    return axios.post(`/api/delete/calories/${id}`, {title: title, start: start, end: end});
   },
 
   updateCalories: (id, title, start, end) => {
-    return axios.put(`api/update/calories/${id}`, {title: title, start: start, end: end});
+    return axios.put(`/api/update/calories/${id}`, {title: title, start: start, end: end});
   },
 
   getWeight: () => {
@@ -51,16 +51,16 @@ export default {
 
   createWeight: (weight, date) => {
     console.log("got here!");
-    return axios.post(`api/weight`, {weight: weight, date: date});
+    return axios.post(`/api/weight`, {weight: weight, date: date});
     
   },
 
   deleteWeight: (id, weight, labels) => {
-    return axios.post(`api/delete/weight/${id}`, {weight: weight, labels: labels});
+    return axios.post(`/api/delete/weight/${id}`, {weight: weight, labels: labels});
   },
 
   updateWeight: (id, weight, labels) => {
-    return axios.put(`api/update/weight/${id}`, {weight: weight, labels: labels});
+    return axios.put(`/api/update/weight/${id}`, {weight: weight, labels: labels});
   },
 
   sendMessage: (username, message, sender) => {

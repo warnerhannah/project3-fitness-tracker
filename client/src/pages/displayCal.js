@@ -69,7 +69,7 @@ class displayCalories extends Component {
             <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
-            <form>
+            <form className="flexIt">
               <p> Consumed:
                 <input
                   className="cal"
