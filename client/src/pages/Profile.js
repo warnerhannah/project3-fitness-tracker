@@ -4,7 +4,7 @@ import API from './../utils/API';
 // import { Link } from 'react-router-dom';
 // import Stats from "../components/Stats"
 import "./style.css";
-import UpdateCalories from '../components/UpdateCalories';
+// import UpdateCalories from '../components/UpdateCalories';
 
 
 
@@ -22,7 +22,6 @@ class Profile extends Component {
 
   componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
-     
       this.setState({
         username: res.data.username,
         email: res.data.email,
