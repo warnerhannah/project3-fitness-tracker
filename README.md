@@ -65,3 +65,13 @@ git commit -m "Initial commit"
 2. Go to resources and find mLab as a Add-on
 3. Provision a Mongo Database
 4. Go back and click "Deploy"
+
+
+
+
+
+
+1. Add new weights to the graph
+    * Create a weight schema to be able to store the users weights
+    * Connect the graph to the db to show the users weight
+    

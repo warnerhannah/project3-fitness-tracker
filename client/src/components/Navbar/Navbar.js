@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import AuthService from '../AuthService';
 import { Link } from "react-router-dom";
-import shoe from './images/shoe.jpg'
 
 class Navbar extends Component {
     constructor() {
@@ -13,25 +12,29 @@ class Navbar extends Component {
         if (this.Auth.loggedIn()) {
             return (
                 <div>
-                    <ul className="navbar-nav">
+                    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"></link>
+                    <ul id="navBarLinks" className="navbar-nav">
                         
                         <li className="nav-item">
-                            <Link className="nav-link" to="/calendar">Calendar</Link>
+                            <a className="nav-link" href="/calendar">Calendar</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/calories">Calories</Link>
+                            <a className="nav-link" href="/calories">Calories</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/weight">Weight</Link>
+                            <a className="nav-link" href="/weight">Weight</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/resources">Resources</Link>
+                            <a className="nav-link" href="/food">food</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/profile">Profile</Link>
+                            <a className="nav-link" href="/resources">Resources</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/messages">Messages</Link>
+                            <a className="nav-link" href="/profile">Profile</a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/messages">Messages</a>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -58,16 +61,17 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark">
+            <nav className="navbar navbar-expand-lg">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">
-                    <img src={shoe} alt="shoeimage"/>
-                     Fitness Tracker</Link>
+               
+                <a id="navbar-brand" href="/"> F I T N E S S  |  L I F E S T Y L E  </a>
+
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav mr-auto">
+                        
                         </ul>
                         {this.showNavigation()}
                     </div>

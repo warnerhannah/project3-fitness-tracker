@@ -1,29 +1,56 @@
 body {
+  height: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Arimo', sans-serif;
-  background: #d0e8e3
+  background: white;
 }
 
 .navbar {
-  background: #008c90
+  background: white;
+  width: 100%;
+  position: fixed;
+   z-index: 1;
+   color:black;
+  /* padding-top: -10px; */
 }
 
 .nameHeader {
   float: left;
   margin-left: 10%;
+
   padding-top: 10px
 }
 
-footer {
-  background: #008c90;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 50px 5px 50px;
-  color: white
-}
+.rbc-calendar {
+  height: 600px !important;
 
-footer p {
-  opacity: .75
 }
-
+.navbar-nav{
+  color: black;
+}
+#statsTitle{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+#weightProgress{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#calConBunred{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#statsMain{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#myworkoutsch{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}

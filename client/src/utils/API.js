@@ -33,8 +33,8 @@ export default {
     return axios.get(`/calories`);
   },
 
-  createCalories: (title, start, end) => {
-    return axios.post(`api/calories`, {title: title, start: start, end: end});
+  createCalories: (consumed, burned, date) => {
+    return axios.post(`api/calories`, {consumed: consumed, burned: burned, date: date});
   },
 
   deleteCalories: (id, title, start, end) => {
