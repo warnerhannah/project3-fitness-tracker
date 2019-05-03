@@ -11,7 +11,9 @@ class Home extends Component {
     weight: "",
     inches: "",
     feet: "",
-    age: ""
+    age: "",
+    data: [],
+    labels: []
   };
 
   componentDidMount() {
@@ -23,33 +25,51 @@ class Home extends Component {
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
-      })
+      });
     });
+    this.loadWeight();
   }
+
+  loadWeight = () => {
+    API.getWeight().then(res => {
+      const newWeight = res.data.map(weight => weight.weight);
+      const newLabels = res.data.map(labels => labels.date);
+      console.log(res.data);
+      this.setState({
+        data: newWeight,
+        labels: newLabels
+      });
+    });
+  };
 
   render() {
     return (
       <div className="container">
-
         <div className="stats">
           <h3>My Stats</h3>
           <div className="flex">
             <p>Current Weight: {this.state.weight} lbs</p>
-            <p>Current Height: {this.state.feet}ft. {this.state.inches}in.</p>
+            <p>
+              Current Height: {this.state.feet}ft. {this.state.inches}in.
+            </p>
             <p>Current Age: {this.state.age} years</p>
           </div>
           <div className="flex">
             <div className="graph">
               <div className="graphTitle">
                 <p>Weight Progress</p>
-                <a href="/weight"><i className="fas fa-edit"></i></a>
+                <a href="/weight">
+                  <i className="fas fa-edit" />
+                </a>
               </div>
-              <Weight />
+              <Weight data={this.state.data} labels={this.state.labels} />
             </div>
             <div className="graph">
               <div className="graphTitle">
                 <p>Calories Consumed/Burned</p>
-                <a href="/calories"><i className="fas fa-edit"></i></a>
+                <a href="/calories">
+                  <i className="fas fa-edit" />
+                </a>
               </div>
               <Calories />
             </div>
@@ -68,7 +88,6 @@ class Home extends Component {
           </div>
         </div>
         {/* </div> */}
-        
       </div>
     );
   }
