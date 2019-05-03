@@ -19,7 +19,8 @@ button {
 
 .signupL {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    /* width: 40% */
 }
 
 h1 {
