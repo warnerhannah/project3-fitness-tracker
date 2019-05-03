@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-// import API from "../utils/API";
+import withAuth from './../components/withAuth';
 
 class Resources extends Component {
   render() {
@@ -33,4 +33,4 @@ class Resources extends Component {
   }
 }
 
-export default Resources;
+export default withAuth(Resources);

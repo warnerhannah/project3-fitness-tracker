@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import withAuth from './../components/withAuth';
 import API from './../utils/API';
-// import { Link } from 'react-router-dom';
-// import Stats from "../components/Stats"
 import "./style.css";
-import UpdateCalories from '../components/UpdateCalories';
+
 
 
 
@@ -71,13 +69,7 @@ class Profile extends Component {
         <p>Email: {this.state.email}</p>
 
         <div>
-          <p>Weight: <input
-            className="profile"
-            name="weight"
-            value={this.state.weight}
-            onChange={this.handleInputChange}
-          ></input>
-            lbs.</p>
+         
 
           <p>Height: <input
             className="profile"

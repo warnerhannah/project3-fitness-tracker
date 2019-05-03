@@ -9,8 +9,8 @@ body {
 .navbar {
   background: black;
   width: 100%;
-  position: fixed;
-   z-index: 1;
+  
+  z-index: 1;
    color:black;
   /* padding-top: -10px; */
 }

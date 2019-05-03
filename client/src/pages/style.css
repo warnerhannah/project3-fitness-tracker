@@ -76,7 +76,8 @@ i {
 }
 
 .container {
-    width: 80%;
+    width: 100%;
+    
     margin-left: 5%
 }
 
@@ -167,4 +168,7 @@ form {
  margin-left: 10%;
  margin-top: 50px;
  border-radius: 10px;
+}
+#calendarContent{
+    width: 100%;
 }
