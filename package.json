@@ -13,11 +13,13 @@
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build"
   },
+  "nodemonConfig": {
+    "ignore": ["client/"]
+  },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "concurrently": "^3.6.1",
-    "nodemon": "^1.18.3"
+    "concurrently": "^3.6.1"
   },
   "dependencies": {
     "axios": "^0.18.0",

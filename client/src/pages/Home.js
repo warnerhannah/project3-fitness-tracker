@@ -13,7 +13,10 @@ class Home extends Component {
     feet: "",
     age: "",
     data: [],
-    labels: []
+    labels: [],
+    calData: [],
+    burnData: [],
+    calLabels: []
   };
 
   componentDidMount() {
@@ -28,6 +31,7 @@ class Home extends Component {
       });
     });
     this.loadWeight();
+    this.loadCalories();
   }
 
   loadWeight = () => {
@@ -40,6 +44,21 @@ class Home extends Component {
         labels: newLabels
       });
     });
+  };
+
+  loadCalories = () => {
+    API.getCalories().then(res => {
+      const newConsumed = res.data.map(consumed => consumed.consumed);
+      const newBurned = res.data.map(burned => burned.burned);
+      const newLabels = res.data.map(labels => labels.date);
+      this.setState({
+        calData: newConsumed,
+        burnData: newBurned,
+        calLabels: newLabels
+      })
+    })
+      
+ 
   };
 
   render() {
@@ -71,15 +90,10 @@ class Home extends Component {
                   <i className="fas fa-edit" />
                 </a>
               </div>
-              <Calories />
+              <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
             </div>
           </div>
         </div>
-
-        {/* <div className="flex calContainer"> */}
-        {/* <div className="calendarClick">
-            <p>info when click on calendar</p>
-          </div> */}
 
         <div className="calendar">
           <h3>My Workout Schedule</h3>

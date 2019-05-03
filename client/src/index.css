@@ -7,29 +7,22 @@ body {
 }
 
 .navbar {
-  background: black;
-  width: 100%;
+  background: #008c90;
+  /* width: 100%;
   position: fixed;
    z-index: 1;
-   color:black;
-  /* padding-top: -10px; */
+   color:#008c90;
+  padding-top: -10px; */
 }
 
 .nameHeader {
   float: left;
-  margin-left: 10%;
-  padding-top: 10px;
+  
+  padding-top: 10px
 }
 
-footer {
-  background: #008c90;
-  display: flex;
-  justify-content: space-between;
-  padding: 25px 50px 5px 50px;
-  color: black;
-}
+.rbc-calendar {
+  height: 600px !important;
 
-footer p {
-  opacity: .75;
 }
 
