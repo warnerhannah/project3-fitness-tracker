@@ -97,6 +97,19 @@ app.get('/api/messages/:username', (req, res) => {
     }).catch(err => res.status(400).send(err));
 })
 
+// get unread messages for count
+app.get('/api/count/:username', (req, res) => {
+  // console.log(req.params.username)
+  db.Message.find({
+    username: req.params.username,
+    read: false
+  })
+    .then(data => {
+      // console.log(data)
+      res.json(data);
+    }).catch(err => res.status(400).send(err));
+})
+
 // mark message as read 
 app.post("/api/messages/:id", (req, res) => {
   db.Message.findById(req.params.id)
