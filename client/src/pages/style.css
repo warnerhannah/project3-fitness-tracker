@@ -48,7 +48,7 @@ h1 {
     background:white;
     border-radius: 10px;
     /* width: 55%; */
-    height: 600px;
+    /* height: 600px; */
 
 }
 
@@ -150,7 +150,7 @@ form {
 
 
 .cal {
-    width: 50px
+    width: 75px
 }
 
 .flexIt {
@@ -166,7 +166,4 @@ form {
  margin-left: 10%;
  margin-top: 50px;
  border-radius: 10px;
-}
-#calendarContent{
-    width: 100%;
 }

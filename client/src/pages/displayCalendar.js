@@ -32,7 +32,6 @@ class displayCalendar extends Component {
         )
     }
 }
-
 export default withAuth(displayCalendar);
 
 

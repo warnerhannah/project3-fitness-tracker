@@ -3,17 +3,13 @@ const Schema = mongoose.Schema;
 
 const calendarSchema = new Schema({
     title: {
-        type: String,
-        required: true,
-        trim: true
+        type: String
     },
     start: {
-        type: String,
-        required: true
+        type: Date
     },
     end: {
-        type: String,
-        required: true
+        type: Date
     }
 });
 

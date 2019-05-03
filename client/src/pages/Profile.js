@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import withAuth from './../components/withAuth';
 import API from './../utils/API';
 import "./style.css";
-
+// import UpdateCalories from '../components/UpdateCalories';
 
 
 
@@ -20,7 +20,6 @@ class Profile extends Component {
 
   componentDidMount() {
     API.getUser(this.props.user.id).then(res => {
-     
       this.setState({
         username: res.data.username,
         email: res.data.email,

@@ -7,18 +7,17 @@ body {
 }
 
 .navbar {
-  background: white;
-  width: 100%;
-  
-  z-index: 1;
-   color:black;
+  background: #008c90;
+  /* width: 100%; */
+  /* position: fixed; */
+   /* z-index: 1; */
+   /* color:#008c90; */
   /* padding-top: -10px; */
 }
 
 .nameHeader {
   float: left;
-  margin-left: 10%;
-
+  color: lightgrey;
   padding-top: 10px
 }
 
@@ -26,31 +25,15 @@ body {
   height: 600px !important;
 
 }
-.navbar-nav{
-  color: black;
+
+footer {
+  background: #008c90;
+  display: flex;
+  justify-content: space-between;
+  padding: 25px 50px 5px 50px;
+  color: white
 }
-#statsTitle{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 30px;
-}
-#weightProgress{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 20px;
-}
-#calConBunred{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 20px;
-}
-#statsMain{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 20px;
-}
-#myworkoutsch{
-  font-family: 'Playfair Display', serif;
-  font-weight: normal;
-  font-size: 30px;
+
+footer p {
+  opacity: .75
 }
