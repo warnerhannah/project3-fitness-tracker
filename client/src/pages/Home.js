@@ -95,11 +95,6 @@ class Home extends Component {
           </div>
         </div>
 
-        {/* <div className="flex calContainer"> */}
-        {/* <div className="calendarClick">
-            <p>info when click on calendar</p>
-          </div> */}
-
         <div className="calendar">
           <h3>My Workout Schedule</h3>
           <div>
