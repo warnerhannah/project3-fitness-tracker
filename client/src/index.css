@@ -3,11 +3,11 @@ body {
   margin: 0;
   padding: 0;
   font-family: 'Arimo', sans-serif;
-  background: #d0e8e3;
+  background: white;
 }
 
 .navbar {
-  background: black;
+  background: white;
   width: 100%;
   
   z-index: 1;
@@ -26,4 +26,31 @@ body {
   height: 600px !important;
 
 }
-
+.navbar-nav{
+  color: black;
+}
+#statsTitle{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+#weightProgress{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#calConBunred{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#statsMain{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#myworkoutsch{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}

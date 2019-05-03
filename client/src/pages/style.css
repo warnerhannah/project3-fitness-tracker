@@ -4,9 +4,7 @@
     border-radius: 10px;
 }
 
-p {
-    font-weight: bold;
-}
+
 
 input.name {
     width: 300px;
@@ -65,7 +63,7 @@ h1 {
 .graph {
     background: white;
     /* height: 300px; */
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 48%;
 }
 

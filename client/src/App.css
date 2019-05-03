@@ -26,12 +26,28 @@
 
 
 .navbar {
-  background: #008c90;
+  background: white;
+
   
-  
+}
+#navbar-brand{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  /* font-weight: normal; */
+  font-size: 25px;
+}
+#navBarLinks{
+  color: black;
+  font-family: 'Playfair Display', serif;
+  /* font-weight: normal; */
+  /* font-size: 25px; */
 }
 
 img {
   height: 40px;
 }
+.nav-link{
+  color: black;
+}
+
 

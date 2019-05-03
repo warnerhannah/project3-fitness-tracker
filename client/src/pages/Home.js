@@ -68,14 +68,14 @@ class Home extends Component {
           <div className="flex">
             <p>Current Weight: {this.state.data[this.state.data.length-1]}lbs</p>
             <p>
-              Current Height: {this.state.feet}ft. {this.state.inches}in.
+              Height: {this.state.feet}ft. {this.state.inches}in.
             </p>
             <p>Current Age: {this.state.age} years</p>
           </div>
           <div className="flex">
             <div className="graph">
               <div className="graphTitle">
-                <p>Weight Progress</p>
+                <p id="weightProgress">Weight Progress</p>
                 <a href="/weight">
                   <i className="fas fa-edit"/>
                 </a>
@@ -84,7 +84,7 @@ class Home extends Component {
             </div>
             <div className="graph">
               <div className="graphTitle">
-                <p>Calories Consumed/Burned</p>
+                <p id="calConBunred" >Calories Consumed/Burned</p>
                 <a href="/calories">
                   <i className="fas fa-edit" />
                 </a>
