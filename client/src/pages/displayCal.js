@@ -3,6 +3,7 @@ import withAuth from './../components/withAuth';
 import API from "../utils/API";
 import Food from "../pages/Food"
 import Calories from "../components/Calories"
+import Food from "./Food"
 
 class displayCalories extends Component {
   constructor(props) {
@@ -18,6 +19,12 @@ class displayCalories extends Component {
   }
   componentDidMount(){
     this.loadCalories();
+  }
+
+  state = {
+    burned: "",
+    consumed: "",
+
   }
 
   loadCalories = () => {
@@ -44,13 +51,15 @@ class displayCalories extends Component {
       });
   };
 
+  addConsumed = () => {
+    //pull from state.consumed
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-
 
   render() {
     return (
@@ -70,7 +79,7 @@ class displayCalories extends Component {
             <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
-            <form className="flexIt">
+            <form>
               <p> Consumed:
                 <input
                   className="cal"
@@ -105,17 +114,26 @@ class displayCalories extends Component {
             <Food />
           </div>
 
-          {/* <div className="messaging">
+          <div className="messaging">
             <p>Know how many calories you've had?</p>
             <h3>Add More Calories:</h3>
             <div>
               <div>
-                <form className="flexIt">
+                <form>
                   <p> New Calories Burned Data Point:
                 <input
                       className="cal"
                       onChange={this.handleInputChange}
                       name="size"
+                    >
+                    </input>
+                  </p>
+                  <p> Date Recorded:
+                <input
+                      className="cal"
+                      placeholder="MM/DD"
+                      onChange={this.handleInputChange}
+                      name="dateBurned"
                     >
                     </input>
                   </p>
@@ -126,12 +144,21 @@ class displayCalories extends Component {
                 </form>
               </div>
               <div>
-                <form className="flexIt">
+                <form>
                   <p> New Calories Consumed Data Point:
                 <input
                       className="cal"
                       onChange={this.handleInputChange}
                       name="size"
+                    >
+                    </input>
+                  </p>
+                  <p> Date Recorded:
+                <input
+                      className="cal"
+                      placeholder="MM/DD"
+                      onChange={this.handleInputChange}
+                      name="dateConsumed"
                     >
                     </input>
                   </p>
@@ -143,7 +170,7 @@ class displayCalories extends Component {
               </div>
             </div>
           </div>
-          <Food /> */}
+          <Food />
         </div>
       </div>
 
