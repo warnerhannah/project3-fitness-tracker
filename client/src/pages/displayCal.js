@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import withAuth from './../components/withAuth';
 import API from "../utils/API";
 import Calories from "../components/Calories"
+import Food from "./Food"
 
 class displayCalories extends Component {
   constructor(props) {
@@ -77,7 +78,7 @@ class displayCalories extends Component {
             <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
-            <form className="flexIt">
+            <form>
               <p> Consumed:
                 <input
                   className="cal"
@@ -111,7 +112,7 @@ class displayCalories extends Component {
             </form>
           </div>
 
-          {/* <div className="messaging">
+          <div className="messaging">
             <p>Know how many calories you've had?</p>
             <h3>Add More Calories:</h3>
             <div>
@@ -167,7 +168,7 @@ class displayCalories extends Component {
               </div>
             </div>
           </div>
-          <Food /> */}
+          <Food />
         </div>
       </div>
 
