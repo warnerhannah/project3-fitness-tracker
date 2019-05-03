@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import withAuth from './../components/withAuth';
 import API from "../utils/API";
+import Food from "../pages/Food"
 import Calories from "../components/Calories"
 
 class displayCalories extends Component {
@@ -101,6 +102,7 @@ class displayCalories extends Component {
                 onClick={this.handleFormSubmit}
               >Add It</button>
             </form>
+            <Food />
           </div>
 
           {/* <div className="messaging">
