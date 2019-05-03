@@ -25,6 +25,7 @@ function Calories(props) {
             },
             {
               label: "Calorie Lost",
+              fill: true,
               // this changes line fill color
               backgroundColor: ["rgb(128,1,128,0.6)"],
               // this changes the color of the dots
