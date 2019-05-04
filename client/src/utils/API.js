@@ -71,6 +71,10 @@ export default {
     return axios.get(`/api/messages/${username}`, { username: username})
   },
 
+  countUnreadMessages: (username) => {
+    return axios.get(`/api/count/${username}`, { username: username})
+  },
+
   deleteMessage: (id) => {
     return axios.post(`/api/delete/${id}`)
   },
