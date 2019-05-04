@@ -3,7 +3,6 @@ import withAuth from './../components/withAuth';
 import API from "../utils/API";
 import Food from "../pages/Food"
 import Calories from "../components/Calories"
-import Food from "./Food"
 
 class displayCalories extends Component {
   constructor(props) {
