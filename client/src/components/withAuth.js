@@ -12,6 +12,7 @@ export default function withAuth(AuthComponent) {
         }
         componentWillMount() {
             if (!Auth.loggedIn()) {
+                // console.log(this.props);
                 this.props.history.replace('/signup');
             }
             else {

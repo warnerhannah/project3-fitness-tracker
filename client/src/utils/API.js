@@ -45,13 +45,13 @@ export default {
     return axios.put(`/api/update/calories/${id}`, {title: title, start: start, end: end});
   },
 
-  getWeight: () => {
-    return axios.get(`/weight`);
+  getWeight: (id) => {
+    return axios.get(`/weight/${id}`);
   },
 
-  createWeight: (weight, date) => {
+  createWeight: (id, weight, date) => {
     console.log("got here!");
-    return axios.post(`/api/weight`, {weight: weight, date: date});
+    return axios.post(`/api/weight/${id}`, {weight: weight, date: date});
     
   },
 

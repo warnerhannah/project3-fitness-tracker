@@ -13,6 +13,7 @@ class displayWeight extends Component {
   }
   componentDidMount() {
     this.loadWeight();
+    // console.log(this.props.user);
   }
 
   loadWeight = () => {
@@ -31,7 +32,7 @@ class displayWeight extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.createWeight(this.state.weight, this.state.date, this.state.currentWeight)
+    API.createWeight(this.props.user.id, this.state.weight, this.state.date)
       .then(response => this.loadWeight())
       .catch(err => {
         console.log(err);
