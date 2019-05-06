@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthService from '../AuthService';
+import AuthService from "../AuthService";
 import { Link } from "react-router-dom";
 import shoe from './images/shoe.jpg'
 import withAuth from '../../components/withAuth';
@@ -17,21 +17,17 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        // API.getUser(this.props.user.id)
-        //     .then(res => {
-        //         this.setState({
-        //             username: res.data.username,
-        //         })
-        //     })
-        //     .then(res => {
-        //         API.countUnreadMessages(this.state.username)
-        //             .then(res => {
-        //                 console.log("Here", res.data)
-        //                 this.setState({
-        //                     messages: res.data
-        //                 })
-        //             })
-        //         })
+        if (this.Auth.loggedIn()) {
+            const userProfile = this.Auth.getProfile();
+            console.log(userProfile.username);
+            API.countUnreadMessages(userProfile.username)
+                .then(res => {
+                    console.log("Here", res.data)
+                    this.setState({
+                        messages: res.data.length
+                    })
+                })
+        }
     }
 
     showNavigation = () => {
@@ -50,13 +46,21 @@ class Navbar extends Component {
                             <Link className="nav-link" to="/weight">Weight</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/resources">Resources</Link>
+                        <div class="dropdown">
+                        <Link className="nav-link">Resources</Link>
+                            <div class="dropdown-content">
+                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" target="_black">B O D Y B U I L D I N G . C O M</a>
+                            <a href="https://www.strongerbyscience.com/?s=NUTRITION" target="_black">S T R O N G E R B Y S C I E N C E</a>
+                            <a href="https://weightology.net/free-content/" target="_black" >W E I G H T O L O G Y</a>
+                            </div>
+                            </div>
+                            
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/profile">Profile</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/messages">Messages ({this.state.messages.length})</Link>
+                            <Link className="nav-link" to="/messages">Messages ({this.state.messages})</Link>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -87,7 +91,7 @@ class Navbar extends Component {
                 <div className="container">
                     <Link className="navbar-brand" to="/">
                         <img src={shoe} alt="shoeimage" />
-                        Fitness Tracker</Link>
+                        </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
@@ -100,6 +104,10 @@ class Navbar extends Component {
             </nav>
         )
     }
+
+
+
+
 }
 
 export default Navbar;

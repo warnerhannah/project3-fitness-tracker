@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import withAuth from './../components/withAuth';
+import withAuth from "./../components/withAuth";
 import API from "../utils/API";
 import Food from "../pages/Food"
 import Calories from "../components/Calories"
@@ -16,7 +16,7 @@ class displayCalories extends Component {
       calLabels: []
     };
   }
-  componentDidMount(){
+  componentDidMount() {
     this.loadCalories();
   }
 
@@ -35,10 +35,8 @@ class displayCalories extends Component {
         calData: newConsumed,
         burnData: newBurned,
         calLabels: newLabels
-      })
-    })
-      
- 
+      });
+    });
   };
 
   handleFormSubmit = event => {
@@ -63,54 +61,60 @@ class displayCalories extends Component {
   render() {
     return (
       <div className="container">
-
         <div className="graphdata" style={{ position: "relative" }}>
-
           <div className="messaging">
             <h3 className="none">Today's Totals</h3>
             <div className="flex">
-              <p className="read">Burned: {this.state.burned}</p>
-              <p className="read">Consumed: {this.state.consumed}</p>
+              <p className="read">Burned: {this.state.calData[this.state.calData.length-1]}</p>
+              <p className="read">Consumed: {this.state.burnData[this.state.burnData.length-1]}</p>
             </div>
           </div>
           <div className="messaging">
             <h3 className="none">Calories Consumed v. Calories Burned</h3>
-            <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
+            <Calories
+              data={this.state.calData}
+              burned={this.state.burnData}
+              labels={this.state.calLabels}
+            />
           </div>
           <div className="messaging">
-          <p>Know how many calories you've had?</p>
+          <p>Track your daily calorie intake</p>
             <h3>Add More Calories:</h3>
             <form>
-              <p> Consumed:
+              <p>
+                {" "}
+                Consumed:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
                   name="consumed"
-                >
-                </input>
+                />
                 kCal
-                </p>
-              <p> Burned:
+              </p>
+              <p>
+                {" "}
+                Burned:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
                   name="burned"
-                >
-                </input>
+                />
                 kCal.
-                </p>
-              <p> Date Recorded:
+              </p>
+              <p>
+                {" "}
+                Date Recorded:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
                   name="date"
+                  type="date"
                 >
                 </input>
               </p>
-              <button
-                className="sendButton"
-                onClick={this.handleFormSubmit}
-              >Add It</button>
+              <button className="sendButton" onClick={this.handleFormSubmit}>
+                Add It
+              </button>
             </form>
             <Food />
           </div>
@@ -122,5 +126,3 @@ class displayCalories extends Component {
 }
 
 export default withAuth(displayCalories);
-
-

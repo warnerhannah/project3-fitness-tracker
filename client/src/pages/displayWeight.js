@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import Weight from "../components/Weight";
-import withAuth from './../components/withAuth';
+import withAuth from "./../components/withAuth";
 import API from "../utils/API";
 
 class displayWeight extends Component {
@@ -17,13 +17,15 @@ class displayWeight extends Component {
   }
 
   loadWeight = () => {
-    API.getWeight(this.props.user.id).then(res => {
-      const newWeight = res.data.weight.map(weight => weight.weight);
-      const newLabels = res.data.weight.map(labels => labels.date);
+    API.getWeight().then(res => {
+      const newWeight = res.data.map(weight => weight.weight);
+      const newLabels = res.data.map(labels => labels.date);
+      const currentWeight = res.data.map(currentWeight => currentWeight.currentWeight);
       console.log(res.data);
       this.setState({
         data: newWeight,
-        labels: newLabels
+        labels: newLabels,
+        weight: currentWeight
       });
     });
   };
@@ -50,7 +52,7 @@ class displayWeight extends Component {
         <div className="messaging">
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>
-            <Weight data={this.state.data} labels={this.state.labels} />
+            <Weight data={this.state.data} labels={this.state.labels} weight={this.state.weight}/>
           </div>
         </div>
 
@@ -66,6 +68,7 @@ class displayWeight extends Component {
                     className="cal"
                     onChange={this.handleInputChange}
                     name="weight"
+                    
                   />
                   lbs.
                 </p>
@@ -76,6 +79,7 @@ class displayWeight extends Component {
                     className="cal"
                     onChange={this.handleInputChange}
                     name="date"
+                    type="date"
                   />
                 </p>
                 <button className="sendButton" onClick={this.handleFormSubmit}>

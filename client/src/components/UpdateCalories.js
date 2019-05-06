@@ -1,39 +1,57 @@
 import React, { Component } from 'react';
-
 import API from './../utils/API';
 
-class UpdateCalories extends Component {
 
-    state = {
-     caloriesConsumed: ""
-    };
+const count = 0;
+class UpdateCalories extends Component {
   
-    componentDidMount() {
-      API.getUser(this.props.user.id).then(res => {
+  state = {
+    calData: [],
+    count: []
+  };
+  
+
+  componentDidMount() {
+    API.getUser(this.props.user.id).then(res => {
        
-        this.setState({
-          caloriesConsumed: res.data.caloriesConsumed
+      this.setState({
+        caloriesConsumed: res.data.caloriesConsumed
         
          
-        })
-      });
-    }
-  
-    updateUser = () => {
+      })
+    });
+  };
+  loadCalories = () => {
+    API.getCalories().then(res => {
+      const newConsumed = res.data.map(consumed => consumed.consumed);
+      const newBurned = res.data.map(burned => burned.burned);
+      this.setState({
+        calData: newConsumed,
+        burnData: newBurned,
+         
+      })
+    });
+        
+   
+  };
+  updateUser = () => {
       // console.log(this.props.user)
       console.log(this.state.name)
-      API.updateUser(this.props.user.id, this.state.caloriesConsumed)
-        .then(res => {
+    API.updateUser(this.props.user.id, this.state.caloriesConsumed)
+      .then(res => {
           console.log("saved!")
           this.setState({
-            caloriesConsumed: res.data.caloriesConsumed
-          })
-        })
-    }
-  
-
-  
-    render() {
+          caloriesConsumed: res.data.caloriesConsumed
+      })
+    })
+  };
+  // handleIncrement = () => {
+  //   // We always use the setState method to update a component's state
+  //   for(let i = 0; i < calData.length; i++)
+    
+  //   this.setState({ count: this.state.caloriesConsumed[i] + this.state.count });
+  // };
+  render() {
       return (
         <div className="container Profile">
           <h1>Your Profile</h1>
