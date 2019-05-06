@@ -151,10 +151,8 @@ app.post("/api/delete/:id", (req, res) => {
 app.put('/api/update/:id', (req, res) => {
   console.log(req.body)
   db.User.findByIdAndUpdate(req.params.id,
-
     {
       name: req.body.name,
-      weight: req.body.weight,
       feet: req.body.feet,
       inches: req.body.inches,
       age: req.body.age
@@ -169,6 +167,28 @@ app.put('/api/update/:id', (req, res) => {
       }
     }).catch(err => res.status(400).send(err));
 });
+
+app.put('/api/create/:id', (req, res) => {
+  console.log(req.body)
+  db.User.findByIdAndUpdate(req.params.id,
+    {
+      name: req.body.name,
+      feet: req.body.feet,
+      inches: req.body.inches,
+      age: req.body.age
+    }
+  )
+    .then(data => {
+      if (data) {
+        console.log(data);
+        res.send(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
+});
+
+
 
 // Serve up static assets (usually on heroku)
 if (process.env.NODE_ENV === "production") {
