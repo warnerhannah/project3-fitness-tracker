@@ -28,6 +28,7 @@ h1 {
     display: flex;
     justify-content: space-evenly;
     flex: wrap;
+   
   }
 
 .calContainer {
@@ -38,33 +39,40 @@ h1 {
 .calendarClick {
     margin-top:10px;
     background:white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     width: 44%;
     height: 300px;
 }
   
 .calendar {
+    clear: both;
     margin:10px 0px;
     background:white;
-    border-radius: 10px;
+    /* border-radius: 10px; */
     /* width: 55%; */
-    height: 600px;
+    height: auto;
 
 }
 
 .stats {
-    background: white;
-    border-radius: 10px;
+    clear: both;
+    background: whitesmoke;
+    /* border-radius: 10px; */
     width: 100%;    
     margin: 10px auto;
     padding: 20px;
+    height: auto;
 }
 
 .graph {
+    clear: both;
     background: whitesmoke;
     /* height: 300px; */
     /* border-radius: 10px; */
-    width: 48%;
+    width: 80%;
+    height: auto;
+   
+  
 }
 
 i {
@@ -74,19 +82,21 @@ i {
 }
 
 .container {
-    width: 80%;
-    margin-left: 10%;
+    width: 100%;
+    height: auto;
+    /* margin-left: 10%; */
 
    
 }
 
 .messaging {
     background: white;
-    border-radius: 10px;
-    width: 100%;    
+    /* border-radius: 10px; */
+    width: 80%;    
     margin: 10px auto;
     padding: 20px;
     text-align: left;
+    height: auto;
 }
 
 .scroll {
@@ -105,17 +115,17 @@ form {
 
 .sendButton {
     float: right;
-    margin-right: 40px;
-    border-radius: 10px;
-    background: #008c90;
+    /* margin-right: 40px; */
+    border-radius: 5px;
+    background: rgb(35, 129, 206);
     color: white;
-    padding: 5px;
+    /* padding: 5px; */
 }
 
 .saveButton {
     margin-right: 40px;
     border-radius: 10px;
-    background: #008c90;
+    background: rgb(35, 129, 206);
     color: white;
     padding: 5px;
 }
@@ -143,6 +153,7 @@ form {
     display: flex;
     justify-content: space-between;
     padding: 10px;
+    height: auto;
 }
 
 .none {
@@ -159,12 +170,14 @@ form {
     justify-content: flex-start
 }
 .containerRes{
- background: white;
+ background: grey;
  display: flex;
  justify-content: space-between;
  padding: 10px;
- width: 80%;
+ width: 100%;
  margin-left: 10%;
  margin-top: 50px;
  border-radius: 10px;
+ height: auto;
 }
+/* style="height:150px;margin:auto;"  */

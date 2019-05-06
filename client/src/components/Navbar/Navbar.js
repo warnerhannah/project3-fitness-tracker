@@ -12,8 +12,9 @@ class Navbar extends Component {
         if (this.Auth.loggedIn()) {
             return (
                 <div>
-                    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet"></link>
+                   
                     <ul id="navBarLinks" className="navbar-nav">
+                   
                         
                         <li className="nav-item">
                             <a className="nav-link" href="/calendar">Calendar</a>
@@ -61,7 +62,7 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg">
+            <nav id="navBarStyle"  className="navbar navbar-expand-lg">
                 <div className="container">
                
                 <a id="navbar-brand" href="/"> F I T N E S S  |  L I F E S T Y L E  </a>

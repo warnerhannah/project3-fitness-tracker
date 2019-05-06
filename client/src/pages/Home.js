@@ -4,6 +4,7 @@ import withAuth from "../components/withAuth";
 import Calendar from "../components/Calendar";
 import Calories from "../components/Calories";
 import Weight from "../components/Weight";
+import Splash from "../pages/Splash";
 
 class Home extends Component {
   state = {
@@ -55,58 +56,61 @@ class Home extends Component {
         calData: newConsumed,
         burnData: newBurned,
         calLabels: newLabels
-      })
-    })
-      
- 
+      });
+    });
   };
 
   render() {
     return (
       <div className="container">
+        
         <div className="stats">
-          <h3 id="statsTitle" > S T A T S </h3>
-          <div id="statsMain" className="flex">
-            <p>Current Weight: {this.state.weight} lbs</p>
-            <p>
-              Height: {this.state.feet}ft. {this.state.inches}in.
-            </p>
-            <p>Current Age: {this.state.age} years</p>
-          </div>
-          <div className="flex">
-            <div className="graph">
-              <div className="graphTitle">
-                <p id="weightProgress">Weight Progress</p>
-                <a href="/weight">
-                  <i className="fas fa-edit" />
-                </a>
-              </div>
-              <Weight data={this.state.data} labels={this.state.labels} />
-            </div>
-            <div className="graph">
-              <div className="graphTitle">
-                <p id="calConBunred" >Calories Consumed/Burned</p>
-                <a href="/calories">
-                  <i className="fas fa-edit" />
-                </a>
-              </div>
-              <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
-            </div>
-          </div>
-        </div>
+           <div className="welcome">
+           Welcome, {this.state.name}
+           </div>
+             <h3 id="statsTitle"> S T A T S </h3>
+           
+        
+           <div id="statsMain" className="flex">
+             <p>
+               Current Weight: {this.state.data[this.state.data.length - 1]} lbs
+             </p>
+             <p>
+               Height: {this.state.feet}ft. {this.state.inches}in.
+             </p>
+             <p>Current Age: {this.state.age} years</p>
+           </div>
+           <div className="flex">
+             <div className="graph">
+               <div className="graphTitle">
+                 <p id="weightProgress">Weight Progress</p>
+                 <a href="/weight">
+                   <i className="fas fa-edit" />
+                 </a>
+               </div>
+               <Weight data={this.state.data} labels={this.state.labels} />
+             </div>
+             <div className="graph">
+               <div className="graphTitle">
+                 <p id="calConBunred">Calories Consumed/Burned</p>
+                 <a href="/calories">
+                   <i className="fas fa-edit" />
+                 </a>
+               </div>
+               <Calories
+                 data={this.state.calData}
+                 burned={this.state.burnData}
+                 labels={this.state.calLabels}
+               />
+             </div>
+           </div>
+         </div>
 
-        {/* <div className="flex calContainer"> */}
-        {/* <div className="calendarClick">
-            <p>info when click on calendar</p>
-          </div> */}
+       <div className="calendar">
+         <h3 id="myworkoutsch">My Workout Schedule</h3>
 
-        <div  className="calendar">
-          <h3 id="myworkoutsch" >My Workout Schedule</h3>
-          <div>
-            <Calendar />
-          </div>
-        </div>
-        {/* </div> */}
+         <Calendar />
+       </div>
       </div>
     );
   }

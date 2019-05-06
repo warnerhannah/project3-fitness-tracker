@@ -42,9 +42,7 @@ class App extends Component {
     // console.log(process.env.REACT_APP_SECRET_CODE);
     return (
       <div className="App">
-        <div className="App-header">
-          <h2 className="nameHeader">Welcome, {this.state.name}!</h2>
-        </div>
+     
         <Home />
         <footer>
         <p>Created by: Hannah, Michael, Ivan, and Manny</p>

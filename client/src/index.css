@@ -1,20 +1,25 @@
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Arimo', sans-serif;
-  background: white;
+  background-image: url("https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  opacity: .9;
+  background-size: cover;
+ 
 }
 
 .navbar {
-  background: white;
-  width: 100%;
-  position: fixed;
-   z-index: 1;
-   color:black;
-  /* padding-top: -10px; */
-}
 
+ 
+}
+#navBarStyle{
+  background: rgb(52,52,52);
+  width: 100%;
+ 
+   color:white;
+}
 .nameHeader {
   float: left;
   margin-left: 10%;
@@ -27,7 +32,7 @@ body {
 
 }
 .navbar-nav{
-  color: black;
+  color: white;
 }
 #statsTitle{
   font-family: 'Playfair Display', serif;
@@ -35,6 +40,7 @@ body {
   font-size: 30px;
 }
 #weightProgress{
+  
   font-family: 'Playfair Display', serif;
   font-weight: normal;
   font-size: 20px;
@@ -48,9 +54,18 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: normal;
   font-size: 20px;
+  
 }
 #myworkoutsch{
   font-family: 'Playfair Display', serif;
   font-weight: normal;
   font-size: 30px;
 }
+.welcome{
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+/* ---------------------------------------------------------this is the new css---------------------------------------- */
+
