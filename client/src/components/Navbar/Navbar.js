@@ -32,6 +32,14 @@ class Navbar extends Component {
         //                 })
         //             })
         //         })
+        if(this.Auth.loggedIn()) {
+            const userProfile = this.Auth.getProfile();
+            console.log(userProfile.unreadMessage);
+            this.setState({
+                messages: userProfile.unreadMessage
+            });
+        }
+        
     }
 
     showNavigation = () => {
@@ -56,7 +64,7 @@ class Navbar extends Component {
                             <Link className="nav-link" to="/profile">Profile</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/messages">Messages ({this.state.messages.length})</Link>
+                            <Link className="nav-link" to="/messages">Messages ({this.state.messages})</Link>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
