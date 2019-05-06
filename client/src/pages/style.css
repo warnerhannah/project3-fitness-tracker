@@ -17,7 +17,8 @@ button {
 
 .signupL {
     display: flex;
-    justify-content: center
+    justify-content: center;
+    /* width: 40% */
 }
 
 h1 {
@@ -162,7 +163,7 @@ form {
 
 
 .cal {
-    width: 50px
+    width: 75px
 }
 
 .flexIt {

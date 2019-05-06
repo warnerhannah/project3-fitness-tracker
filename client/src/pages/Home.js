@@ -65,9 +65,9 @@ class Home extends Component {
       <div className="container">
         
         <div className="stats">
-           <div className="welcome">
+           {/* <div className="welcome">
            Welcome, {this.state.name}
-           </div>
+           </div> */}
              <h3 id="statsTitle"> S T A T S </h3>
            
         
@@ -106,11 +106,13 @@ class Home extends Component {
            </div>
          </div>
 
-       <div className="calendar">
-         <h3 id="myworkoutsch">My Workout Schedule</h3>
-
-         <Calendar />
-       </div>
+        <div className="calendar">
+          <h3>My Workout Schedule</h3>
+          <div className="calDiv">
+            <Calendar />
+          </div>
+        </div>
+        {/* </div> */}
       </div>
     );
   }

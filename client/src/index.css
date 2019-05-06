@@ -22,9 +22,9 @@ body {
 }
 .nameHeader {
   float: left;
-  margin-left: 10%;
-
-  padding-top: 10px
+  color: lightgrey;
+  padding-top: 10px;
+  padding-left: 20%;
 }
 
 .rbc-calendar {
@@ -38,6 +38,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: normal;
   font-size: 30px;
+  text-align: center;
 }
 #weightProgress{
   
@@ -54,6 +55,7 @@ body {
   font-family: 'Playfair Display', serif;
   font-weight: normal;
   font-size: 20px;
+  text-align: center;
   
 }
 #myworkoutsch{
@@ -68,4 +70,15 @@ body {
   font-size: 30px;
 }
 /* ---------------------------------------------------------this is the new css---------------------------------------- */
+
+footer {
+  background:rgb(52,52,52);
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+ 
+  color: white;
+  clear: both;
+}
 

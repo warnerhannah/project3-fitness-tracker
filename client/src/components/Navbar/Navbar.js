@@ -1,11 +1,37 @@
 import React, { Component } from "react";
 import AuthService from '../AuthService';
 import { Link } from "react-router-dom";
+import shoe from './images/shoe.jpg'
+import withAuth from '../../components/withAuth';
+import API from "../../utils/API"
 
 class Navbar extends Component {
+    state = {
+        username: "",
+        messages: []
+    }
+
     constructor() {
         super();
         this.Auth = new AuthService();
+    }
+
+    componentDidMount() {
+        API.getUser(this.props.user.id)
+            .then(res => {
+                this.setState({
+                    username: res.data.username,
+                })
+            })
+            .then(res => {
+                API.countUnreadMessages(this.state.username)
+                    .then(res => {
+                        console.log("Here", res.data)
+                        this.setState({
+                            messages: res.data
+                        })
+                    })
+                })
     }
 
     showNavigation = () => {
@@ -82,4 +108,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default withAuth(Navbar);

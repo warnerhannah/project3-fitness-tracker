@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import withAuth from './../components/withAuth';
 import API from "../utils/API";
 import Calories from "../components/Calories"
+import Food from "./Food"
 
 class displayCalories extends Component {
   constructor(props) {
@@ -17,6 +18,12 @@ class displayCalories extends Component {
   }
   componentDidMount(){
     this.loadCalories();
+  }
+
+  state = {
+    burned: "",
+    consumed: "",
+
   }
 
   loadCalories = () => {
@@ -43,13 +50,15 @@ class displayCalories extends Component {
       });
   };
 
+  addConsumed = () => {
+    //pull from state.consumed
+  }
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
       [name]: value
     });
   };
-
 
   render() {
     return (
@@ -69,6 +78,8 @@ class displayCalories extends Component {
             <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
           </div>
           <div className="messaging">
+          <p>Know how many calories you've had?</p>
+            <h3>Add More Calories:</h3>
             <form>
               <p> Consumed:
                 <input
@@ -102,49 +113,9 @@ class displayCalories extends Component {
               >Add It</button>
             </form>
           </div>
-
-          {/* <div className="messaging">
-            <p>Know how many calories you've had?</p>
-            <h3>Add More Calories:</h3>
-            <div>
-              <div>
-                <form className="flexIt">
-                  <p> New Calories Burned Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addBurned}
-                  >Add It</button>
-                </form>
-              </div>
-              <div>
-                <form className="flexIt">
-                  <p> New Calories Consumed Data Point:
-                <input
-                      className="cal"
-                      onChange={this.handleInputChange}
-                      name="size"
-                    >
-                    </input>
-                  </p>
-                  <button
-                    className="sendButton"
-                    onClick={this.addConsumed}
-                  >Add It</button>
-                </form>
-              </div>
-            </div>
-          </div>
-          <Food /> */}
+          <Food />
         </div>
       </div>
-
     );
   }
 }

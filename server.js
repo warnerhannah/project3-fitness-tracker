@@ -97,6 +97,19 @@ app.get('/api/messages/:username', (req, res) => {
     }).catch(err => res.status(400).send(err));
 })
 
+// get unread messages for count
+app.get('/api/count/:username', (req, res) => {
+  // console.log(req.params.username)
+  db.Message.find({
+    username: req.params.username,
+    read: false
+  })
+    .then(data => {
+      // console.log(data)
+      res.json(data);
+    }).catch(err => res.status(400).send(err));
+})
+
 // mark message as read 
 app.post("/api/messages/:id", (req, res) => {
   db.Message.findById(req.params.id)
@@ -172,14 +185,31 @@ app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => 
 
 // CALENDAR ROUTES
 
-app.post('/api/calendar', (req, res) => {
+app.post('/api/calendar/:userId', (req, res) => {
+
   db.Calendar.create(req.body)
-    .then(data => res.json(data))
-    .catch(err => res.status(400).json(err));
+  .then(function(dbCalendar) {
+    // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
+    // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
+    // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+    return db.User.findOneAndUpdate({_id: req.params.userId}, { $push: { calendar: dbCalendar._id } }, { new: true });
+  })
+  .then(function(dbUser) {
+    // If the User was updated successfully, send it back to the client
+    res.json(dbUser);
+  })
+  .catch(function(err) {
+    // If an error occurs, send it back to the client
+    res.json(err);
+  });
 });
 
-app.get('/calendar', (req, res) => {
-  db.Calendar.find({}).then(data => {
+
+app.get('/calendar/:userId', (req, res) => {
+  db.User
+  .findOne({_id: req.params.userId})
+  .populate("calendar")
+  .then(data => {
     if (data) {
       res.json(data);
     } else {
