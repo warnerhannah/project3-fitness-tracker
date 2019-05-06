@@ -4,7 +4,9 @@
     border-radius: 10px;
 }
 
-
+p {
+    font-weight: bold;
+}
 
 input.name {
     width: 300px;
@@ -189,4 +191,30 @@ form {
     font-size: 30px;
    
 }
-/* style="height:150px;margin:auto;"  */
+
+.signupPage {
+    padding-top: 5%;
+}
+
+.fitnessTracker {
+    color: #008c90;
+    font-size: 100px;
+    font-family: "impact";
+    font-style: italic;
+}
+
+.left {
+    text-align: left;
+}
+
+.center {
+    text-align: center;
+}
+
+.create {
+    background: #CCCCCC;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+
+}

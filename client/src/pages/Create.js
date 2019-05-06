@@ -1,12 +1,14 @@
 import React, { Component } from 'react';
 import withAuth from './../components/withAuth';
 import API from './../utils/API';
+// import { Link } from 'react-router-dom';
+// import Stats from "../components/Stats"
 import "./style.css";
 // import UpdateCalories from '../components/UpdateCalories';
 
 
 
-class Profile extends Component {
+class Create extends Component {
 
   state = {
     username: "",
@@ -14,20 +16,12 @@ class Profile extends Component {
     name: "",
     inches: "",
     feet: "",
-    age: ""
+    age: "",
+    weight: "",
   };
 
   componentDidMount() {
-    API.getUser(this.props.user.id).then(res => {
-      this.setState({
-        username: res.data.username,
-        email: res.data.email,
-        name: res.data.name,
-        inches: res.data.inches,
-        feet: res.data.feet,
-        age: res.data.age
-      })
-    });
+
   }
 
   updateUser = () => {
@@ -40,8 +34,14 @@ class Profile extends Component {
           name: res.data.name,
           inches: res.data.inches,
           feet: res.data.feet,
-          age: res.data.age
+          age: res.data.age,
+          weight: res.data.weight
         })
+      })
+      .then(res => {
+        // once user is logged in
+        // take them to their profile page
+        this.props.history.replace(`/`);
       })
   }
 
@@ -52,30 +52,26 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="container Profile">
-        <h1>Your Profile</h1>
+      <div className="container create">
+      <h3 className="center">Thanks for joining...</h3>
+        <h1>Create Your Profile</h1>
         <h3>Name: <input
           className="name profile"
-          value={this.state.name}
           name="name"
           onChange={this.handleInputChange}
         ></input>
         </h3>
-        <p>UserName: {this.state.username}</p>
-        <p>Email: {this.state.email}</p>
 
         <div>
           <p>Height: <input
             className="profile"
             name="feet"
-            value={this.state.feet}
             onChange={this.handleInputChange}
           ></input>
             ft.
             <input
               className="profile"
               name="inches"
-              value={this.state.inches}
               onChange={this.handleInputChange}
             ></input>
             in.</p>
@@ -83,22 +79,25 @@ class Profile extends Component {
           <p>Age: <input
             className="profile"
             name="age"
-            value={this.state.age}
-
             onChange={this.handleInputChange}
           ></input>
             years old</p>
+
+            <p>Initial Weight: <input
+            className="profile"
+            name="weight"
+            onChange={this.handleInputChange}
+          ></input>
+            lbs</p>
         </div>
 
         <button
           className="saveButton"
           onClick={this.updateUser}
-        >Save</button>
-        {/* <Link to="/">Go home</Link> */}
-        
+        >Save</button>        
       </div>
     )
   }
 }
 
-export default withAuth(Profile);
+export default withAuth(Create);

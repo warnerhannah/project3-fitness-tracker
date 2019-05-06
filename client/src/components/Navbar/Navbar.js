@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthService from '../AuthService';
+import AuthService from "../AuthService";
 import { Link } from "react-router-dom";
 import shoe from './images/shoe.jpg'
 import withAuth from '../../components/withAuth';
@@ -17,21 +17,17 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        API.getUser(this.props.user.id)
-            .then(res => {
-                this.setState({
-                    username: res.data.username,
-                })
-            })
-            .then(res => {
-                API.countUnreadMessages(this.state.username)
-                    .then(res => {
-                        console.log("Here", res.data)
-                        this.setState({
-                            messages: res.data
-                        })
+        if (this.Auth.loggedIn()) {
+            const userProfile = this.Auth.getProfile();
+            console.log(userProfile.username);
+            API.countUnreadMessages(userProfile.username)
+                .then(res => {
+                    console.log("Here", res.data)
+                    this.setState({
+                        messages: res.data.length
                     })
                 })
+        }
     }
 
     showNavigation = () => {
@@ -46,16 +42,24 @@ class Navbar extends Component {
                             <a className="nav-link" href="/calendar">Calendar</a>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/calories">Calories</a>
+                            <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/weight">Weight</a>
+                            <Link className="nav-link" to="/calories">Calories</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/food">food</a>
+                            <Link className="nav-link" to="/weight">Weight</Link>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link" href="/resources">Resources</a>
+                        <div className="dropdown">
+                        <Link className="nav-link" to="#">Resources</Link>
+                            <div className="dropdown-content">
+                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" target="_black">B O D Y B U I L D I N G . C O M</a>
+                            <a href="https://www.strongerbyscience.com/?s=NUTRITION" target="_black">S T R O N G E R B Y S C I E N C E</a>
+                            <a href="https://weightology.net/free-content/" target="_black" >W E I G H T O L O G Y</a>
+                            </div>
+                            </div>
+                            
                         </li>
                         <li className="nav-item">
                             <a className="nav-link" href="/profile">Profile</a>
@@ -98,7 +102,6 @@ class Navbar extends Component {
                     </button>
                     <div className="collapse navbar-collapse" id="navbarNav">
                         <ul className="navbar-nav mr-auto">
-                        
                         </ul>
                         {this.showNavigation()}
                     </div>
@@ -106,6 +109,10 @@ class Navbar extends Component {
             </nav>
         )
     }
+
+
+
+
 }
 
-export default withAuth(Navbar);
+export default Navbar;

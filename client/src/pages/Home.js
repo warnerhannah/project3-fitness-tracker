@@ -25,26 +25,31 @@ class Home extends Component {
       // console.log(res.data)
       this.setState({
         name: res.data.name,
-        weight: res.data.weight,
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
       });
-    });
+    })
+    .catch(console.log)
     this.loadWeight();
     this.loadCalories();
   }
 
   loadWeight = () => {
-    API.getWeight().then(res => {
-      const newWeight = res.data.map(weight => weight.weight);
-      const newLabels = res.data.map(labels => labels.date);
-      console.log(res.data);
+    API.getWeight(this.props.user.id).then(res => {
+      const newWeight = res.data.weight.map(weight => weight.weight);
+      const newLabels = res.data.weight.map(labels => labels.date);
+      const recentWeight = newWeight[newWeight.length-1]
+      console.log(recentWeight);
+      // console.log(newLabels);
       this.setState({
         data: newWeight,
-        labels: newLabels
+        labels: newLabels,
+        weight: recentWeight
       });
-    });
+    })
+    .catch(console.log)
+    ;
   };
 
   loadCalories = () => {
@@ -57,7 +62,9 @@ class Home extends Component {
         burnData: newBurned,
         calLabels: newLabels
       });
-    });
+    })
+    .catch(console.log)
+    ;
   };
 
   render() {
