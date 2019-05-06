@@ -9,7 +9,6 @@
 
 .App-header {
   background-color: #222;
-  clear: all;
   height: 100px;
   padding: 20px;
   color: black;
@@ -27,27 +26,12 @@
 
 .navbar {
   background: #008c90;
-
   
-}
-#navbar-brand{
-  color: black;
-  font-family: 'Playfair Display', serif;
-  /* font-weight: normal; */
-  font-size: 25px;
-}
-#navBarLinks{
-  color: black;
-  font-family: 'Playfair Display', serif;
-  /* font-weight: normal; */
-  /* font-size: 25px; */
+  
 }
 
 img {
   height: 40px;
-}
-.nav-link{
-  color: black;
 }
 
 
