@@ -20,6 +20,7 @@ import displayWeight from "./pages/displayWeight"
 import Resources from "./pages/Resources"
 import Message from "./pages/Message"
 import Food from "./pages/Food"
+import Create from "./pages/Create"
 
 // Here is if we have an id_token in localStorage
 if (localStorage.getItem("id_token")) {
@@ -34,6 +35,7 @@ ReactDOM.render(
             <Route exact path="/" component={App} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/signup" component={Signup} />
+            <Route exact path="/create" component={Create} />
             <Route exact path="/profile" component={Profile} />
             <Route exact path="/calendar" component={displayCalendar} />
             <Route exact path="/calories" component={displayCal} />

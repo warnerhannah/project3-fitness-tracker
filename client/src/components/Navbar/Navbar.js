@@ -17,21 +17,17 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        // API.getUser(this.props.user.id)
-        //     .then(res => {
-        //         this.setState({
-        //             username: res.data.username,
-        //         })
-        //     })
-        //     .then(res => {
-        //         API.countUnreadMessages(this.state.username)
-        //             .then(res => {
-        //                 console.log("Here", res.data)
-        //                 this.setState({
-        //                     messages: res.data
-        //                 })
-        //             })
-        //         })
+        if (this.Auth.loggedIn()) {
+            const userProfile = this.Auth.getProfile();
+            console.log(userProfile.username);
+            API.countUnreadMessages(userProfile.username)
+                .then(res => {
+                    console.log("Here", res.data)
+                    this.setState({
+                        messages: res.data.length
+                    })
+                })
+        }
     }
 
     showNavigation = () => {
@@ -64,7 +60,7 @@ class Navbar extends Component {
                             <Link className="nav-link" to="/profile">Profile</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/messages">Messages ({this.state.messages.length})</Link>
+                            <Link className="nav-link" to="/messages">Messages ({this.state.messages})</Link>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -95,7 +91,7 @@ class Navbar extends Component {
                 <div className="container">
                     <Link className="navbar-brand" to="/">
                         <img src={shoe} alt="shoeimage" />
-                        Fitness Tracker</Link>
+                        </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>
