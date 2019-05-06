@@ -17,21 +17,21 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        API.getUser(this.props.user.id)
-            .then(res => {
-                this.setState({
-                    username: res.data.username,
-                })
-            })
-            .then(res => {
-                API.countUnreadMessages(this.state.username)
-                    .then(res => {
-                        console.log("Here", res.data)
-                        this.setState({
-                            messages: res.data
-                        })
-                    })
-                })
+        // API.getUser(this.props.user.id)
+        //     .then(res => {
+        //         this.setState({
+        //             username: res.data.username,
+        //         })
+        //     })
+        //     .then(res => {
+        //         API.countUnreadMessages(this.state.username)
+        //             .then(res => {
+        //                 console.log("Here", res.data)
+        //                 this.setState({
+        //                     messages: res.data
+        //                 })
+        //             })
+        //         })
     }
 
     showNavigation = () => {
@@ -110,4 +110,4 @@ class Navbar extends Component {
     }
 }
 
-export default withAuth(Navbar);
+export default Navbar;
