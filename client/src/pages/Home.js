@@ -24,7 +24,6 @@ class Home extends Component {
       // console.log(res.data)
       this.setState({
         name: res.data.name,
-        weight: res.data.weight,
         inches: res.data.inches,
         feet: res.data.feet,
         age: res.data.age
@@ -39,10 +38,9 @@ class Home extends Component {
       const newWeight = res.data.map(weight => weight.weight);
       const newLabels = res.data.map(labels => labels.date);
       console.log(res.data);
-
       this.setState({
         data: newWeight,
-        labels: newLabels
+        labels: newLabels, 
       });
     });
   };
