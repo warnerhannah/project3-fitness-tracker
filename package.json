@@ -14,7 +14,9 @@
     "heroku-postbuild": "npm run build"
   },
   "nodemonConfig": {
-    "ignore": ["client/"]
+    "ignore": [
+      "client/"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "concurrently": "^3.6.1"
   },
   "dependencies": {
+    "@material-ui/core": "^3.9.3",
     "axios": "^0.18.0",
     "bcrypt-nodejs": "0.0.3",
     "chart.js": "^2.8.0",
