@@ -6,6 +6,7 @@ import API from './../utils/API';
 import "./style.css";
 // import UpdateCalories from '../components/UpdateCalories';
 
+const now = Date.now()
 
 
 class Create extends Component {
@@ -26,8 +27,7 @@ class Create extends Component {
 
   updateUser = () => {
     // console.log(this.props.user)
-    console.log(this.state.name)
-    API.updateUser(this.props.user.id, this.state.name, this.state.weight, this.state.feet, this.state.inches, this.state.age)
+    API.createUser(this.props.user.id, this.state.name, this.state.feet, this.state.inches, this.state.age)
       .then(res => {
         console.log("saved!")
         this.setState({
@@ -35,7 +35,6 @@ class Create extends Component {
           inches: res.data.inches,
           feet: res.data.feet,
           age: res.data.age,
-          weight: res.data.weight
         })
       })
       .then(res => {
@@ -43,7 +42,15 @@ class Create extends Component {
         // take them to their profile page
         this.props.history.replace(`/`);
       })
+      .catch(console.log)
+      this.addWeight()
   }
+
+
+  addWeight = () => {
+    API.createWeight(this.props.user.id, this.state.weight, now)
+  }
+
 
   handleInputChange = (e) => {
     const { name, value } = e.target;
