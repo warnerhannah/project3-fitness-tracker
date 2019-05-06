@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthService from '../AuthService';
+import AuthService from "../AuthService";
 import { Link } from "react-router-dom";
 import shoe from './images/shoe.jpg'
 import withAuth from '../../components/withAuth';
@@ -108,6 +108,10 @@ class Navbar extends Component {
             </nav>
         )
     }
+
+
+
+
 }
 
 export default Navbar;

@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import AuthService from './../components/AuthService';
-// import {Link} from 'react-router-dom';
+
 
 class Login extends Component {
   constructor() {
@@ -22,6 +22,7 @@ class Login extends Component {
         // once user is logged in
         // take them to their profile page
         this.props.history.replace(`/`);
+        
       })
       .catch(err => {
         alert(err.response.data.message)
