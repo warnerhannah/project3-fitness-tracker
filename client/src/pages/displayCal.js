@@ -65,8 +65,8 @@ class displayCalories extends Component {
           <div className="messaging">
             <h3 className="none">Today's Totals</h3>
             <div className="flex">
-              <p className="read">Burned: {this.state.burned}</p>
-              <p className="read">Consumed: {this.state.consumed}</p>
+              <p className="read">Burned: {this.state.calData[this.state.calData.length-1]}</p>
+              <p className="read">Consumed: {this.state.burnData[this.state.burnData.length-1]}</p>
             </div>
           </div>
           <div className="messaging">
@@ -78,7 +78,7 @@ class displayCalories extends Component {
             />
           </div>
           <div className="messaging">
-          <p>Know how many calories you've had?</p>
+          <p>Track your daily calorie intake</p>
             <h3>Add More Calories:</h3>
             <form>
               <p>
