@@ -60,7 +60,7 @@ class Login extends Component {
                    id="pwd"
                    onChange={this.handleChange}/>
           </div>
-          <button type="submit" className="btn btn-primary submit">Submit</button>
+          <button type="submit" className="btn btn-primary submit sendButton">Submit</button>
 
         </form>
         </div>
