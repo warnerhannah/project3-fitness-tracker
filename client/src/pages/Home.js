@@ -39,6 +39,7 @@ class Home extends Component {
       const newWeight = res.data.map(weight => weight.weight);
       const newLabels = res.data.map(labels => labels.date);
       console.log(res.data);
+
       this.setState({
         data: newWeight,
         labels: newLabels
@@ -55,10 +56,8 @@ class Home extends Component {
         calData: newConsumed,
         burnData: newBurned,
         calLabels: newLabels
-      })
-    })
-      
- 
+      });
+    });
   };
 
   render() {
@@ -67,30 +66,34 @@ class Home extends Component {
         <div className="stats">
           <h3>My Stats</h3>
           <div className="flex">
-            <p>Current Weight: {this.state.weight} lbs</p>
+            <p>Current Weight: {this.state.data[this.state.data.length-1]}lbs</p>
             <p>
-              Current Height: {this.state.feet}ft. {this.state.inches}in.
+              Height: {this.state.feet}ft. {this.state.inches}in.
             </p>
             <p>Current Age: {this.state.age} years</p>
           </div>
           <div className="flex">
             <div className="graph">
               <div className="graphTitle">
-                <p>Weight Progress</p>
+                <p id="weightProgress">Weight Progress</p>
                 <a href="/weight">
-                  <i className="fas fa-edit" />
+                  <i className="fas fa-edit"/>
                 </a>
               </div>
               <Weight data={this.state.data} labels={this.state.labels} />
             </div>
             <div className="graph">
               <div className="graphTitle">
-                <p>Calories Consumed/Burned</p>
+                <p id="calConBunred" >Calories Consumed/Burned</p>
                 <a href="/calories">
                   <i className="fas fa-edit" />
                 </a>
               </div>
-              <Calories data={this.state.calData} burned={this.state.burnData} labels={this.state.calLabels} />
+              <Calories
+                data={this.state.calData}
+                burned={this.state.burnData}
+                labels={this.state.calLabels}
+              />
             </div>
           </div>
         </div>
