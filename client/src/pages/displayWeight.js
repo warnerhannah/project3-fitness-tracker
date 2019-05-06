@@ -59,14 +59,16 @@ class displayWeight extends Component {
               <form>
                 <p>
                   {" "}
-                  Weight:
+                  Weight:  
                   <input
                     className="cal"
                     onChange={this.handleInputChange}
                     name="weight"
+                    size="35"
                   />
                   lbs.
                 </p>
+                <hr/>
                 <p>
                   {" "}
                   Date Recorded:
@@ -74,6 +76,7 @@ class displayWeight extends Component {
                     className="cal"
                     onChange={this.handleInputChange}
                     name="date"
+                    type="date"
                   />
                 </p>
                 <button className="sendButton" onClick={this.handleFormSubmit}>

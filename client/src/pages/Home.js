@@ -112,7 +112,7 @@ class Home extends Component {
             <Calendar />
           </div>
         </div>
-        {/* </div> */}
+        
       </div>
     );
   }

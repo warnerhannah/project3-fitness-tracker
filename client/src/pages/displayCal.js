@@ -89,7 +89,7 @@ class displayCalories extends Component {
                 >
                 </input>
                 kCal
-                </p>
+                </p><hr/>
               <p> Burned:
                 <input
                   className="cal"
@@ -98,12 +98,13 @@ class displayCalories extends Component {
                 >
                 </input>
                 kCal.
-                </p>
+                </p><hr/>
               <p> Date Recorded:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
                   name="date"
+                  type="date"
                 >
                 </input>
               </p>
