@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import AuthService from '../AuthService';
+import AuthService from "../AuthService";
 import { Link } from "react-router-dom";
 import shoe from './images/shoe.jpg'
 import withAuth from '../../components/withAuth';
@@ -50,7 +50,15 @@ class Navbar extends Component {
                             <Link className="nav-link" to="/weight">Weight</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/resources">Resources</Link>
+                        <div class="dropdown">
+                        <Link className="nav-link">Resources</Link>
+                            <div class="dropdown-content">
+                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" target="_black">B O D Y B U I L D I N G . C O M</a>
+                            <a href="https://www.strongerbyscience.com/?s=NUTRITION" target="_black">S T R O N G E R B Y S C I E N C E</a>
+                            <a href="https://weightology.net/free-content/" target="_black" >W E I G H T O L O G Y</a>
+                            </div>
+                            </div>
+                            
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/profile">Profile</Link>
@@ -100,6 +108,10 @@ class Navbar extends Component {
             </nav>
         )
     }
+
+
+
+
 }
 
 export default Navbar;

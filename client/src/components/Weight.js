@@ -15,7 +15,7 @@ function Weight(props) {
           backgroundColor: ["rgb(75,192,192,0.4)"],
           // this changes the color of the dots
           pointBackgroundColor: "rgb(75,192,192)",
-
+          borderColor: "rgb(75,192,192)",
           pointHoverRadius: 5,
           pointHoverBorderColor: "black",
           data: props.data
