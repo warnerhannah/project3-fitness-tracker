@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import Weight from "../components/Weight";
+import withAuth from './../components/withAuth';
 import API from "../utils/API";
 
 class displayWeight extends Component {
@@ -12,12 +13,13 @@ class displayWeight extends Component {
   }
   componentDidMount() {
     this.loadWeight();
+    // console.log(this.props.user);
   }
 
   loadWeight = () => {
-    API.getWeight().then(res => {
-      const newWeight = res.data.map(weight => weight.weight);
-      const newLabels = res.data.map(labels => labels.date);
+    API.getWeight(this.props.user.id).then(res => {
+      const newWeight = res.data.weight.map(weight => weight.weight);
+      const newLabels = res.data.weight.map(labels => labels.date);
       console.log(res.data);
       this.setState({
         data: newWeight,
@@ -28,7 +30,7 @@ class displayWeight extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.createWeight(this.state.weight, this.state.date)
+    API.createWeight(this.props.user.id, this.state.weight, this.state.date)
       .then(response => this.loadWeight())
       .catch(err => {
         console.log(err);
@@ -88,4 +90,4 @@ class displayWeight extends Component {
   }
 }
 
-export default displayWeight;
+export default withAuth(displayWeight);

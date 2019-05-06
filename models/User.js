@@ -62,7 +62,15 @@ const UserSchema = new Schema({
 
       ref: "Calendar"
     }
-  ] 
+  ],
+  
+  weight: [
+    {
+      type: Schema.Types.ObjectId,
+
+      ref: "Weight"
+    }
+  ]
 });
 
 // Execute before each user.save() call

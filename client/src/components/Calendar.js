@@ -2,13 +2,9 @@ import React, { Component } from "react";
 import API from "../utils/API";
 import withAuth from './../components/withAuth';
 import BigCalendar from 'react-big-calendar'
-import events from './events'
 import dates from '../../src/utils/dates'
 import moment from 'moment'
 import 'react-big-calendar/lib/css/react-big-calendar.css';
-let allViews = Object.keys(BigCalendar.Views).map(k => BigCalendar.Views[k]);
-
-console.log(allViews);
 
 const localizer = BigCalendar.momentLocalizer(moment) // or globalizeLocalizer
 
