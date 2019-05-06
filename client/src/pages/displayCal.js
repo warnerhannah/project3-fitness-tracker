@@ -104,6 +104,7 @@ class displayCalories extends Component {
                   className="cal"
                   onChange={this.handleInputChange}
                   name="date"
+                  type="date"
                 >
                 </input>
               </p>

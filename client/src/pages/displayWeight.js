@@ -74,6 +74,7 @@ class displayWeight extends Component {
                     className="cal"
                     onChange={this.handleInputChange}
                     name="date"
+                    type="date"
                   />
                 </p>
                 <button className="sendButton" onClick={this.handleFormSubmit}>

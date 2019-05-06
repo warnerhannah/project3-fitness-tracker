@@ -51,11 +51,11 @@ class Navbar extends Component {
                         </li>
                         <li className="nav-item">
                         <div class="dropdown">
-                        <Link className="nav-link" to="/resources">Resources</Link>
+                        <Link className="nav-link">Resources</Link>
                             <div class="dropdown-content">
-                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" track="_black">B O D Y B U I L D I N G . C O M</a>
-                            <a href="https://www.strongerbyscience.com/?s=NUTRITION">S T R O N G E R B Y S C I E N C E</a>
-                            <a href="https://weightology.net/free-content/">W E I G H T O L O G Y</a>
+                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" target="_black">B O D Y B U I L D I N G . C O M</a>
+                            <a href="https://www.strongerbyscience.com/?s=NUTRITION" target="_black">S T R O N G E R B Y S C I E N C E</a>
+                            <a href="https://weightology.net/free-content/" target="_black" >W E I G H T O L O G Y</a>
                             </div>
                             </div>
                             
