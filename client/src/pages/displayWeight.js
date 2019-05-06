@@ -17,10 +17,10 @@ class displayWeight extends Component {
   }
 
   loadWeight = () => {
-    API.getWeight().then(res => {
-      const newWeight = res.data.map(weight => weight.weight);
-      const newLabels = res.data.map(labels => labels.date);
-      const currentWeight = res.data.map(currentWeight => currentWeight.currentWeight);
+    API.getWeight(this.props.user.id).then(res => {
+      const newWeight = res.data.weight.map(weight => weight.weight);
+      const newLabels = res.data.weight.map(labels => labels.date);
+      const currentWeight = newWeight[newWeight.length -1]
       console.log(res.data);
       this.setState({
         data: newWeight,
