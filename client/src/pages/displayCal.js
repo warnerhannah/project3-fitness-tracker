@@ -22,8 +22,7 @@ class displayCalories extends Component {
 
   state = {
     burned: "",
-    consumed: "",
-
+    consumed: ""
   }
 
   loadCalories = () => {
