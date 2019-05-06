@@ -50,7 +50,15 @@ class Navbar extends Component {
                             <Link className="nav-link" to="/weight">Weight</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/resources">Resources</Link>
+                        <div class="dropdown">
+                        <Link className="nav-link" to="/resources">Resources</Link>
+                            <div class="dropdown-content">
+                            <a href="https://search.bodybuilding.com/slp/full?context=articles&query=Nutrition" track="_black">B O D Y B U I L D I N G . C O M</a>
+                            <a href="https://www.strongerbyscience.com/?s=NUTRITION">S T R O N G E R B Y S C I E N C E</a>
+                            <a href="https://weightology.net/free-content/">W E I G H T O L O G Y</a>
+                            </div>
+                            </div>
+                            
                         </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/profile">Profile</Link>
