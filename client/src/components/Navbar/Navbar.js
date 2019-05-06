@@ -17,29 +17,17 @@ class Navbar extends Component {
     }
 
     componentDidMount() {
-        // API.getUser(this.props.user.id)
-        //     .then(res => {
-        //         this.setState({
-        //             username: res.data.username,
-        //         })
-        //     })
-        //     .then(res => {
-        //         API.countUnreadMessages(this.state.username)
-        //             .then(res => {
-        //                 console.log("Here", res.data)
-        //                 this.setState({
-        //                     messages: res.data
-        //                 })
-        //             })
-        //         })
-        if(this.Auth.loggedIn()) {
+        if (this.Auth.loggedIn()) {
             const userProfile = this.Auth.getProfile();
-            console.log(userProfile.unreadMessage);
-            this.setState({
-                messages: userProfile.unreadMessage
-            });
+            console.log(userProfile.username);
+            API.countUnreadMessages(userProfile.username)
+                .then(res => {
+                    console.log("Here", res.data)
+                    this.setState({
+                        messages: res.data.length
+                    })
+                })
         }
-        
     }
 
     showNavigation = () => {
