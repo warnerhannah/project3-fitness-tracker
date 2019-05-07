@@ -63,13 +63,13 @@ const UserSchema = new Schema({
     }
   ],
   
-  weight: [
-    {
-      type: Schema.Types.ObjectId,
+  // weight: [
+  //   {
+  //     type: Schema.Types.ObjectId,
 
-      ref: "Weight"
-    }
-  ]
+  //     ref: "Weight"
+  //   }
+  // ]
 });
 
 // Execute before each user.save() call

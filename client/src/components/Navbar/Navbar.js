@@ -19,10 +19,10 @@ class Navbar extends Component {
     componentDidMount() {
         if (this.Auth.loggedIn()) {
             const userProfile = this.Auth.getProfile();
-            console.log(userProfile.username);
+            // console.log(userProfile.username);
             API.countUnreadMessages(userProfile.username)
                 .then(res => {
-                    console.log("Here", res.data)
+                    // console.log("Here", res.data)
                     this.setState({
                         messages: res.data.length
                     })
