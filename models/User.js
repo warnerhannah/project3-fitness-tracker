@@ -31,6 +31,7 @@ const UserSchema = new Schema({
   weight: {
     type: Number,
     required: false
+    
   },
   feet: {
     type: Number,

@@ -38,8 +38,8 @@ class Home extends Component {
       const newWeight = res.data.weight.map(weight => weight.weight);
       const newLabels = res.data.weight.map(labels => labels.date);
       const recentWeight = newWeight[newWeight.length-1]
-      console.log(recentWeight);
-      // console.log(newLabels);
+      console.log(res.data);
+      console.log(newLabels);
       this.setState({
         data: newWeight,
         labels: newLabels,

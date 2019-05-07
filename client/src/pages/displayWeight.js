@@ -18,15 +18,15 @@ class displayWeight extends Component {
 
   loadWeight = () => {
     API.getWeight(this.props.user.id).then(res => {
-      const newWeight = res.data.weight.map(weight => weight.weight);
-      const newLabels = res.data.weight.map(labels => labels.date);
-      const currentWeight = newWeight[newWeight.length -1]
+      // const newWeight = res.data.weight.map(weight => weight.weight);
+      // const newLabels = res.data.weight.map(labels => labels.date);
+      // const currentWeight = newWeight[newWeight.length -1]
       console.log(res.data);
-      this.setState({
-        data: newWeight,
-        labels: newLabels,
-        weight: currentWeight
-      });
+      // this.setState({
+      //   data: newWeight,
+      //   labels: newLabels,
+      //   weight: currentWeight
+      // });
     });
   };
 
