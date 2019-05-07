@@ -9,7 +9,6 @@ class displayWeight extends Component {
     this.state = {
       weight: "",
       date: "",
-
       data: [],
       labels: []
     };
