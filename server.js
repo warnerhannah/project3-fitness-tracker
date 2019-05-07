@@ -272,20 +272,36 @@ app.delete('/api/delete/calendar/:id', (req, res) => {
 
 
 // CALORIES ROUTES 
-app.post('/api/calories', (req, res) => {
-  db.Calories.create(req.body)
-    .then(data => res.json(data))
-    .catch(err => res.status(400).json(err));
+app.post('/api/calories/:userId', (req, res) => {
+  console.log("reached server")
+  db.Calories.create({
+    userID: req.params.userId,
+    consumed: req.body.consumed,
+    burned: req.body.burned,
+    date: req.body.date
+  })
+    .then(data => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => console.log(err));
 });
 
-app.get('/calories', (req, res) => {
-  db.Calories.find({}).then(data => {
-    if (data) {
-      res.json(data);
-    } else {
-      res.status(404).send({ success: false, message: 'No user found' });
-    }
-  }).catch(err => res.status(400).send(err));
+app.get('/calories/:userId', (req, res) => {
+  db.Calories
+    .find({
+      userID: req.params.userId
+    })
+    .then(data => {
+      if (data) {
+        console.log(data)
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 app.put('/api/update/calories/:id', (req, res) => {
@@ -329,21 +345,21 @@ app.post('/api/weight/:userId', (req, res) => {
     weight: req.body.weight,
     date: req.body.date
   })
-  .then(data => {
-    if (data) {
-      res.json(data)
-    } else {
-      res.status(404).send({ success: false, message: 'No user found' });
-    }
-  }).catch(err => console.log(err));
+    .then(data => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => console.log(err));
 
 });
 
 app.get('/weight/:userId', (req, res) => {
   db.Weight
-  .find({
-    userID: req.params.userId
-  })
+    .find({
+      userID: req.params.userId
+    })
     .then(data => {
       if (data) {
         console.log(data)

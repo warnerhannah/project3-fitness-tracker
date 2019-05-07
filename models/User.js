@@ -62,7 +62,7 @@ const UserSchema = new Schema({
 
       ref: "Calendar"
     }
-  ],
+  ]
   
   // weight: [
   //   {
