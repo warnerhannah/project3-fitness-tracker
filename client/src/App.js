@@ -45,7 +45,7 @@ class App extends Component {
      
         <Home />
         <footer>
-        <p>Created by: Hannah, Michael, Ivan, and Manny</p>
+        <p>Created by: Hannah, Manny, Ivan, and Michael</p>
         <p>May 2019</p>
       </footer>
       </div>
