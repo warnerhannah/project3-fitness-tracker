@@ -7,26 +7,27 @@ class displayWeight extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      weight: "",
+      date: "",
       data: [],
       labels: []
     };
   }
   componentDidMount() {
     this.loadWeight();
-    // console.log(this.props.user);
   }
 
   loadWeight = () => {
     API.getWeight(this.props.user.id).then(res => {
-      // const newWeight = res.data.weight.map(weight => weight.weight);
-      // const newLabels = res.data.weight.map(labels => labels.date);
-      // const currentWeight = newWeight[newWeight.length -1]
-      console.log(res.data);
-      // this.setState({
-      //   data: newWeight,
-      //   labels: newLabels,
-      //   weight: currentWeight
-      // });
+      const newWeight = res.data.map(user => user.weight)
+      const newLabels = res.data.map(user => user.date)
+      const currentWeight = newWeight[newWeight.length -1]
+
+      this.setState({
+        data: newWeight,
+        labels: newLabels,
+        weight: currentWeight
+      });
     });
   };
 
@@ -77,7 +78,7 @@ class displayWeight extends Component {
                   Date Recorded:
                   <input
                     className="cal"
-                    onChange={this.handleInputChange}
+                    onChange={(event) => this.setState({date: event.target.value})}
                     name="date"
                     type="date"
                   />

@@ -2,11 +2,20 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const weightSchema = new Schema({
+    userID: {
+        type: String,
+        // required: true,
+        trim: true
+    },
     weight: {
-        type: Number
+        type: Number,
+        // required: true,
+        trim: true
     }, 
     date: {
-        type: String
+        type: String,
+        // required: true,
+        trim: true
     }
 });
 

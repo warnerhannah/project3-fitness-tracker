@@ -28,7 +28,8 @@ class Home extends Component {
         feet: res.data.feet,
         age: res.data.age
       });
-    });
+    })
+    .catch(console.log)
     this.loadWeight();
     this.loadCalories();
   }
@@ -45,7 +46,9 @@ class Home extends Component {
         labels: newLabels,
         weight: recentWeight
       });
-    });
+    })
+    .catch(console.log)
+    ;
   };
 
   loadCalories = () => {
@@ -58,7 +61,9 @@ class Home extends Component {
         burnData: newBurned,
         calLabels: newLabels
       });
-    });
+    })
+    .catch(console.log)
+    ;
   };
 
   render() {

@@ -9,6 +9,10 @@ export default {
     return axios.post('/api/signup', {username: username, email: email, password: password});
   },
 
+  createUser: (id, name, feet, inches, age) => {
+    return axios.put(`/api/create/${id}`, {name: name, feet: feet, inches: inches, age: age});
+  },
+
   updateUser: (id, name, weight, feet, inches, age ) => {
     return axios.put(`/api/update/${id}`, {name: name, weight: weight, feet: feet, inches: inches, age: age});
   },
@@ -52,7 +56,6 @@ export default {
   createWeight: (id, weight, date) => {
     console.log("got here!");
     return axios.post(`/api/weight/${id}`, {weight: weight, date: date});
-    
   },
 
   deleteWeight: (id, weight, labels) => {
