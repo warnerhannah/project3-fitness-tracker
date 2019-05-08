@@ -26,7 +26,10 @@ class displayCalories extends Component {
   }
 
   loadCalories = () => {
-    API.getCalories().then(res => {
+    console.log(this.props.user.id);
+    API.getCalories(this.props.user.id).then(res => {
+
+      console.log(res.data);
       const newConsumed = res.data.map(consumed => consumed.consumed);
       const newBurned = res.data.map(burned => burned.burned);
       const newLabels = res.data.map(labels => labels.date);
@@ -40,7 +43,7 @@ class displayCalories extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    API.createCalories(this.state.consumed, this.state.burned, this.state.date)
+    API.createCalories(this.props.user.id, this.state.consumed, this.state.burned, this.state.date)
       .then(response => this.loadCalories())
       .catch(err => {
         console.log(err);

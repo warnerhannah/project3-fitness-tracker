@@ -19,10 +19,10 @@ class Navbar extends Component {
     componentDidMount() {
         if (this.Auth.loggedIn()) {
             const userProfile = this.Auth.getProfile();
-            console.log(userProfile.username);
+            // console.log(userProfile.username);
             API.countUnreadMessages(userProfile.username)
                 .then(res => {
-                    console.log("Here", res.data)
+                    // console.log("Here", res.data)
                     this.setState({
                         messages: res.data.length
                     })
@@ -36,11 +36,6 @@ class Navbar extends Component {
                 <div>
                    
                     <ul id="navBarLinks" className="navbar-nav">
-                   
-                        
-                        <li className="nav-item">
-                            <a className="nav-link" href="/calendar">Calendar</a>
-                        </li>
                         <li className="nav-item">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
@@ -95,7 +90,7 @@ class Navbar extends Component {
             <nav id="navBarStyle"  className="navbar navbar-expand-lg">
                 <div className="container">
                
-                <a id="navbar-brand" href="/"> F I T N E S S  |  L I F E S T Y L E  </a>
+                <a id="navbar-brand" href="/"> =Fitness  Tracker=</a>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

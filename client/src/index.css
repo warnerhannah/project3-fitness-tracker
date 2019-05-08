@@ -11,13 +11,12 @@ body {
 }
 
 .navbar {
-
+  
  
 }
 #navBarStyle{
   background: rgb(52,52,52);
   width: 100%;
- 
    color:white;
 }
 .nameHeader {
@@ -85,14 +84,7 @@ footer {
 footer p {
   opacity: .75
 }
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+
 
 .dropdown {
   position: relative;

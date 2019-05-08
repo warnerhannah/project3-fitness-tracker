@@ -37,23 +37,20 @@ class Home extends Component {
 
   loadWeight = () => {
     API.getWeight(this.props.user.id).then(res => {
-      const newWeight = res.data.weight.map(weight => weight.weight);
-      const newLabels = res.data.weight.map(labels => labels.date);
-      const recentWeight = newWeight[newWeight.length-1]
-      console.log(recentWeight);
-      // console.log(newLabels);
+      const newWeight = res.data.map(user => user.weight)
+      const newLabels = res.data.map(user => user.date)
+      const currentWeight = newWeight[newWeight.length -1]
+
       this.setState({
         data: newWeight,
         labels: newLabels,
-        weight: recentWeight
+        weight: currentWeight
       });
-    })
-    .catch(console.log)
-    ;
+    });
   };
 
   loadCalories = () => {
-    API.getCalories().then(res => {
+    API.getCalories(this.props.user.id).then(res => {
       const newConsumed = res.data.map(consumed => consumed.consumed);
       const newBurned = res.data.map(burned => burned.burned);
       const newLabels = res.data.map(labels => labels.date);
@@ -69,7 +66,7 @@ class Home extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container maincontentcontainer">
         
         <div className="stats">
            {/* <div className="welcome">
@@ -119,7 +116,6 @@ class Home extends Component {
             <Calendar />
           </div>
         </div>
-        
       </div>
     );
   }

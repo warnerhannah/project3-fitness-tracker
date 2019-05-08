@@ -33,12 +33,12 @@ export default {
     return axios.put(`/api/update/calendar/${id}`, {title: title, start: start, end: end});
   },
 
-  getCalories: () => {
-    return axios.get(`/calories`);
+  getCalories: (id) => {
+    return axios.get(`/calories/${id}`);
   },
 
-  createCalories: (consumed, burned, date) => {
-    return axios.post(`/api/calories`, {consumed: consumed, burned: burned, date: date});
+  createCalories: (id, consumed, burned, date) => {
+    return axios.post(`/api/calories/${id}`, {consumed: consumed, burned: burned, date: date});
   },
 
   deleteCalories: (id, title, start, end) => {

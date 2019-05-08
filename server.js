@@ -208,34 +208,34 @@ app.get('/', isAuthenticated /* Using the express jwt MW here */, (req, res) => 
 app.post('/api/calendar/:userId', (req, res) => {
 
   db.Calendar.create(req.body)
-  .then(function(dbCalendar) {
-    // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
-    // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
-    // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-    return db.User.findOneAndUpdate({_id: req.params.userId}, { $push: { calendar: dbCalendar._id } }, { new: true });
-  })
-  .then(function(dbUser) {
-    // If the User was updated successfully, send it back to the client
-    res.json(dbUser);
-  })
-  .catch(function(err) {
-    // If an error occurs, send it back to the client
-    res.json(err);
-  });
+    .then(function (dbCalendar) {
+      // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
+      // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
+      // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
+      return db.User.findOneAndUpdate({ _id: req.params.userId }, { $push: { calendar: dbCalendar._id } }, { new: true });
+    })
+    .then(function (dbUser) {
+      // If the User was updated successfully, send it back to the client
+      res.json(dbUser);
+    })
+    .catch(function (err) {
+      // If an error occurs, send it back to the client
+      res.json(err);
+    });
 });
 
 
 app.get('/calendar/:userId', (req, res) => {
   db.User
-  .findOne({_id: req.params.userId})
-  .populate("calendar")
-  .then(data => {
-    if (data) {
-      res.json(data);
-    } else {
-      res.status(404).send({ success: false, message: 'No user found' });
-    }
-  }).catch(err => res.status(400).send(err));
+    .findOne({ _id: req.params.userId })
+    .populate("calendar")
+    .then(data => {
+      if (data) {
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 app.put('/api/update/calendar/:id', (req, res) => {
@@ -272,20 +272,36 @@ app.delete('/api/delete/calendar/:id', (req, res) => {
 
 
 // CALORIES ROUTES 
-app.post('/api/calories', (req, res) => {
-  db.Calories.create(req.body)
-    .then(data => res.json(data))
-    .catch(err => res.status(400).json(err));
+app.post('/api/calories/:userId', (req, res) => {
+  console.log("reached server")
+  db.Calories.create({
+    userID: req.params.userId,
+    consumed: req.body.consumed,
+    burned: req.body.burned,
+    date: req.body.date
+  })
+    .then(data => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => console.log(err));
 });
 
-app.get('/calories', (req, res) => {
-  db.Calories.find({}).then(data => {
-    if (data) {
-      res.json(data);
-    } else {
-      res.status(404).send({ success: false, message: 'No user found' });
-    }
-  }).catch(err => res.status(400).send(err));
+app.get('/calories/:userId', (req, res) => {
+  db.Calories
+    .find({
+      userID: req.params.userId
+    })
+    .then(data => {
+      if (data) {
+        console.log(data)
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 app.put('/api/update/calories/:id', (req, res) => {
@@ -323,34 +339,35 @@ app.delete('/api/delete/calories/:id', (req, res) => {
 // WEIGHT ROUTES
 
 app.post('/api/weight/:userId', (req, res) => {
-  db.Weight.create(req.body)
-    .then(function(dbWeight) {
-      // If a Note was created successfully, find one User (there's only one) and push the new Note's _id to the User's `notes` array
-      // { new: true } tells the query that we want it to return the updated User -- it returns the original by default
-      // Since our mongoose query returns a promise, we can chain another `.then` which receives the result of the query
-      return db.User.findOneAndUpdate({_id: req.params.userId}, { $push: { weight: dbWeight._id } }, { new: true });
-    })
-    .then(function(dbUser) {
-      // If the User was updated successfully, send it back to the client
-      res.json(dbUser);
-    })
-    .catch(function(err) {
-      // If an error occurs, send it back to the client
-      res.json(err);
-    });
+  console.log("reached server")
+  db.Weight.create({
+    userID: req.params.userId,
+    weight: req.body.weight,
+    date: req.body.date
+  })
+    .then(data => {
+      if (data) {
+        res.json(data)
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => console.log(err));
+
 });
 
 app.get('/weight/:userId', (req, res) => {
-  db.User
-  .findOne({_id: req.params.userId})
-  .populate("weight")
-  .then(data => {
-    if (data) {
-      res.json(data);
-    } else {
-      res.status(404).send({ success: false, message: 'No user found' });
-    }
-  }).catch(err => res.status(400).send(err));
+  db.Weight
+    .find({
+      userID: req.params.userId
+    })
+    .then(data => {
+      if (data) {
+        console.log(data)
+        res.json(data);
+      } else {
+        res.status(404).send({ success: false, message: 'No user found' });
+      }
+    }).catch(err => res.status(400).send(err));
 });
 
 app.put('/api/update/weight/:id', (req, res) => {

@@ -31,6 +31,7 @@ const UserSchema = new Schema({
   weight: {
     type: Number,
     required: false
+    
   },
   feet: {
     type: Number,
@@ -61,15 +62,15 @@ const UserSchema = new Schema({
 
       ref: "Calendar"
     }
-  ],
-  
-  weight: [
-    {
-      type: Schema.Types.ObjectId,
-
-      ref: "Weight"
-    }
   ]
+  
+  // weight: [
+  //   {
+  //     type: Schema.Types.ObjectId,
+
+  //     ref: "Weight"
+  //   }
+  // ]
 });
 
 // Execute before each user.save() call
