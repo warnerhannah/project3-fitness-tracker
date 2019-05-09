@@ -93,7 +93,7 @@ class Food extends Component {
                 name="size"
               />
             </p>
-            <button className="sendButton" onClick={this.checkInput}>
+            <button className=" btn btn-primary  sendButton" onClick={this.checkInput}>
               Yum!
             </button>
           </form>

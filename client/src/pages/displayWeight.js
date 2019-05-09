@@ -84,7 +84,7 @@ class displayWeight extends Component {
                     type="date"
                   />
                 </p>
-                <button className="sendButton" onClick={this.handleFormSubmit}>
+                <button className="btn btn-primary sendButton" onClick={this.handleFormSubmit}>
                   Add It
                 </button>
               </form>

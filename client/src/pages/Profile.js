@@ -96,13 +96,16 @@ class Profile extends Component {
               value={this.state.age}
               onChange={this.handleInputChange}
             />
-             years old
+            years old
           </p>
+          <button
+            className="btn btn-primary  saveButton"
+            onClick={this.updateUser}
+          >
+            Save
+          </button>
         </div>
 
-        <button className="saveButton" onClick={this.updateUser}>
-          Save
-        </button>
         {/* <Link to="/">Go home</Link> */}
       </div>
     );
