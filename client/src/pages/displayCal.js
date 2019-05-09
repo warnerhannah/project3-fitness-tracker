@@ -67,8 +67,8 @@ class displayCalories extends Component {
           <div className="messaging">
             <h3 className="none">Today's Totals</h3>
             <div className="flex">
-              <p className="read">Burned: {this.state.calData[this.state.calData.length-1]}</p>
-              <p className="read">Consumed: {this.state.burnData[this.state.burnData.length-1]}</p>
+              <p className="read">Burned: {this.state.burnData[this.state.burnData.length-1]}</p>
+              <p className="read">Consumed:{this.state.calData[this.state.calData.length-1]}</p>
             </div>
           </div>
           <div className="messaging">
@@ -92,20 +92,16 @@ class displayCalories extends Component {
                   name="consumed"
                 />
                 kCal
-              </p>
-              <p>
-                {" "}
-                Burned:
+                </p><hr/>
+              <p> Burned:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
                   name="burned"
                 />
                 kCal.
-              </p>
-              <p>
-                {" "}
-                Date Recorded:
+                </p><hr/>
+              <p> Date Recorded:
                 <input
                   className="cal"
                   onChange={this.handleInputChange}
@@ -114,11 +110,11 @@ class displayCalories extends Component {
                 >
                 </input>
               </p>
-              <button className="sendButton" onClick={this.handleFormSubmit}>
+              <button  className=" btn btn-primary  sendButton " onClick={this.handleFormSubmit}>
                 Add It
               </button>
             </form>
-            <Food />
+            
           </div>
           <Food />
         </div>

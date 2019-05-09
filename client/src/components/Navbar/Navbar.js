@@ -34,8 +34,8 @@ class Navbar extends Component {
         if (this.Auth.loggedIn()) {
             return (
                 <div>
-                    <ul className="navbar-nav">
-
+                   
+                    <ul id="navBarLinks" className="navbar-nav">
                         <li className="nav-item">
                             <Link className="nav-link" to="/calendar">Calendar</Link>
                         </li>
@@ -57,10 +57,10 @@ class Navbar extends Component {
                             
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/profile">Profile</Link>
+                            <a className="nav-link" href="/profile">Profile</a>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/messages">Messages ({this.state.messages})</Link>
+                            <a className="nav-link" href="/messages">Messages</a>
                         </li>
                         <li className="nav-item">
                             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -87,11 +87,11 @@ class Navbar extends Component {
 
     render() {
         return (
-            <nav className="navbar navbar-expand-lg navbar-dark">
+            <nav id="navBarStyle"  className="navbar navbar-expand-lg">
                 <div className="container">
-                    <Link className="navbar-brand" to="/">
-                        <img src={shoe} alt="shoeimage" />
-                        </Link>
+               
+                <a id="navbar-brand" href="/"> =Fitness  Tracker=</a>
+
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                     </button>

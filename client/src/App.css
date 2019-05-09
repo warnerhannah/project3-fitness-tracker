@@ -2,16 +2,16 @@
   text-align: center;
 }
 
-.App-logo {
+/* .App-logo {
   animation: App-logo-spin infinite 20s linear;
   height: 80px;
-}
+} */
 
 .App-header {
-  background-color: #222;
-  height: 100px;
-  padding: 20px;
-  color: black;
+  clear: both;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
 }
 
 .App-intro {
@@ -24,14 +24,25 @@
 }
 
 
-.navbar {
-  background: #008c90;
-  
-  
+
+#navbar-brand{
+  color: white;
+  font-family: 'Playfair Display', serif;
+  /* font-weight: normal; */
+  font-size: 25px;
+}
+#navBarLinks{
+  color: white;
+  font-family: 'Playfair Display', serif;
+  /* font-weight: normal; */
+  /* font-size: 25px; */
 }
 
 img {
   height: 40px;
+}
+.nav-link{
+  color: white;
 }
 
 

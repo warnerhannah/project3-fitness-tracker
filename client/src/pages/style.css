@@ -1,197 +1,250 @@
 .profile {
-    width: 50px;
-    text-align: right;
-    border-radius: 10px;
+  width: 80px;
+  text-align: left;
+}
+.containerProfile {
+  background: white;
+  width: 40%;
+  margin: 10px auto;
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+}
+.profileEdit {
+  margin-left: 10px;
 }
 
 p {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 input.name {
-    width: 300px;
-    text-align: left;
+  width: 300px;
+  text-align: left;
 }
 
 button {
-    margin-left: 400px;
+  margin-left: 400px;
 }
 
 .signupL {
-    display: flex;
-    justify-content: center;
-    /* width: 40% */
+  display: flex;
+  justify-content: center;
+  /* width: 40% */
 }
 
 h1 {
-    text-align: center
+  text-align: center;
 }
 
 .flex {
-    display: flex;
-    justify-content: space-evenly;
-    flex: wrap;
-  }
+  display: flex;
+  justify-content: space-evenly;
+  flex: wrap;
+}
 
 .calContainer {
-    width: 100%;
-    justify-content: space-between
+  width: 100%;
+  justify-content: space-between;
 }
-  
+
 .calendarClick {
-    margin-top:10px;
-    background:white;
-    border-radius: 10px;
-    width: 44%;
-    height: 300px;
+  margin-top: 10px;
+  background: white;
+  /* border-radius: 10px; */
+  width: 44%;
+  height: 300px;
 }
-  
+
 .calendar {
-    margin:10px 0px;
-    background:white;
-    border-radius: 10px;
-    /* width: 55%; */
-    /* height: 600px; */
-    padding: 20px;
+  clear: both;
+  margin: 20px 0px;
+  background: white;
+  /* border-radius: 10px; */
+  /* width: 55%; */
+  height: auto;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
 }
 
 .stats {
-    background: white;
-    border-radius: 10px;
-    width: 100%;    
-    margin: 10px auto;
-    padding: 20px;
+  clear: both;
+  background: whitesmoke;
+  /* border-radius: 10px; */
+  width: 100%;
+  margin: 10px auto;
+  padding: 20px;
+  height: auto;
 }
 
 .graph {
-    background: #CCCCCC;
-    /* height: 300px; */
-    border-radius: 10px;
-    width: 48%;
+  clear: both;
+  background: whitesmoke;
+  /* height: 300px; */
+  /* border-radius: 10px; */
+  width: 80%;
+  height: auto;
 }
 
 i {
-    float: right;
-    margin-right: 5px;
-    color: grey
+  float: right;
+  margin-right: 5px;
+  color: grey;
 }
 
 .container {
-    width: 80%;
+  width: 100%;
+  height: auto;
+
+  
+}
+.maincontentcontainer{
+    margin-top: 30px;
 }
 
-.messaging {
+.messaging{
+  background: white;
+  /* border-radius: 10px; */
+  width: 80%;
+  margin: 10px auto;
+  padding: 20px;
+  text-align: left;
+  height: auto;
+
+ 
+}
+.messagingSignUp{
     background: white;
-    border-radius: 10px;
-    width: 100%;    
+    /* border-radius: 10px; */
+    width: 50%;
     margin: 10px auto;
     padding: 20px;
     text-align: left;
-}
-
+    height: auto;
+  
+   
+  }
 .scroll {
-    max-height: 700px;
-    overflow-y:auto;
+  max-height: 700px;
+  overflow-y: auto;
 }
 
 form {
-    padding: 20px;
+  padding: 20px;
 }
 
 .message {
-    width: 600px;
-    /* height: 100px; */
+  width: 600px;
+  /* height: 100px; */
 }
 
 .sendButton {
-    float: right;
-    margin-right: 40px;
-    border-radius: 10px;
-    background: #008c90;
-    color: white;
-    padding: 5px;
+  float: right;
+  /* margin-right: 40px; */
+  /* border-radius: 5px; */
+  background: rgb(35, 129, 206);
+  color: white;
+  /* padding: 5px; */
 }
 
 .saveButton {
-    margin-right: 40px;
-    border-radius: 10px;
-    background: #008c90;
-    color: white;
-    padding: 5px;
+  margin-right: 40px;
+  /* border-radius: 10px; */
+  background: rgb(35, 129, 206);
+  color: white;
+  padding: 5px;
 }
 
 .read {
-    background: lightgrey;
-    border-radius: 10px;
-    padding: 15px;
-    margin: 5px;
+  background: lightgrey;
+  border-radius: 10px;
+  padding: 15px;
+  margin: 5px;
 }
 
 .unread {
-    background: #008c90;
-    border-radius: 10px;
-    color: white;
-    padding: 15px;
-    margin: 5px;
+  background: rgb(5, 94, 167);
+  border-radius: 10px;
+  color: white;
+  padding: 15px;
+  margin: 5px;
 }
 
 .from {
-    margin-left: 70%;
+  margin-left: 70%;
 }
 
 .graphTitle {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  height: auto;
 }
 
 .none {
-    text-align: center;
+  text-align: center;
 }
 
-
 .cal {
-    width: 75px
+  width: 75px;
 }
 
 .flexIt {
-    display: flex;
-    justify-content: flex-start
+  display: flex;
+  justify-content: flex-start;
 }
-.containerRes{
- background: white;
- display: flex;
- justify-content: space-between;
- padding: 10px;
- width: 80%;
- margin-left: 10%;
- margin-top: 50px;
- border-radius: 10px;
+.containerRes {
+  background: white;
+  /* display: flex; */
+  justify-content: space-between;
+  /* padding: 10px; */
+  width: 80%;
+  margin-left: 10%;
+  margin-top: 50px;
+  /* border-radius: 10px; */
+  height: auto;
+  clear: both;
+}
+.fitresources {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-weight: normal;
+  font-size: 30px;
 }
 
 .signupPage {
-    padding-top: 5%;
+  padding-top: 5%;
 }
 
 .fitnessTracker {
-    color: #008c90;
-    font-size: 100px;
-    font-family: "impact";
-    font-style: italic;
+  color: #008c90;
+  font-size: 100px;
+
+
+  
+  font-family: "impact";
+  font-style: italic;
 }
 
 .left {
-    text-align: left;
+  text-align: left;
 }
 
 .center {
-    text-align: center;
+  text-align: center;
 }
 
 .create {
-    background: #CCCCCC;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-
+  background: #cccccc;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 10px;
+}
+.two-toned-footer-color{
+    font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  
+}
+.signupL{
+    background: white;  
 }

@@ -1,20 +1,20 @@
 body {
   height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
   font-family: 'Arimo', sans-serif;
-  background: #d0e8e3;
+  background-image: url("https://images.unsplash.com/photo-1534258936925-c58bed479fcb?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&w=1000&q=80");
+  opacity: .9;
+  background-size: cover;
+ 
 }
 
-.navbar {
-  background: #008c90;
-  /* width: 100%; */
-  /* position: fixed; */
-   /* z-index: 1; */
-   /* color:#008c90; */
-  /* padding-top: -10px; */
+#navBarStyle{
+  background: rgb(52,52,52);
+  width: 100%;
+   color:white;
 }
-
 .nameHeader {
   float: left;
   color: lightgrey;
@@ -26,26 +26,61 @@ body {
   height: 600px !important;
 
 }
+.navbar-nav{
+  color: white;
+}
+#statsTitle{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+  text-align: center;
+}
+#weightProgress{
+  
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#calConBunred{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+#statsMain{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 20px;
+  text-align: center;
+  
+}
+#myworkoutsch{
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+.welcome{
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+  font-size: 30px;
+}
+/* ---------------------------------------------------------this is the new css---------------------------------------- */
 
 footer {
-  background: #008c90;
+  background:rgb(52,52,52);
   display: flex;
   justify-content: space-between;
-  padding: 25px 50px 5px 50px;
-  color: white
+  font-family: 'Playfair Display', serif;
+  font-weight: normal;
+ 
+  color: white;
+  clear: both;
 }
 
 footer p {
   opacity: .75
 }
-.dropbtn {
-  background-color: #4CAF50;
-  color: white;
-  padding: 16px;
-  font-size: 16px;
-  border: none;
-  cursor: pointer;
-}
+
 
 .dropdown {
   position: relative;

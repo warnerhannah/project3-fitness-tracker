@@ -22,6 +22,7 @@ import Message from "./pages/Message"
 import Food from "./pages/Food"
 import Create from "./pages/Create"
 
+
 // Here is if we have an id_token in localStorage
 if (localStorage.getItem("id_token")) {
     // then we will attach it to the headers of each request from react application via axios
@@ -43,6 +44,11 @@ ReactDOM.render(
             <Route exact path="/messages" component={Message} />
             <Route exact path="/food" component={Food} />
             <Route exact path="/resources" component={Resources} />
+            <div className="two-toned-footer-color">
+            <p className="text-muted text-muted-footer text-center">
+              &copy; Copyright 2019 Hannah, Manny, Ivan, and Michael 
+            </p>
+          </div>
         </div>
     </Router>
     , document.getElementById('root')

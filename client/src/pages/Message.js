@@ -92,7 +92,7 @@ class Message extends Component {
                         </input>
                         </p>
                         <button
-                            className="sendButton"
+                            className="btn btn-primary sendButton"
                             onClick={this.sendMessage}
                         >Send it!</button>
                     </form>
