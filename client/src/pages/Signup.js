@@ -50,7 +50,7 @@ class Signup extends Component {
         </h1>
         <div className="flexIt signupPage">
 
-          <div className="messaging">
+          <div className="messagingSignUp">
             <h1 className="left">A fitness app that is as personalized as you are!</h1>
             <p>Track your progress with graphs.. </p>
             <ul>

@@ -102,7 +102,7 @@ i {
     margin-top: 30px;
 }
 
-.messaging {
+.messaging{
   background: white;
   /* border-radius: 10px; */
   width: 80%;
@@ -110,8 +110,20 @@ i {
   padding: 20px;
   text-align: left;
   height: auto;
-}
 
+ 
+}
+.messagingSignUp{
+    background: white;
+    /* border-radius: 10px; */
+    width: 50%;
+    margin: 10px auto;
+    padding: 20px;
+    text-align: left;
+    height: auto;
+  
+   
+  }
 .scroll {
   max-height: 700px;
   overflow-y: auto;
@@ -151,7 +163,7 @@ form {
 }
 
 .unread {
-  background: #008c90;
+  background: rgb(5, 94, 167);
   border-radius: 10px;
   color: white;
   padding: 15px;
@@ -207,6 +219,9 @@ form {
 .fitnessTracker {
   color: #008c90;
   font-size: 100px;
+
+
+  
   font-family: "impact";
   font-style: italic;
 }
@@ -229,4 +244,7 @@ form {
     font-family: 'Playfair Display', serif;
   font-weight: normal;
   
+}
+.signupL{
+    background: white;  
 }
