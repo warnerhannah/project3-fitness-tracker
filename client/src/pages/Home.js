@@ -5,6 +5,7 @@ import Calendar from "../components/Calendar";
 import Calories from "../components/Calories";
 import Weight from "../components/Weight";
 import Splash from "../pages/Splash";
+import GoogleAds from "../components/GoogleAds"
 
 class Home extends Component {
   state = {
@@ -67,6 +68,7 @@ class Home extends Component {
   render() {
     return (
       <div className="container maincontentcontainer">
+  
         
         <div className="stats">
            {/* <div className="welcome">
@@ -92,7 +94,10 @@ class Home extends Component {
                    <i className="fas fa-edit" />
                  </a>
                </div>
-               <Weight data={this.state.data} labels={this.state.labels} />
+               <Weight 
+                data={this.state.data} 
+                labels={this.state.labels} 
+                />
              </div>
              <div className="graph">
                <div className="graphTitle">
@@ -110,11 +115,14 @@ class Home extends Component {
            </div>
          </div>
 
-        <div className="calendar">
+        <div className="calendar ">
           <h3>My Workout Schedule</h3>
           <div className="calDiv">
             <Calendar />
           </div>
+        </div>
+        <div>
+          <GoogleAds/>
         </div>
       </div>
     );

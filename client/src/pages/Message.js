@@ -70,8 +70,8 @@ class Message extends Component {
 
     render() {
         return (
-            <div className="container">
-                <div className="messaging">
+            <div className="container margin-top">
+                <div className="messaging margin-top">
                     <h3>Send A Motivational Message To Your Friends!</h3>
                     <form>
                         <p>

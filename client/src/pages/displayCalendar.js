@@ -20,7 +20,7 @@ class displayCalendar extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container margin-top">
                 <div className="messaging">
                     <Calendar />
                 </div>

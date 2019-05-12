@@ -49,7 +49,7 @@ class displayWeight extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container margin-top">
         <div className="messaging">
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>

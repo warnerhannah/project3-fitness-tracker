@@ -62,7 +62,7 @@ class displayCalories extends Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="container margin-top">
         <div className="graphdata" style={{ position: "relative" }}>
           <div className="messaging">
             <h3 className="none">Today's Totals</h3>
