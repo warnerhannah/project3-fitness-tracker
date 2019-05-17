@@ -90,7 +90,7 @@ class Navbar extends Component {
             <nav id="navBarStyle"  className="navbar navbar-expand-lg">
                 <div className="container">
                
-                <a id="navbar-brand" href="/"> =Fitness  Tracker=</a>
+                <a id="navbar-brand" href="/"> =FITNESS    TRACKER=</a>
 
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>

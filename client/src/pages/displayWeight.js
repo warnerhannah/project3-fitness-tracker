@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import Weight from "../components/Weight";
 import withAuth from "./../components/withAuth";
 import API from "../utils/API";
+import GoogleAds from "../components/GoogleAds"
 
 class displayWeight extends Component {
   constructor(props) {
@@ -50,6 +51,7 @@ class displayWeight extends Component {
   render() {
     return (
       <div className="container margin-top">
+        <GoogleAds/>
         <div className="messaging">
           <h3 className="none">Weight Tracking</h3>
           <div className="graphdata" style={{ position: "relative" }}>

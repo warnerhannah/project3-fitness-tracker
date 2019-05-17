@@ -21,6 +21,8 @@ import Resources from "./pages/Resources"
 import Message from "./pages/Message"
 import Food from "./pages/Food"
 import Create from "./pages/Create"
+import Workouts from './pages/Workouts';
+import ArmDay from './components/ArmDay';
 
 
 // Here is if we have an id_token in localStorage
@@ -44,6 +46,8 @@ ReactDOM.render(
             <Route exact path="/messages" component={Message} />
             <Route exact path="/food" component={Food} />
             <Route exact path="/resources" component={Resources} />
+            <Route exact path="/workouts" component={Workouts}/>
+            <Route exact path="/armday" component={ArmDay}/>
             <div className="two-toned-footer-color">
             <p className="text-muted text-muted-footer text-center">
               &copy; Copyright 2019 Hannah, Manny, Ivan, and Michael 

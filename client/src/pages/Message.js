@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import withAuth from '../components/withAuth';
+import GoogleAds from "../components/GoogleAds"
 
 
 
@@ -9,11 +10,8 @@ class Message extends Component {
         myusername: "",
         messages: [],
 
-        username: "",
-        message: "",
+       
     }
-
-
     componentDidMount() {
         API.getUser(this.props.user.id)
             .then(res => {
@@ -67,10 +65,14 @@ class Message extends Component {
         const { name, value } = e.target;
         this.setState({ [name]: value })
     }
+ 
 
     render() {
+        
+        
         return (
             <div className="container margin-top">
+                <GoogleAds/>
                 <div className="messaging margin-top">
                     <h3>Send A Motivational Message To Your Friends!</h3>
                     <form>

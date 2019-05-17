@@ -3,6 +3,7 @@ import withAuth from "./../components/withAuth";
 import API from "../utils/API";
 import Food from "../pages/Food"
 import Calories from "../components/Calories"
+import GoogleAds from "../components/GoogleAds"
 
 class displayCalories extends Component {
   constructor(props) {
@@ -63,6 +64,7 @@ class displayCalories extends Component {
   render() {
     return (
       <div className="container margin-top">
+      <GoogleAds/>
         <div className="graphdata" style={{ position: "relative" }}>
           <div className="messaging">
             <h3 className="none">Today's Totals</h3>
