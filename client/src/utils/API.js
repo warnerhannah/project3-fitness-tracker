@@ -1,4 +1,5 @@
 import axios from 'axios';
+
 export default {
   // Gets a single user by id
   getUser: (id) => {

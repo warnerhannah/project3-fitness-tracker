@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import withAuth from './../components/withAuth';
 import API from "../utils/API";
 import Calendar from "../components/Calendar"
+import GoogleAds from "../components/GoogleAds"
 
 class displayCalendar extends Component {
 
@@ -20,7 +21,8 @@ class displayCalendar extends Component {
 
     render() {
         return (
-            <div className="container">
+            <div className="container margin-top">
+                <GoogleAds/>    
                 <div className="messaging">
                     <Calendar />
                 </div>

@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import API from "../utils/API";
 import withAuth from "../components/withAuth";
+import GoogleAds from "../components/GoogleAds"
 // import Calendar from "../components/Calendar"
 // import Calories from "../components/Calories"
 // import Weight from "../components/Weight"
@@ -59,6 +60,7 @@ class Food extends Component {
   render() {
     return (
       <div>
+        <GoogleAds/>
         <div className="messaging">
           <p>Want to know the caloric value of a food?</p>
           <h3>Search a Food:</h3>

@@ -55,7 +55,8 @@ class Profile extends Component {
 
   render() {
     return (
-      <div className="containerProfile">
+     
+      <div className="containerProfile ">
         <h1>Your Profile</h1>
         <h3>UserName: {this.state.username}</h3>
         <h3>Email: {this.state.email}</h3>
@@ -108,6 +109,7 @@ class Profile extends Component {
 
         {/* <Link to="/">Go home</Link> */}
       </div>
+     
     );
   }
 }
